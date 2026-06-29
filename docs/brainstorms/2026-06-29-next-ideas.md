@@ -36,14 +36,11 @@
 
 ## Medium effort (remaining)
 
-1. **Guide reading experience** — inline “On this page” list above fold on mobile (SideToc is timeline-only)
+1. **Guide reading experience** — inline “On this page” list above fold on mobile (SideToc is timeline-only) → see [discovery backlog](./2026-06-29-discovery-backlog-requirements.md) P1
 
 ## Larger bets (product)
 
-1. **Unified search** — in-app results page instead of only opening SearX in new tab
-2. **Release notes stream** — replace one `future-blocks` placeholder with RSS or git-tag feed
-3. **Status subscriptions** — webhook or email when a tracked service goes offline (needs backend)
-4. **Single-theme mode** — env flag to force discovery chrome everywhere for users who want one visual system
+Tracked in [discovery backlog requirements](./2026-06-29-discovery-backlog-requirements.md) (P2–P5, prioritized).
 
 ## Explicit non-goals (for now)
 

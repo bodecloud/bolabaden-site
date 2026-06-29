@@ -19,6 +19,8 @@ export interface TocItem {
 
 interface SideTocProps {
   items: TocItem[];
+  /** When true, hides the fixed bottom mobile timeline (e.g. guide pages with inline TOC). */
+  hideMobileChrome?: boolean;
 }
 
 const NAVBAR_OFFSET_PX = 116;
@@ -44,7 +46,7 @@ function getActiveSectionId(items: TocItem[]): string {
   return activeId;
 }
 
-export function SideToc({ items }: SideTocProps) {
+export function SideToc({ items, hideMobileChrome = false }: SideTocProps) {
   const [mounted, setMounted] = useState(false);
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
@@ -157,6 +159,7 @@ export function SideToc({ items }: SideTocProps) {
         </nav>
       </aside>
 
+      {!hideMobileChrome && (
       <aside
         aria-label="Quick section navigation"
         className="pointer-events-none fixed inset-x-2 bottom-3 z-40 md:hidden"
@@ -216,6 +219,7 @@ export function SideToc({ items }: SideTocProps) {
           </div>
         </nav>
       </aside>
+      )}
     </>
   );
 }

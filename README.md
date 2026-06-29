@@ -70,8 +70,20 @@ Central config: `src/lib/config.ts`.
 
 | Context | Routes | Chrome |
 |---------|--------|--------|
-| Discovery hub | `/`, `/projects`, `/guides`, `/dashboard`, `/contact`, 404 | `PageLayout` — `#0a0a0a`, emerald accent |
-| Portfolio | `/about` | `AboutNavigation`, portfolio footer, blue tokens |
+| Discovery hub | `/`, `/projects`, `/guides`, `/dashboard`, `/contact`, `/search`, 404 | `PageLayout` — `#0a0a0a`, emerald accent |
+| Portfolio | `/about` (default) | `AboutNavigation`, portfolio footer, blue tokens |
+| Forced discovery on about | `/about` when `NEXT_PUBLIC_CHROME_MODE=discovery` | Same as discovery hub; portfolio OG/metadata unchanged |
+
+Set `NEXT_PUBLIC_CHROME_MODE=discovery` to wrap `/about` in `PageLayout` while keeping the same section builder and copy.
+
+### Search
+
+- Navbar search navigates to `/search?q=…` (on-site results when API routes are available).
+- `DEPLOY_TARGET=github-pages` sets `NEXT_PUBLIC_STATIC_EXPORT=true`; `/search` shows an external SearXNG link instead of live results (GitHub Pages build strips `src/app/api`).
+
+### Home release feed
+
+- `NEXT_PUBLIC_HOME_FUTURE_RELEASES_ENABLED=true` (default) loads up to five recent GitHub releases into the future-blocks section when `GITHUB_TOKEN` is set.
 
 ### Homepage builder
 

@@ -13,7 +13,7 @@
 
 import { useState, useCallback, FormEvent } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { config } from "@/lib/config";
 
@@ -69,18 +69,18 @@ function NavLink({
 
 export function MainNavbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
-    if (!searchQuery.trim()) return;
-    window.open(
-      config.getSearxngSearchResolverUrl(searchQuery.trim()),
-      "_blank",
-      "noopener,noreferrer",
+    const trimmed = searchQuery.trim();
+    router.push(
+      trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : "/search",
     );
     setSearchQuery("");
+    setIsMenuOpen(false);
   };
 
   return (

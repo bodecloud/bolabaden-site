@@ -24,6 +24,7 @@ Run two intentional chrome contexts on one site: a **discovery hub** (neutral da
 - **Discovery route engagement** — repeat visits to `/`, `/dashboard`, `/guides` (analytics when wired; manual observation until then)
 - **Dashboard freshness** — services API success rate and time-since-last-refresh on `/dashboard`
 - **GitHub data quality** — share of project views backed by live API vs fallback when `GITHUB_TOKEN` absent
+- **Guide usefulness** — guide page depth (scroll to prev/next), return visits to `/guides` (analytics when wired)
 - **Build health** — `npm run build` succeeds on default env (zero `.env.local`)
 
 ## Tracks
@@ -46,11 +47,22 @@ Extend `src/lib/config.ts` and JSON env overrides for copy, section order, and t
 
 _Why it serves the approach:_ Lets the same codebase serve demo, staging, and production personas.
 
+### Guides and playbook content
+
+Grow bundled guides and imported knowledge (infra playbooks, exported threads) as durable discovery content — not a separate blog product.
+
+_Why it serves the approach:_ Operators hire the hub for answers and live context, not only status tiles.
+
+## Milestones
+
+- **2026-06-29** — Discovery hub cohesion shipped (shared `PageLayout`, heroes, dashboard UI, OG palette, guide nav polish)
+
 ## Not working on
 
-- Collapsing dual chrome into one theme
+- Collapsing dual chrome into one theme (optional single-theme env flag is a deployment convenience, not a product merge)
 - Auth, accounts, or write paths on public discovery routes
-- Unified cross-site search (until a concrete backend exists)
+- Unified cross-site search with a new backend (in-app SearX results may reuse existing API proxy)
+- Full in-app replacement of iframe embeds (Research Wizard, SearX)
 
 ## Marketing
 

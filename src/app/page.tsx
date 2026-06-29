@@ -14,6 +14,8 @@ import {
   type HomeLayoutSectionId,
   type NormalizedSection,
 } from "@/lib/config";
+import { fetchRecentReleases } from "@/lib/github-releases";
+import type { ReleaseFeedItem } from "@/lib/github-releases";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -131,7 +133,10 @@ function HomeExploreSection() {
   );
 }
 
-function renderHomeSection(section: NormalizedSection<HomeLayoutSectionId>) {
+function renderHomeSection(
+  section: NormalizedSection<HomeLayoutSectionId>,
+  releases: ReleaseFeedItem[],
+) {
   if (!section.enabled) return null;
 
   switch (section.id) {
@@ -153,14 +158,19 @@ function renderHomeSection(section: NormalizedSection<HomeLayoutSectionId>) {
     case "explore-lanes":
       return <HomeExploreSection key={section.id} />;
     case "future-blocks":
-      return <HomeFutureSection key={section.id} />;
+      return <HomeFutureSection key={section.id} releases={releases} />;
     default:
       return null;
   }
 }
 
-export default function HomePage() {
+export default async function HomePage() {
   const homeSections = normalizeHomeSections();
+  const releases =
+    config.HOME_FUTURE_RELEASES_ENABLED &&
+    homeSections.some((section) => section.id === "future-blocks" && section.enabled)
+      ? await fetchRecentReleases()
+      : [];
   const homeTocItems: TocItem[] = homeSections
     .filter((section) => section.enabled)
     .map((section) => ({ id: section.id, label: section.label }));
@@ -195,7 +205,7 @@ export default function HomePage() {
         </div>
       </DiscoveryPageHero>
 
-      {homeSections.map((section) => renderHomeSection(section))}
+      {homeSections.map((section) => renderHomeSection(section, releases))}
     </PageLayout>
   );
 }

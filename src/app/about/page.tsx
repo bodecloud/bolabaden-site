@@ -9,6 +9,7 @@ import { GitHubStatsSection } from "@/components/github-stats-section";
 import { AboutSection } from "@/components/about-section";
 import { AboutContactSection } from "@/components/about-contact-section";
 import { Footer } from "@/components/footer";
+import { PageLayout } from "@/components/page-layout";
 import { SideToc, type TocItem } from "@/components/side-toc";
 import { SectionErrorBoundary } from "@/components/section-error-boundary";
 import { getGuides } from "@/lib/guides";
@@ -90,93 +91,112 @@ export default async function AboutPage() {
   const embedsMode = config.ABOUT_EMBEDS_MODE === "hero" ? "hero" : "default";
 
   const guides = shouldLoadGuides ? await getGuides() : [];
+  const useDiscoveryChrome = config.CHROME_MODE === "discovery";
+
+  const sectionBlocks = aboutSections
+    .filter((section) => section.enabled)
+    .map((section) => {
+      if (section.id === "hero") {
+        return (
+          <SectionErrorBoundary
+            key={section.id}
+            fallbackTitle="Overview section failed to load"
+          >
+            <HeroSection />
+          </SectionErrorBoundary>
+        );
+      }
+
+      if (section.id === "embeds") {
+        return (
+          <SectionErrorBoundary
+            key={section.id}
+            fallbackTitle={config.ABOUT_EMBEDS_FALLBACK_TITLE}
+          >
+            <EmbedsSection mode={embedsMode} />
+          </SectionErrorBoundary>
+        );
+      }
+
+      if (section.id === "projects") {
+        return (
+          <SectionErrorBoundary
+            key={section.id}
+            fallbackTitle="Portfolio section failed to load"
+          >
+            <AboutProjectsSection />
+          </SectionErrorBoundary>
+        );
+      }
+
+      if (section.id === "guides") {
+        return (
+          <SectionErrorBoundary
+            key={section.id}
+            fallbackTitle="Guides section failed to load"
+          >
+            <AboutGuidesSection guides={guides} />
+          </SectionErrorBoundary>
+        );
+      }
+
+      if (section.id === "github-stats") {
+        return (
+          <SectionErrorBoundary
+            key={section.id}
+            fallbackTitle="GitHub stats section failed to load"
+          >
+            <GitHubStatsSection />
+          </SectionErrorBoundary>
+        );
+      }
+
+      if (section.id === "about") {
+        return (
+          <SectionErrorBoundary
+            key={section.id}
+            fallbackTitle="About section failed to load"
+          >
+            <AboutSection />
+          </SectionErrorBoundary>
+        );
+      }
+
+      return (
+        <SectionErrorBoundary
+          key={section.id}
+          fallbackTitle="Contact section failed to load"
+        >
+          <AboutContactSection />
+        </SectionErrorBoundary>
+      );
+    });
+
+  const pageBody = (
+    <>
+      {aboutTocItems.length > 0 && <SideToc items={aboutTocItems} />}
+      {useDiscoveryChrome ? (
+        <div className="pb-24 md:pb-0">
+          <AboutHubStrip />
+          {sectionBlocks}
+        </div>
+      ) : (
+        <main className="min-h-screen bg-background pb-24 pt-32 md:pb-0">
+          <AboutHubStrip />
+          {sectionBlocks}
+        </main>
+      )}
+    </>
+  );
+
+  if (useDiscoveryChrome) {
+    return <PageLayout>{pageBody}</PageLayout>;
+  }
 
   return (
     <>
       <AboutNavigation />
-      {aboutTocItems.length > 0 && <SideToc items={aboutTocItems} />}
-      <main className="min-h-screen bg-background pb-24 pt-32 md:pb-0">
-        <AboutHubStrip />
-
-        {aboutSections
-          .filter((section) => section.enabled)
-          .map((section) => {
-            if (section.id === "hero") {
-              return (
-                <SectionErrorBoundary
-                  key={section.id}
-                  fallbackTitle="Overview section failed to load"
-                >
-                  <HeroSection />
-                </SectionErrorBoundary>
-              );
-            }
-
-            if (section.id === "embeds") {
-              return (
-                <SectionErrorBoundary
-                  key={section.id}
-                  fallbackTitle={config.ABOUT_EMBEDS_FALLBACK_TITLE}
-                >
-                  <EmbedsSection mode={embedsMode} />
-                </SectionErrorBoundary>
-              );
-            }
-
-            if (section.id === "projects") {
-              return (
-                <SectionErrorBoundary
-                  key={section.id}
-                  fallbackTitle="Portfolio section failed to load"
-                >
-                  <AboutProjectsSection />
-                </SectionErrorBoundary>
-              );
-            }
-
-            if (section.id === "guides") {
-              return (
-                <SectionErrorBoundary
-                  key={section.id}
-                  fallbackTitle="Guides section failed to load"
-                >
-                  <AboutGuidesSection guides={guides} />
-                </SectionErrorBoundary>
-              );
-            }
-
-            if (section.id === "github-stats") {
-              return (
-                <SectionErrorBoundary
-                  key={section.id}
-                  fallbackTitle="GitHub stats section failed to load"
-                >
-                  <GitHubStatsSection />
-                </SectionErrorBoundary>
-              );
-            }
-
-            if (section.id === "about") {
-              return (
-                <SectionErrorBoundary
-                  key={section.id}
-                  fallbackTitle="About section failed to load"
-                >
-                  <AboutSection />
-                </SectionErrorBoundary>
-              );
-            }
-
-            return (
-              <SectionErrorBoundary
-                key={section.id}
-                fallbackTitle="Contact section failed to load"
-              >
-                <AboutContactSection />
-              </SectionErrorBoundary>
-            );
-          })}
-      </main>
+      {pageBody}
       <Footer />
     </>
   );
