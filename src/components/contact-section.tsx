@@ -12,23 +12,45 @@
  * - ContactSection is generic "get in touch" channel
  */
 
+import { cn } from "@/lib/utils";
 import { config } from "@/lib/config";
 import { Mail, Github, Clock, MapPin } from "lucide-react";
 import { contactInfo } from "@/lib/data";
 
-export function ContactSection() {
+type ContactSectionProps = {
+  /** When false, page-level hero owns the title and intro copy. */
+  showIntro?: boolean;
+};
+
+export function ContactSection({ showIntro = true }: ContactSectionProps) {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-20">
-      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-4">
-        Contact
-      </p>
-      <h1 className="text-3xl font-semibold text-foreground mb-3">
-        Get in touch
-      </h1>
-      <p className="text-muted-foreground mb-12 max-w-lg leading-relaxed">
-        Email is the best way to reach me. I typically respond within 24 hours.
-        Prefer async communication and written follow-ups.
-      </p>
+    <div
+      className={cn(
+        "max-w-3xl mx-auto px-4 sm:px-6",
+        showIntro ? "py-20" : "pt-4 pb-20",
+      )}
+    >
+      {showIntro && (
+        <>
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-4">
+            Contact
+          </p>
+          <h1 className="text-3xl font-semibold text-foreground mb-3">
+            {config.CONTACT_HERO_TITLE}
+          </h1>
+          <p className="text-muted-foreground mb-12 max-w-lg leading-relaxed">
+            Email is the best way to reach me. I typically respond within 24
+            hours. Prefer async communication and written follow-ups.
+          </p>
+        </>
+      )}
+
+      {!showIntro && (
+        <p className="text-muted-foreground mb-12 max-w-lg leading-relaxed">
+          Email is the best way to reach me. I typically respond within 24
+          hours. Prefer async communication and written follow-ups.
+        </p>
+      )}
 
       {/* Primary actions */}
       <div className="space-y-3 mb-14">

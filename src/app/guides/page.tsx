@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
+import { DiscoveryPageHero } from "@/components/discovery-page-hero";
 import { PageLayout } from "@/components/page-layout";
 import { config } from "@/lib/config";
 import { getGuides } from "@/lib/guides";
@@ -20,19 +21,14 @@ export default async function GuidesIndexPage() {
 
   return (
     <PageLayout>
-      <div className="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6 py-16">
-        <div className="border-b border-[#1f1f1f] pb-10 mb-10">
-          <p className="text-xs font-semibold text-zinc-500 uppercase tracking-[0.2em] mb-3">
-            {config.GUIDES_INDEX_SECTION_TITLE}
-          </p>
-          <h1 className="text-4xl font-semibold text-white tracking-tight">
-            {config.GUIDES_PAGE_TITLE}
-          </h1>
-          <p className="mt-3 text-zinc-400 max-w-xl">
-            {config.GUIDES_PAGE_DESCRIPTION}
-          </p>
-        </div>
+      <DiscoveryPageHero
+        eyebrow={config.GUIDES_INDEX_SECTION_TITLE}
+        title={config.GUIDES_PAGE_TITLE}
+        description={config.GUIDES_PAGE_DESCRIPTION}
+        eyebrowTone="muted"
+      />
 
+      <div className="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6 pb-16">
         {guides.length === 0 ? (
           <p className="text-zinc-500 text-sm">No guides yet.</p>
         ) : (

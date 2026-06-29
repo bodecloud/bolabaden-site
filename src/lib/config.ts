@@ -280,8 +280,8 @@ export const config = {
     [
       { id: "showcase", label: "Showcase", enabled: true, order: 1 },
       { id: "embeds", label: "Live Services", enabled: true, order: 2 },
-      { id: "home-hub", label: "Hub", enabled: false, order: 3 },
-      { id: "explore-lanes", label: "Explore", enabled: false, order: 4 },
+      { id: "home-hub", label: "Hub", enabled: true, order: 3 },
+      { id: "explore-lanes", label: "Explore", enabled: true, order: 4 },
       { id: "future-blocks", label: "Future", enabled: false, order: 5 },
     ],
   ),
@@ -296,6 +296,15 @@ export const config = {
   HOME_SHOWCASE_ITEMS: envJson<ShowcaseItem[]>(
     "NEXT_PUBLIC_HOME_SHOWCASE_ITEMS_JSON",
     [
+      {
+        id: "showcase-dashboard",
+        title: "Live Dashboard",
+        description:
+          "Service health, metrics, and container status at a glance.",
+        type: "link",
+        href: "/dashboard#services-table",
+        color: "from-emerald-600/20 to-teal-600/20",
+      },
       {
         id: "showcase-guides",
         title: "Technical Guides",
@@ -413,6 +422,10 @@ export const config = {
 
   /** Page metadata */
   CONTACT_PAGE_TITLE: envString("NEXT_PUBLIC_CONTACT_PAGE_TITLE", "Contact"),
+  CONTACT_HERO_TITLE: envString(
+    "NEXT_PUBLIC_CONTACT_HERO_TITLE",
+    "Get in touch",
+  ),
   CONTACT_PAGE_DESCRIPTION: envString(
     "NEXT_PUBLIC_CONTACT_PAGE_DESCRIPTION",
     "Direct contact options including email and social profiles. Reach out for questions, collaborations, or inquiries.",
@@ -425,6 +438,9 @@ export const config = {
     "NEXT_PUBLIC_DASHBOARD_PAGE_DESCRIPTION",
     "Live status, monitoring, and embedded views of production self-hosted services and infrastructure.",
   ),
+  get DASHBOARD_EMBEDS_ENABLED() {
+    return envFlag("NEXT_PUBLIC_DASHBOARD_EMBEDS_ENABLED", true);
+  },
   PROJECTS_PAGE_TITLE: envString("NEXT_PUBLIC_PROJECTS_PAGE_TITLE", "Projects"),
   PROJECTS_PAGE_DESCRIPTION: envString(
     "NEXT_PUBLIC_PROJECTS_PAGE_DESCRIPTION",

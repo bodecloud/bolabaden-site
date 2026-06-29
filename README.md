@@ -1,19 +1,22 @@
 # bolabaden.org
 
-Personal portfolio site for Boden Crouch. Built with Next.js App Router and Tailwind CSS to showcase projects, guides, and ongoing work.
+Personal site for Boden Crouch — a **discovery hub** (home, projects, guides, dashboard, contact) plus a separate **portfolio** experience on `/about`. Built with Next.js App Router, TypeScript, and Tailwind CSS v4. Works with zero `.env.local`; external APIs fall back to demo/static data.
 
 ## Features
 
-- Portfolio-focused homepage with projects, guides, and about section
-- Dedicated Projects and Guides pages
-- Dynamic error pages for common HTTP statuses
-- Dark-first visual system with responsive layout
+- Config-driven home and about page section builders (`HOME_LAYOUT_SECTIONS`, `ABOUT_LAYOUT_SECTIONS`)
+- Dual chrome: discovery (`PageLayout`, emerald accent) vs portfolio (`/about`, blue tokens)
+- Projects explorer with GitHub aggregation and fallback data
+- Guides from bundled markdown or mounted `GUIDES_DIR`
+- Live service dashboard and optional embeds (Research Wizard iframe)
+- Dynamic error pages and SearXNG search resolver with fallback
 
 ## Tech Stack
 
-- Next.js 15 (App Router)
+- Next.js 16 (App Router, Turbopack build)
+- React 19
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS v4
 - Docker for production containerization
 
 ## Project Structure
@@ -22,25 +25,21 @@ Personal portfolio site for Boden Crouch. Built with Next.js App Router and Tail
 .
 ├── src/
 │   ├── app/
-│   │   ├── api/
-│   │   │   └── error/[status]/        # Dynamic error pages API
-│   │   ├── error-pages/
-│   │   │   ├── 404/
-│   │   │   └── 500/
-│   │   ├── guides/                    # Guides landing page
-│   │   ├── projects/                  # Projects landing page
-│   │   ├── about/                     # About page
-│   │   ├── contact/                   # Contact page
-│   │   ├── globals.css                # Global styles
-│   │   ├── layout.tsx                 # Root layout
-│   │   └── page.tsx                   # Homepage
+│   │   ├── api/              # services, github, searx, projects, error HTML
+│   │   ├── about/            # Portfolio chrome (AboutNavigation + Footer)
+│   │   ├── contact/
+│   │   ├── dashboard/
+│   │   ├── guides/
+│   │   ├── projects/
+│   │   ├── page.tsx          # Discovery home (PageLayout)
+│   │   └── not-found.tsx
 │   ├── components/
-│   │   ├── Logo.tsx                   # Wordmark logo
-│   │   ├── Navbar.tsx                 # Navigation
-│   │   └── SiteFooter.tsx             # Footer
-│   └── lib/                           # Shared config/data helpers
-├── Dockerfile
-├── docker-compose.override.yml
+│   │   ├── page-layout.tsx   # Discovery shell (MainNavbar + MainFooter)
+│   │   └── dashboard/
+│   └── lib/
+│       └── config.ts         # Single source of truth for env-driven copy
+├── docs/brainstorms/         # Product/requirements notes
+├── .env.example
 └── next.config.ts
 ```
 
@@ -53,87 +52,57 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Configuration
+For a full local install when `NODE_ENV=production` skips devDependencies:
 
-This site is now env-driven with safe defaults, including page metadata, homepage blocks, nav labels, OG copy, and fallback data models.
+```bash
+unset NODE_ENV && npm install
+```
+
+## Configuration
 
 1. Copy `.env.example` to `.env.local`
 2. Change only the keys you want to personalize
-3. Use JSON override vars (for example `NEXT_PUBLIC_HOME_HUB_CARDS_JSON`) to swap entire content modules without code edits
+3. Use JSON override vars (e.g. `NEXT_PUBLIC_HOME_LAYOUT_SECTIONS_JSON`) to reorder or hide sections without code edits
 
-Most-used variables:
+Central config: `src/lib/config.ts`.
 
-- `NEXT_PUBLIC_OWNER_NAME`, `NEXT_PUBLIC_JOB_TITLE`, `NEXT_PUBLIC_BIO`
-- `NEXT_PUBLIC_SITE_NAME`, `NEXT_PUBLIC_SITE_DOMAIN`, `NEXT_PUBLIC_SITE_URL`
-- `NEXT_PUBLIC_GITHUB_OWNER`, `NEXT_PUBLIC_GITHUB_USERS`
-- `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_LOCATION`, `NEXT_PUBLIC_TIMEZONE`
-- `NEXT_PUBLIC_NAV_ITEMS_JSON`, `NEXT_PUBLIC_EMBED_SERVICES_JSON`
-- `NEXT_PUBLIC_HOME_HUB_CARDS_JSON`, `NEXT_PUBLIC_HOME_EXPLORE_LANES_JSON`, `NEXT_PUBLIC_HOME_FUTURE_PLACEHOLDERS_JSON`
-- `NEXT_PUBLIC_HOME_LAYOUT_SECTIONS_JSON`, `NEXT_PUBLIC_HOME_EMBEDS_MODE`
-- `NEXT_PUBLIC_ABOUT_LAYOUT_SECTIONS_JSON`, `NEXT_PUBLIC_ABOUT_EMBEDS_MODE`
-- `NEXT_PUBLIC_FALLBACK_PROJECTS_JSON`, `NEXT_PUBLIC_TECH_STACK_JSON`, `NEXT_PUBLIC_CONTACT_INFO_JSON`
-- `NEXT_PUBLIC_SEARXNG_URL`, `NEXT_PUBLIC_SEARXNG_SEARCH_PATH`, `SEARXNG_FALLBACK_ENABLED`
-- `GUIDES_DIR`
+### Dual chrome
 
-### Homepage Builder (Config-Driven)
+| Context | Routes | Chrome |
+|---------|--------|--------|
+| Discovery hub | `/`, `/projects`, `/guides`, `/dashboard`, `/contact`, 404 | `PageLayout` — `#0a0a0a`, emerald accent |
+| Portfolio | `/about` | `AboutNavigation`, portfolio footer, blue tokens |
 
-The home route (`/`) supports a builder-style layout controlled via env JSON, so you can reorder, hide, or relabel sections without touching code.
+### Homepage builder
 
-- `NEXT_PUBLIC_HOME_LAYOUT_SECTIONS_JSON` controls **order + visibility + labels**
-- `NEXT_PUBLIC_HOME_EMBEDS_MODE` controls embeds hero style (`hero` or `default`)
-- `NEXT_PUBLIC_HOME_HUB_CARDS_JSON` controls card grid content/icons/CTAs
-- `NEXT_PUBLIC_HOME_EXPLORE_LANES_JSON` controls explore lane content/icons/CTAs
-- `NEXT_PUBLIC_HOME_FUTURE_PLACEHOLDERS_JSON` controls future placeholder list
+`NEXT_PUBLIC_HOME_LAYOUT_SECTIONS_JSON` controls order, visibility, and labels for:
 
-Example:
+- `showcase` — quick link grid
+- `embeds` — live service iframe (`NEXT_PUBLIC_HOME_EMBEDS_MODE`: `default` | `hero`)
+- `home-hub` — four-card hub grid (`NEXT_PUBLIC_HOME_HUB_CARDS_JSON`)
+- `explore-lanes` — directional lanes (`NEXT_PUBLIC_HOME_EXPLORE_LANES_JSON`)
+- `future-blocks` — roadmap placeholders (`NEXT_PUBLIC_HOME_FUTURE_PLACEHOLDERS_JSON`)
 
-```env
-NEXT_PUBLIC_HOME_EMBEDS_MODE=hero
-NEXT_PUBLIC_HOME_LAYOUT_SECTIONS_JSON=[{"id":"embeds","label":"Start","enabled":true,"order":1},{"id":"home-hub","label":"Main","enabled":true,"order":2},{"id":"explore-lanes","label":"Paths","enabled":true,"order":3},{"id":"future-blocks","label":"Roadmap","enabled":false,"order":4}]
-NEXT_PUBLIC_HOME_HUB_CARDS_JSON=[{"title":"About","description":"Profile and portfolio details","href":"/about","icon":"compass","cta":"Open"},{"title":"Projects","description":"Build catalog","href":"/projects","icon":"blocks","cta":"Browse"}]
-```
+### Dashboard
 
-Supported `HOME_HUB_CARDS_JSON` icons: `compass`, `dashboard`, `code`, `book`, `blocks`
+- `NEXT_PUBLIC_DASHBOARD_EMBEDS_ENABLED=false` hides the embed iframe below the status UI.
 
-Supported `HOME_EXPLORE_LANES_JSON` icons: `rocket`, `workflow`, `layers`, `cpu`
+### About page builder
 
-### About Page Builder (Config-Driven)
-
-The about route (`/about`) also supports builder-style section control via env JSON.
-
-- `NEXT_PUBLIC_ABOUT_LAYOUT_SECTIONS_JSON` controls **order + visibility + labels**
-- `NEXT_PUBLIC_ABOUT_EMBEDS_MODE` controls embeds mode on About (`default` or `hero`)
-- `NEXT_PUBLIC_ABOUT_EMBEDS_FALLBACK_TITLE` controls embeds section error fallback title
-
-Example:
-
-```env
-NEXT_PUBLIC_ABOUT_EMBEDS_MODE=default
-NEXT_PUBLIC_ABOUT_LAYOUT_SECTIONS_JSON=[{"id":"hero","label":"Overview","enabled":true,"order":1},{"id":"projects","label":"Projects","enabled":true,"order":2},{"id":"guides","label":"Guides","enabled":true,"order":3},{"id":"embeds","label":"Live Services","enabled":false,"order":4},{"id":"about","label":"About","enabled":true,"order":5},{"id":"contact","label":"Contact","enabled":true,"order":6}]
-```
+See `.env.example` and `NEXT_PUBLIC_ABOUT_LAYOUT_SECTIONS_JSON` in README history — same pattern as home.
 
 ## Guides as Markdown
 
-Guides are loaded from markdown files at runtime.
-
-- Bundled fallback guides live in `src/content/guides/*.md`
-- If `GUIDES_DIR` exists, guides are loaded from there instead
-- If `GUIDES_DIR` does not exist, bundled fallback guides are used
-
-For custom guides, mount a host folder to `/app/guides` and set `GUIDES_DIR=/app/guides`.
-File names determine guide titles on the site via normalized title case (for example, `vs-code-ai-workflow-guide.md` becomes `VS Code AI Workflow Guide`).
+- Bundled guides: `src/content/guides/*.md`
+- Override with `GUIDES_DIR` (e.g. mount to `/app/guides` in Docker)
 
 ## Docker + Traefik
 
-The provided docker-compose override contains Traefik labels for main routing and error middleware. Update the hostnames and IPs to match your environment.
+See `docker-compose.override.yml` for Traefik labels and env passthrough (`DOCKER_PROXY_URL`, SearXNG vars, etc.).
 
-The compose file now passes `NEXT_PUBLIC_SEARXNG_URL`, `NEXT_PUBLIC_SEARXNG_SEARCH_PATH`, and `SEARXNG_FALLBACK_ENABLED` into both build args and runtime env with defaults, so you can override these before deployment without code changes.
+## Lint
 
-Search behavior uses `/api/searx/search` as a resolver endpoint: it checks the configured SearXNG target first and automatically redirects to the public instance when the configured one responds with errors or is unavailable (unless fallback is disabled).
-
-## Error Pages
-
-Dynamic error page HTML is generated in `src/app/api/error/[status]/route.ts` and can be used as a middleware target for reverse proxies.
+`npm run lint` targets removed `next lint` (Next.js 16). ESLint flat config exists but may hit upstream FlatCompat issues — see `AGENTS.md`.
 
 ## License
 
