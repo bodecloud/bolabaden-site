@@ -8,6 +8,12 @@
 
 import { ImageResponse } from "next/og";
 import { config } from "@/lib/config";
+import {
+  OG_DISCOVERY_ACCENT,
+  OG_DISCOVERY_CONTENT_TYPE,
+  OG_DISCOVERY_PAGE_STYLE,
+  OG_DISCOVERY_SIZE,
+} from "@/lib/og-discovery-styles";
 
 /**
  * OpenGraph image generator using Next.js ImageResponse.
@@ -20,32 +26,19 @@ import { config } from "@/lib/config";
  */
 
 export const runtime = "edge";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const size = OG_DISCOVERY_SIZE;
+export const contentType = OG_DISCOVERY_CONTENT_TYPE;
 
 export default function GuidesOpenGraphImage() {
   return new ImageResponse(
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        background:
-          "linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 32% 17%) 64%, hsl(217 91% 60% / 0.3) 100%)",
-        color: "hsl(210 20% 98%)",
-        padding: "62px",
-        fontFamily: "Inter, system-ui, sans-serif",
-      }}
-    >
+    <div style={OG_DISCOVERY_PAGE_STYLE}>
       <div style={{ fontSize: 24, opacity: 0.9 }}>{config.SITE_NAME}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
         <div style={{ fontSize: 62, fontWeight: 700 }}>
           {config.OG_GUIDES_TITLE}
         </div>
         <div
-          style={{ fontSize: 34, color: "hsl(217 91% 72%)", fontWeight: 600 }}
+          style={{ fontSize: 34, color: OG_DISCOVERY_ACCENT, fontWeight: 600 }}
         >
           {config.OG_GUIDES_SUBTITLE}
         </div>

@@ -153,7 +153,7 @@ export function ServiceTable({
   };
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 scroll-mt-28" id="services-table">
       {/* Filters and Search */}
       <div className="mb-6 flex flex-col sm:flex-row gap-4 items-center justify-between">
         <div className="flex gap-2">
@@ -327,7 +327,8 @@ export function ServiceTable({
                 filteredServices.map((service) => (
                   <tr
                     key={service.id}
-                    className="border-b border-white/5 hover:bg-white/5 transition-colors"
+                    id={`service-${service.id}`}
+                    className="border-b border-white/5 hover:bg-white/5 transition-colors scroll-mt-28"
                   >
                     <td className="px-6 py-4">
                       <div>

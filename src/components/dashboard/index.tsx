@@ -16,8 +16,14 @@ import { ServiceTable } from "./service-table";
 import { CategoryDistribution } from "./category-distribution";
 import { Loader2, RefreshCw } from "lucide-react";
 import { motion } from "framer-motion";
+import { config } from "@/lib/config";
 
-export function Dashboard() {
+type DashboardProps = {
+  /** When false, omit the in-component title block (page supplies its own hero). */
+  showHeader?: boolean;
+};
+
+export function Dashboard({ showHeader = true }: DashboardProps) {
   const [services, setServices] = useState<any[]>([]);
   const [stats, setStats] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(true);
@@ -82,37 +88,43 @@ export function Dashboard() {
     );
   }
 
+  const refreshControl = (
+    <div className="flex items-center text-sm text-muted-foreground">
+      <span className="mr-2">Last updated:</span>
+      <span className="text-foreground">
+        {lastUpdated?.toLocaleTimeString()}
+      </span>
+      <motion.button
+        whileTap={{ scale: 0.95 }}
+        onClick={fetchData}
+        disabled={loading}
+        aria-label="Refresh dashboard data"
+        title="Refresh dashboard data"
+        className="ml-3 p-1.5 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors"
+      >
+        <RefreshCw
+          className={`h-4 w-4 text-primary ${loading ? "animate-spin" : ""}`}
+        />
+      </motion.button>
+    </div>
+  );
+
   return (
     <div>
-      {/* Header with last updated time */}
-      <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">
-            System Dashboard
-          </h2>
-          <p className="text-sm text-muted-foreground mt-1">
-            Real-time monitoring and status overview
-          </p>
-        </div>
-
-        <div className="flex items-center mt-4 sm:mt-0 text-sm text-muted-foreground">
-          <span className="mr-2">Last updated:</span>
-          <span className="text-foreground">
-            {lastUpdated?.toLocaleTimeString()}
-          </span>
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={fetchData}
-            disabled={loading}
-            aria-label="Refresh dashboard data"
-            title="Refresh dashboard data"
-            className="ml-3 p-1.5 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors"
-          >
-            <RefreshCw
-              className={`h-4 w-4 text-primary ${loading ? "animate-spin" : ""}`}
-            />
-          </motion.button>
-        </div>
+      <div
+        className={`mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center ${showHeader ? "" : "sm:justify-end"}`}
+      >
+        {showHeader && (
+          <div>
+            <h2 className="text-2xl font-bold text-foreground">
+              {config.DASHBOARD_PAGE_TITLE}
+            </h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              {config.DASHBOARD_PAGE_DESCRIPTION}
+            </p>
+          </div>
+        )}
+        <div className={showHeader ? "mt-4 sm:mt-0" : ""}>{refreshControl}</div>
       </div>
 
       {/* Status Cards */}

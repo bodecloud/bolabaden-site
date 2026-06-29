@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import { AboutHubStrip } from "@/components/about-hub-strip";
 import { AboutNavigation } from "@/components/about-navigation";
 import { HeroSection } from "@/components/hero-section";
 import { EmbedsSection } from "@/components/embeds-section";
@@ -96,31 +96,7 @@ export default async function AboutPage() {
       <AboutNavigation />
       {aboutTocItems.length > 0 && <SideToc items={aboutTocItems} />}
       <main className="min-h-screen bg-background pb-24 pt-32 md:pb-0">
-        <section className="py-10 border-b border-border/50 bg-muted/10">
-          <div className="container mx-auto px-2">
-            <div className="grid gap-4 md:grid-cols-3">
-              {config.HOME_HUB_CARDS.slice(0, 3).map((card) => (
-                <Link
-                  key={card.title}
-                  href={
-                    card.href === "/projects" ? "/about#projects" : card.href
-                  }
-                  className="group rounded-xl border border-border bg-background/70 p-5 transition-colors hover:border-primary/50"
-                >
-                  <h2 className="text-lg font-semibold text-foreground mb-2">
-                    {card.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {card.description}
-                  </p>
-                  <span className="mt-3 inline-block text-sm font-medium text-primary group-hover:text-primary/80 transition-colors">
-                    {card.cta} →
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <AboutHubStrip />
 
         {aboutSections
           .filter((section) => section.enabled)
