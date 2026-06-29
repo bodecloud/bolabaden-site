@@ -154,7 +154,7 @@ export function ContactSection({ showIntro = true }: ContactSectionProps) {
                 Availability
               </p>
               <p className="text-sm font-medium text-foreground capitalize">
-                {contactInfo.availability.replace("-", " ")}
+                {contactInfo.availability.replaceAll("-", " ")}
               </p>
             </div>
           </div>

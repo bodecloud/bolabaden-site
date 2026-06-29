@@ -13,7 +13,7 @@
 
 import { useState, useEffect, useCallback, FormEvent } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Github, Search } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -58,6 +58,7 @@ function AboutNavLink({
 
 export function AboutNavigation() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -67,14 +68,10 @@ export function AboutNavigation() {
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
-    if (!searchQuery.trim()) return;
-
-    window.open(
-      config.getSearxngSearchResolverUrl(searchQuery.trim()),
-      "_blank",
-      "noopener,noreferrer",
+    const trimmed = searchQuery.trim();
+    router.push(
+      trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : "/search",
     );
-
     setSearchQuery("");
   };
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
 import { MarkdownContent } from "@/components/markdown-content";
+import { GuideInlineToc } from "@/components/guide-inline-toc";
 import { SideToc } from "@/components/side-toc";
 import { config } from "@/lib/config";
 import { getGuides } from "@/lib/guides";
@@ -52,7 +53,9 @@ export default async function GuidePage({
 
   return (
     <PageLayout>
-      {guideTocItems.length >= 3 && <SideToc items={guideTocItems} />}
+      {guideTocItems.length >= 3 && (
+        <SideToc items={guideTocItems} hideMobileChrome />
+      )}
       <div className="max-w-3xl mx-auto px-2 sm:px-4 lg:px-6 py-16">
         <div className="mb-8">
           <Link
@@ -81,6 +84,7 @@ export default async function GuidePage({
             <span className="text-xs text-zinc-500">{guide.estimatedTime}</span>
           </div>
         </div>
+        <GuideInlineToc items={guideTocItems} />
         <article className="max-w-none">
           <MarkdownContent content={guide.content} />
         </article>
