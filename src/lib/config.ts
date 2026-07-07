@@ -129,6 +129,15 @@ function envFlag(name: string, defaultValue: boolean = true): boolean {
   return !["false", "0", "no", "off"].includes(normalized);
 }
 
+export type ChromeMode = "dual" | "discovery";
+
+function envChromeMode(name: string, defaultValue: ChromeMode): ChromeMode {
+  const raw = process.env[name]?.trim().toLowerCase();
+  if (raw === "discovery") return "discovery";
+  if (raw === "dual") return "dual";
+  return defaultValue;
+}
+
 export const config = {
   /** Owner / personal identity */
   OWNER_NAME: envString("NEXT_PUBLIC_OWNER_NAME", "Boden Crouch"),
@@ -182,6 +191,8 @@ export const config = {
 
   /** Site-wide copy and metadata */
   HTML_LANG: envString("NEXT_PUBLIC_HTML_LANG", "en"),
+  /** dual = portfolio chrome on /about; discovery = PageLayout everywhere */
+  CHROME_MODE: envChromeMode("NEXT_PUBLIC_CHROME_MODE", "dual"),
   SITE_SECTION_LABEL: envString(
     "NEXT_PUBLIC_SITE_SECTION_LABEL",
     "Independent Web Hub",
@@ -280,9 +291,9 @@ export const config = {
     [
       { id: "showcase", label: "Showcase", enabled: true, order: 1 },
       { id: "embeds", label: "Live Services", enabled: true, order: 2 },
-      { id: "home-hub", label: "Hub", enabled: false, order: 3 },
-      { id: "explore-lanes", label: "Explore", enabled: false, order: 4 },
-      { id: "future-blocks", label: "Future", enabled: false, order: 5 },
+      { id: "home-hub", label: "Hub", enabled: true, order: 3 },
+      { id: "explore-lanes", label: "Explore", enabled: true, order: 4 },
+      { id: "future-blocks", label: "Future", enabled: true, order: 5 },
     ],
   ),
   HOME_SHOWCASE_TITLE: envString(
@@ -296,6 +307,15 @@ export const config = {
   HOME_SHOWCASE_ITEMS: envJson<ShowcaseItem[]>(
     "NEXT_PUBLIC_HOME_SHOWCASE_ITEMS_JSON",
     [
+      {
+        id: "showcase-dashboard",
+        title: "Live Dashboard",
+        description:
+          "Service health, metrics, and container status at a glance.",
+        type: "link",
+        href: "/dashboard#services-table",
+        color: "from-emerald-600/20 to-teal-600/20",
+      },
       {
         id: "showcase-guides",
         title: "Technical Guides",
@@ -324,9 +344,9 @@ export const config = {
       {
         id: "showcase-searx",
         title: "SearX Search",
-        description: "Use the integrated search entry point with API fallback.",
+        description: "Search on-site with SearXNG results and an external fallback.",
         type: "link",
-        href: "/api/searx/search?q=bolabaden",
+        href: "/search?q=bolabaden",
         color: "from-green-600/20 to-emerald-600/20",
       },
     ],
@@ -410,9 +430,16 @@ export const config = {
       "Public Experiments Lab (Placeholder)",
     ],
   ),
+  get HOME_FUTURE_RELEASES_ENABLED() {
+    return envFlag("NEXT_PUBLIC_HOME_FUTURE_RELEASES_ENABLED", true);
+  },
 
   /** Page metadata */
   CONTACT_PAGE_TITLE: envString("NEXT_PUBLIC_CONTACT_PAGE_TITLE", "Contact"),
+  CONTACT_HERO_TITLE: envString(
+    "NEXT_PUBLIC_CONTACT_HERO_TITLE",
+    "Get in touch",
+  ),
   CONTACT_PAGE_DESCRIPTION: envString(
     "NEXT_PUBLIC_CONTACT_PAGE_DESCRIPTION",
     "Direct contact options including email and social profiles. Reach out for questions, collaborations, or inquiries.",
@@ -425,6 +452,9 @@ export const config = {
     "NEXT_PUBLIC_DASHBOARD_PAGE_DESCRIPTION",
     "Live status, monitoring, and embedded views of production self-hosted services and infrastructure.",
   ),
+  get DASHBOARD_EMBEDS_ENABLED() {
+    return envFlag("NEXT_PUBLIC_DASHBOARD_EMBEDS_ENABLED", true);
+  },
   PROJECTS_PAGE_TITLE: envString("NEXT_PUBLIC_PROJECTS_PAGE_TITLE", "Projects"),
   PROJECTS_PAGE_DESCRIPTION: envString(
     "NEXT_PUBLIC_PROJECTS_PAGE_DESCRIPTION",
@@ -457,6 +487,14 @@ export const config = {
   GUIDE_BACK_TO_INDEX_LABEL: envString(
     "NEXT_PUBLIC_GUIDE_BACK_TO_INDEX_LABEL",
     "← All Guides",
+  ),
+  GUIDE_INLINE_TOC_LABEL: envString(
+    "NEXT_PUBLIC_GUIDE_INLINE_TOC_LABEL",
+    "On this page",
+  ),
+  GUIDE_INLINE_TOC_ARIA: envString(
+    "NEXT_PUBLIC_GUIDE_INLINE_TOC_ARIA",
+    "On this page",
   ),
 
   /** Navigation */
@@ -514,6 +552,40 @@ export const config = {
     "NEXT_PUBLIC_NAV_ABOUT_BUTTON_LABEL",
     "About",
   ),
+
+  /** On-site search page */
+  SEARCH_PAGE_TITLE: envString("NEXT_PUBLIC_SEARCH_PAGE_TITLE", "Search"),
+  SEARCH_PAGE_DESCRIPTION: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_DESCRIPTION",
+    "Search the web with SearXNG without leaving bolabaden.org.",
+  ),
+  SEARCH_PAGE_FORM_ARIA: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_FORM_ARIA",
+    "Site search",
+  ),
+  SEARCH_PAGE_EMPTY_HINT: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_EMPTY_HINT",
+    "Enter a query above to search with SearXNG.",
+  ),
+  SEARCH_PAGE_RESULTS_HEADING: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_RESULTS_HEADING",
+    'Results for "{query}"',
+  ),
+  SEARCH_PAGE_NO_RESULTS: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_NO_RESULTS",
+    "No results returned. Try a different query or open SearXNG directly.",
+  ),
+  SEARCH_PAGE_OPEN_EXTERNAL_LABEL: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_OPEN_EXTERNAL_LABEL",
+    "Open in SearXNG",
+  ),
+  SEARCH_PAGE_STATIC_MESSAGE: envString(
+    "NEXT_PUBLIC_SEARCH_PAGE_STATIC_MESSAGE",
+    "On-site search requires a server deployment with API routes. This static build links to the public SearXNG instance instead.",
+  ),
+  get STATIC_EXPORT() {
+    return envFlag("NEXT_PUBLIC_STATIC_EXPORT", false);
+  },
 
   /**
    * About page layout configuration
@@ -690,7 +762,9 @@ export const config = {
     return `${this.SITE_URL}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
   },
   getSearxngSearchResolverUrl(query: string) {
-    return `/api/searx/search?q=${encodeURIComponent(query)}`;
+    const trimmed = query.trim();
+    if (!trimmed) return "/search";
+    return `/search?q=${encodeURIComponent(trimmed)}`;
   },
   getSearxngSearchUrl(query: string) {
     const baseUrl = this.SEARXNG_URL.replace(/\/+$/, "");

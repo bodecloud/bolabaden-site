@@ -6,6 +6,8 @@
 
 This is a single Next.js 16 (App Router) portfolio website. No database, Docker, or external services are required for local development. All external dependencies (GitHub API, SearXNG, Docker socket proxy, Prometheus) have built-in fallbacks/demo data.
 
+- `docs/solutions/` — documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`). Relevant when implementing or debugging in documented areas.
+
 ### Running the application
 
 - `npm run dev` starts the dev server on `http://localhost:3000`.

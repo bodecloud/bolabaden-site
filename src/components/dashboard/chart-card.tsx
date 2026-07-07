@@ -241,11 +241,15 @@ export function ChartCard({
 
         {/* X-axis labels */}
         <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-          {[0, Math.floor(data.length / 2), data.length - 1].map((index) => {
+          {Array.from(
+            new Set([0, Math.floor(data.length / 2), data.length - 1]),
+          ).map((index) => {
             if (data[index]) {
-              return <div key={index}>{formatTime(data[index].timestamp)}</div>;
+              return (
+                <div key={`axis-${index}`}>{formatTime(data[index].timestamp)}</div>
+              );
             }
-            return <div key={index}></div>;
+            return <div key={`axis-${index}`} aria-hidden="true" />;
           })}
         </div>
       </div>

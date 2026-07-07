@@ -143,7 +143,7 @@ function normalizeSize(kb: number): string {
   return `${kb.toFixed(0)} KB`;
 }
 
-export function ProjectsSection() {
+export function ProjectsSection({ showHeader = true }: { showHeader?: boolean }) {
   const [sortBy, setSortBy] = useState<SortOption>("composite");
   const [relationshipFilter, setRelationshipFilter] = useState<
     Relationship | "all"
@@ -236,10 +236,17 @@ export function ProjectsSection() {
   return (
     <Section
       id="projects"
-      title="Contributions & Gists"
-      subtitle="Main-site discovery view of open-source contributions, repository activity, and public code artifacts ranked dynamically by impact and recency."
+      title={showHeader ? "Contributions & Gists" : undefined}
+      subtitle={
+        showHeader
+          ? "Main-site discovery view of open-source contributions, repository activity, and public code artifacts ranked dynamically by impact and recency."
+          : undefined
+      }
       background="default"
     >
+      {!showHeader && (
+        <h2 className="sr-only">Repositories and gists</h2>
+      )}
       {loading && (
         <div className="flex items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -250,12 +257,44 @@ export function ProjectsSection() {
       )}
 
       {error && (
-        <div className="mb-4 rounded-lg border border-red-500/35 bg-red-500/10 p-3 text-center text-sm text-red-300">
-          {error}
+        <div className="mb-6 rounded-xl border border-amber-500/35 bg-amber-500/10 p-5 text-center">
+          <p className="text-sm text-amber-100">{error}</p>
+          <p className="mt-2 text-xs text-muted-foreground max-w-lg mx-auto leading-relaxed">
+            Without a GitHub token the API allows only 60 requests per hour.
+            Add{" "}
+            <code className="rounded bg-secondary/50 px-1.5 py-0.5 text-[11px]">
+              GITHUB_TOKEN
+            </code>{" "}
+            to your server environment for richer contribution data, or browse
+            the curated portfolio on{" "}
+            <Link href="/about#projects" className="text-primary hover:underline">
+              About
+            </Link>
+            .
+          </p>
         </div>
       )}
 
-      {!loading && intelligence && (
+      {!loading && !error && intelligence && intelligence.items.length === 0 && (
+        <div className="mb-6 rounded-xl border border-border bg-secondary/20 p-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            No contribution data is available right now.
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground max-w-lg mx-auto leading-relaxed">
+            This usually means GitHub rate-limited the request. Set{" "}
+            <code className="rounded bg-background px-1.5 py-0.5 text-[11px]">
+              GITHUB_TOKEN
+            </code>{" "}
+            for authenticated API access, or open the portfolio view on{" "}
+            <Link href="/about#projects" className="text-primary hover:underline">
+              About
+            </Link>
+            .
+          </p>
+        </div>
+      )}
+
+      {!loading && intelligence && intelligence.items.length > 0 && (
         <>
           <div className="mb-8 rounded-xl border border-border bg-secondary/20 p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">

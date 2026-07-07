@@ -5,6 +5,9 @@ const pagesBasePath = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || "/home";
 
 const nextConfig: NextConfig = {
   output: isGithubPagesBuild ? "export" : "standalone",
+  env: {
+    NEXT_PUBLIC_STATIC_EXPORT: isGithubPagesBuild ? "true" : "false",
+  },
   outputFileTracingIncludes: isGithubPagesBuild
     ? undefined
     : {
