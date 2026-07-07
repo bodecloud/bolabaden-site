@@ -1,0 +1,82 @@
+---
+source_url: "https://www.perplexity.ai/search/fc554e98-b436-4ed1-8512-5c0922e393de"
+thread_uuid: "acbf7974-cbdf-4abe-bce7-a7ce6180cc56"
+slug: "fc554e98-b436-4ed1-8512-5c0922e393de"
+title: "Please tell me what this image is. What am I looking at?"
+extracted_at: "2026-06-29T16:19:45.405Z"
+matched_keywords: []
+export_suite: "identity"
+entry_count: 4
+provenance: perplexity-rest-api
+---
+
+# Please tell me what this image is. What am I looking at?
+
+Source: [Perplexity thread](https://www.perplexity.ai/search/fc554e98-b436-4ed1-8512-5c0922e393de)
+
+## User
+
+Please tell me what this image is. What am I looking at?
+
+## Assistant
+
+The image you provided appears to show a molecular structure. The white and gray lines likely represent bonds between atoms, with the red spheres representing oxygen atoms. This type of representation is commonly used in chemistry to depict organic molecules.
+
+Without more specific details, it is difficult to identify the exact molecule, but based on the structure and the presence of oxygen atoms, it could be a representation of a hydrocarbon with hydroxyl groups (OH), potentially an alcohol or another organic compound.
+
+If you have more context or additional information, I can help further refine the identification.
+
+### Sources
+
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515066/user_uploads/kvdgzvxyw/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=hYYYbZiGwKrv0G1t7x18lDi6Hjk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)
+
+## User
+
+The only context I have is this conversation. Wizard can't figure it out either.
+
+## Assistant
+
+The image in question appears to be a molecular model, likely representing a chemical compound. The gray lines represent bonds between atoms, and the red spheres typically represent oxygen atoms in these types of models. This is a common way to depict organic molecules in chemistry.
+
+From the structure, it looks like a hydrocarbon chain with oxygen atoms attached, possibly indicating an organic molecule such as a fatty acid or a complex alcohol. The exact molecule is not immediately clear without more specific details, but it could be a stylized representation of something like Vitamin D or another biologically relevant compound.
+
+Given the conversation context, it seems that the avatar might be intended as a playful or cryptic representation of a molecule, and the person using it is challenging others to guess what specific molecule it could be.
+
+### Sources
+
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515154/user_uploads/xkzvcocec/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=yOPxHXpcS%2FU2RW31VNGfZ0fr8XE%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515066/user_uploads/kvdgzvxyw/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=hYYYbZiGwKrv0G1t7x18lDi6Hjk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)
+
+## User
+
+it's staring you right in the face.
+
+## Assistant
+
+Based on the image you provided, it appears to be a stylized molecular structure. The gray and white lines represent bonds between atoms, and the red spheres likely represent oxygen atoms. This kind of depiction is common in organic chemistry to illustrate molecular compounds.
+
+From the structure, it looks like a steroid or a complex lipid, possibly **Vitamin D** or another similar molecule. The ring-like structures and the attached oxygen atoms suggest that it is an organic compound with multiple carbon rings and hydroxyl groups (OH).
+
+Given the context of the conversation, it seems like the avatar is meant to be a puzzle where the answer is hidden in plain sight, and it is indeed a molecular structure—likely something biologically significant like Vitamin D or a related compound.
+
+### Sources
+
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515154/user_uploads/xkzvcocec/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=yOPxHXpcS%2FU2RW31VNGfZ0fr8XE%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515066/user_uploads/kvdgzvxyw/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=hYYYbZiGwKrv0G1t7x18lDi6Hjk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)
+
+## User
+
+the answer is literally actually in the image too i don't know how you are missing it lol
+
+## Assistant
+
+Ah, I see now! The image in the avatar is a molecular structure, and based on the context and the visual clues, it appears to be **cortisol**, a steroid hormone. The name "Cortisol" is also the username of the person in the conversation, which is a big hint!
+
+Cortisol is a hormone produced by the adrenal glands and plays a role in stress response, metabolism, and immune function. The molecular structure in the avatar shows the characteristic rings and oxygen atoms that are typical of steroid hormones like cortisol.
+
+So, the answer is **cortisol**, both literally in the image and as a clever play on the username!
+
+### Sources
+
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515154/user_uploads/xkzvcocec/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=yOPxHXpcS%2FU2RW31VNGfZ0fr8XE%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)
+- [image.jpg](https://ppl-ai-file-upload.s3.amazonaws.com/image/upload/v1730515066/user_uploads/kvdgzvxyw/image.jpg?AWSAccessKeyId=ASIA2F3EMEYEV7NF6E4R&Signature=hYYYbZiGwKrv0G1t7x18lDi6Hjk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD675fhb366n%2FygKXix%2B8nV%2B1AWyrW1tUee0MLznMTrRwIgaZ0t%2B2tq4AJ5SnHnkp89XQlGBmpKDDMdcCNguy5w0Yoq%2FAQIsf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDC2cqD42KWDcYAqutCrQBMnYhpFcrIpeL1TZn2c5dTVOhv0unQMs%2FJDbEQfutjhP9bpOvEzC%2BiuBiBUwIoeZzOWnJm8Ec92zbulODO7PUFOMrbblaMSIjuwkt%2BNrYs6J%2FY92OXKgrFqO3hB6Vhhapb6VUZKft7nEzYIyN%2FKCGTd0OZdKvotW9o8pjHKM6mD1Kyh0%2Bd9qlRGHSMvDnGMIcgQtd1vud5RXL5oCRw9YpQgTESlMDh44dulr32JF6DBQ3uAZTOKQsmAKHdOVpJDYnirzI57s0VTA8IXtsemRGjjzJqrj8uPt%2FVTGLAluruR1uLzvw8h0%2FUjtuTb3s1n%2BlaK2D1tCD9yEGsliotxUApavpya3KmPJqpgzHPZtfQuScNvIjkW9tiUsptzOoeShb4iWHAkuooGq%2Fw2QSKTANMC%2FnJMLlm8toHSeuOEeyuuu%2BXDgZzbx9ldSOVRHQqfnVK366VlIA5nQOj0B%2B2QPWIRJFu%2FwlLFvBtzId6BEN2rtpN21nOc1EH4szYdkzF%2BJe6gkmOwNHZl0QdW0pwXyMm6v6UqtxsLsh1eFS%2BLcz6dx87hrLhLc%2FHV7O8Frf4yTFaGvvnAyz%2BLPHOkCUiNf%2BQEL%2FMKkU9sGegT0%2FwLnPIqBT8nPy0yjzkmSHZu17UvU4pnuUofoOIXPC85RdnKvJ0AIXqRlFtX4A4piH1vDqxPOPKpa90FfkVCVWUcUiWKTAZDrZz4bEXamhpeu1qLVgY0AKcNg9nsBABeUCJX5bW2eZqIADSAhweXNES1vUT67%2Fv1JgWRkYgEzSZl3WuJuoTMwzaeK0gY6mAGH9OD5kwtGmyK2paDpLi8D8xYS2Ubjd7TlBfX067VqkaSYkfJS22xDBS9IW4w7cN4oldIR1CcLE6bMhTHfSYoTK8WEBIXl93yjTzFkS0QXJPS%2Baf2qWn3hpyYsKftJgv8cHvzno4JVwLGU0UKrJe6MbG%2B%2FK5IU9GLV4J3OlzHgMnhM0ulJco%2BlTZyrmZtHXw%2FCUnXT1DeyQA%3D%3D&Expires=1782750585)

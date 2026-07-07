@@ -1,0 +1,4 @@
+{
+  "keywords": [],
+  "notes": "Default: export all conversations (no semantic filter). Narrow with --keyword, --keywords-file, or --title-regex. --filter loads this file; an empty list means no filtering."
+}
