@@ -48,3 +48,45 @@ design-backups/
 
 # compound engineering local overrides
 .compound-engineering/*.local.yaml
+
+# chatgpt export tooling (keep exported markdown; ignore browser session)
+scripts/.chatgpt-browser-profile/
+scripts/.chatgpt-patchright-profile/
+scripts/.chatgpt-export-profile/
+scripts/.chatgpt-export-*/
+scripts/.perplexity-patchright-profile/
+scripts/.grok-patchright-profile/
+scripts/agentdecompile_projects/
+scripts/*.log
+scripts/*-status.json
+scripts/*-manifest.json
+scripts/chatgpt-conversation-ids.json
+scripts/perplexity-api-probe-output.json
+scripts/perplexity-browser.log
+scripts/perplexity-export-status.json
+scripts/perplexity-thread-manifest.json
+scripts/grok-browser.log
+scripts/grok-conversation-manifest.json
+scripts/grok-export-status.json
+scripts/chatgpt-conversation-manifest.json
+scripts/chatgpt-export-status.json
+scripts/identity-perplexity-manifest.json
+scripts/identity-perplexity-export-status.json
+scripts/identity-chatgpt-manifest.json
+scripts/identity-chatgpt-export-status.json
+scripts/identity-grok-manifest.json
+scripts/identity-grok-export-status.json
+.playwright-mcp/
+.autoclaw/
+agentdecompile_projects/
+data/archive-cache/
+data/archives/
+chatgpt-cloudflare-check.png
+
+# compuhack game package
+packages/compuhack/compuhack.db
+packages/compuhack/compuhack.db-shm
+packages/compuhack/compuhack.db-wal
+packages/compuhack/.next/
+packages/compuhack/node_modules/
+data/play-sessions.json
