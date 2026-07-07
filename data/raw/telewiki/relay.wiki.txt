@@ -1,0 +1,91 @@
+This following article will explain the significance and usage of the built-in relay chat of Telehack. In the second part you will find useful information on accessing users through the IRC, outside of the Telehack system.
+
+==Relay==
+Relay is a predecessor to [http://en.wikipedia.org/wiki/Internet_Relay_Chat IRC]. It is based on the [http://en.wikipedia.org/wiki/Bitnet_Relay BITNET Relay], one of the early chat systems used on the internet. On Telehack, it provides a single channel of communication for all logged in (real) users. Users must of course be also running relay.
+
+The /bg command is very useful for putting relay into background, so you may continue hacking hosts, playing adventure games, reading text files, and causing trouble. When /bg is used, chat messages appear in-line beginning with a % symbol. You can then re-enter relay by typing "relay" at any command prompt, or you can send a message without entering relay by typing "relay <message>" or "relay <command>"; Ctrl-R brings you back directly to relay as well.
+===Commands===
+{| border="0" cellpadding="1" valign=top
+|- align="left"
+! scope="col" | Command
+! scope="col" | Description
+|-
+|/bg
+|backgrounds relay; exit relay shell but continue to receive relay messages
+|-
+|/clear
+|clear screen
+|-
+|/help
+|print this message
+|-
+|/ignore <x>
+|ignore user <x>
+|-
+|/log
+|show relay log
+|-
+|/logfull
+|show relay log with enters/exits
+|-
+|/me <x>
+|emote <x>
+|-
+|/quit
+|exit relay
+|-
+|/send
+|send user
+|-
+|/status <x>
+|set status to <x>
+|-
+|/w
+|systat
+|-
+|/who
+|who's on relay
+|}
+===Log===
+Within the '''/log''' view use the following keys for jumping around the log:
+
+{| border="0" cellpadding="1" valign=top
+|- align="left"
+! scope="col" | Key
+! scope="col" | Description
+|-
+|space
+|Scrolls one page of text
+|-
+|b
+|Scrolls back one page of text
+|-
+|k
+|Scrolls back one line of text
+|-
+|j
+|Scrolls forward one line of text
+|-
+|/
+|Search
+|-
+|g
+|Jumps to top of the whole log
+|-
+|G
+|Jumps at the bottom of the whole log
+|-
+|q
+|Quits the log view
+|}
+
+==IRC==
+Telehack has an in-official IRC channel as well, where you can also contact Telehack users, get help, or just be around. You can access the Telehack IRC at:
+
+'''Server''': irc.oftc.net<br />
+'''Port''': 6667 (6697 for SSL)<br />
+'''Channel''': #telehack<br />
+
+Administrators are: '''art''', '''arfonzo''', '''norbert79'''
+[[Category:Chat]]
+[[Category:Basic Commands]]

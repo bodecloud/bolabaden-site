@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CyberscapeArchiveManifest",
+  "type": "object",
+  "required": ["version", "entries"],
+  "properties": {
+    "version": { "type": "integer" },
+    "updated": { "type": "string", "format": "date" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source_url", "license_class", "assignable_tags"],
+        "properties": {
+          "id": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" },
+          "local_path": { "type": "string" },
+          "sha256": { "type": ["string", "null"] },
+          "license_class": {
+            "enum": ["public", "dev-only", "restricted"]
+          },
+          "assignable_tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

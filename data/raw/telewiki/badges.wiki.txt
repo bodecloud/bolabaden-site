@@ -1,0 +1,345 @@
+{{SavedTheTarty}}
+== About badges ==
+
+=== Badges ===
+[[Badges|Badges]] plays an important role in Telehack's gameplay and also for you, as it increases your disk space and background process memory (see your disk space with <code>df</code> and your memory with <code>ps</code>) as well as your system level.
+<br>
+You could see your badges in different ways, either by running <code>finger [your name here]</code>  or running <code>scores /badges</code>.
+<br>
+Most of the badges are pretty straightforward and obvious, while some requires doing certain tasks in order. Sometimes, a badge or two might be needed to unlock a command, another badge, etc. Some of the badges are references to certain movies that are listed in [[Stuff:telehack.txt|telehack.txt]], so we suggest that you watch those as the movies listed have a significant influence on some of the badges in Telehack. 
+
+The following table is sorted by badge popularity, meaning the further down to the list the harder and rarer that badge gets.
+
+'''<big><u>SPOILER ALERT:</u></big>''' The information on this page might reveals a lot of information that a normal user would have to figure out about the badges. If you wish to discover the badges yourself, it's recommended that you explore Telehack first or read the description of them because some of it are quite obvious. If you encounter difficulties, you can seek assistance on <code>relay /newbie</code> or consult other wiki entries related to the specific badge.
+ 
+=== Classifications ===
+Our glorious leader [https://telehack.com/u/stargraph stargraph] has classified those badges into 3 different categories: [[:Category:Early_Game|Early Game]], [[:Category:Mid_Game|Mid Game]] and [[:Category:Late_Game|Late Game]].
+
+== List of badges ==
+{| class="wikitable"
+|-
+! Badge Name !! Description
+|-
+| [[ACCT]] || Registered User
+|-
+| [[POSTMASTER]] || I read your e-mail
+|-
+| [[RETUSER]] || Returned User
+|-
+| [[HACKER]] || Hack the Planet
+|-
+| [[RTFM]] || Was that so hard?
+|-
+| [[SYSMON]] || System Monitor
+|-
+| [[DTMF]] || Wardial Access
+|-
+| [[HACK5]] || Hacked 5 network hosts
+|-
+| [[IETF]] || Next Generation
+|-
+| [[RETR]] || Passive or Active
+|-
+| [[HACK10]] || Hacked 10 network hosts
+|-
+| [[PTYCON]] || Invoked PTYCON
+|-
+| [[ACKNAK]] || Flowing bytes
+|-
+| [[REGUSER]] || Regular User
+|-
+| [[MITNICK]] || Free Kevin
+|-
+| [[UNHALT]] || Restarted the CPU
+|-
+| [[NETIZEN]] || Emily Postnews
+|-
+| [[PHREAK]] || ATT Lineman
+|-
+| [[ROOT]] || Got root?
+|-
+| [[FOOL|FOOL]] || Folly or Wisdom
+|-
+| [[HACK50]] || Hacked 50 network hosts
+|-
+| [[CAPCOM]] || One small step...
+|-
+| [[SEEDER]] || Share it
+|-
+| [[RADIO]] || Turn on, tune in, drop out
+|-
+| [[2600HZ]] || Joybubbles
+|-
+| [[PDEBUG]] || Segmentation Fault
+|-
+| [[TURING]] || AI Complete
+|-
+| [[SYSWATCH]] || /dev/panopticon
+|-
+| [[CBBS]] || Ward & Randy
+|-
+| [[PERMUSER]] || Permanent User
+|-
+| [[CONSEC]] || ConSec Corporation
+|-
+| [[KILROY]] || Kilroy was Here
+|-
+| [[PING]] || Pong
+|-
+| [[KONAMI]] || Konami Code
+|-
+| [[FISHGAMING]] || Remember to game
+|-
+| [[HACK100]] || Hacked 100 network hosts
+|-
+| [[WUMPUS]] || Hunt the Wumpus
+|-
+| [[BRUTE]] || May the FORCE be with you
+|-
+| [[SWEEPER]] || Ordnance Disposal Specialist
+|-
+| [[XYZZY]] || Get lamp
+|-
+| [[HELO]] || Message Delivered
+|-
+| [[TRIBE]] || Can I kick it?
+|-
+| [[KGB]] || Markus Hess
+|-
+| [[IOCOM]] || Illuminati Online
+|-
+| [[CLONER]] || Send in the Cloner
+|-
+| [[RETROMASTER]] || QUIZLORD
+|-
+| [[NIKOLI]] || Number Place
+|-
+| [[BINARY]] || 1011011010
+|-
+| [[DIRTYHARRY]] || Are you feeling lucky, punk?
+|-
+| [[DACTYLO]] || The quick brown fox...
+|-
+| [[LATENITE]]|| Go to sleep
+|-
+| [[QUATERNARY]] || 112310
+|-
+| [[TETRIS]] || Space-Tested USSR Mind-Game
+|-
+| [[BLUESUGAR]] || Me Want Cookie
+|-
+| [[WOLF|SHEEP]]|| Baa
+|-
+| [[LETMEIN]] || Just a lucky guess
+|-
+| [[DEPSECDEF]] || Head of the Heads
+|-
+| [[SYSADM]] || User Table Hacked
+|-
+| [[WOLF]]|| In sheep's clothing
+|-
+| [[LIGHTMAN]] || Shall we play a game?
+|-
+| [[KLEENE]] || Regexpert
+|-
+| [[OCTAL]] || 5550
+|-
+| [[HCF]] || The Killer Poke
+|-
+| [[SPORTSTER]] || Magic String
+|-
+| [[SECURITY]] || Better safe than sorry
+|-
+|[[KRPATSKY]]
+|We need to go deeper
+|-
+| [[UUBOT]] || Administrate
+|-
+| [[BABYLON]] || First Dynasty
+|-
+| [[KEEPALIVE]] || Connection Preserved
+|-
+| [[DECIMAL]] || 3650
+|-
+| [[2048]] || Everyone played in 2014
+|-
+| [[BUTTERFLY]] || Flip one bit
+|-
+| [[RACER]] || You want a piece of me?
+|-
+| [[TEXT/PLAIN]] || against HTML e-mail
+|-
+| [[SPUTNIK]] || Beep... Beep... Beep...
+|-
+| [[WORM]] || Blossom and Blood
+|-
+| [[FOUNDER]]|| 1000 days
+|-
+| [[TELEKOMBAT]] || Defeat to Egroj!
+|-
+| [[ZEROCOOL]] || Mess with the best
+|-
+| [[TEMBA]] || His arms wide
+|-
+| [[EICAR]] || You are infected!
+|-
+| [[NOOTER]] || Noot noot
+|-
+| [[HANGOVER]] || No. 708/348
+|-
+| [[SSADB]] || Secret Agent
+|-
+|[[PROJECTK]]
+|Welcome to PROJECTK
+|-
+|[[OPERATIONK]]
+|Taking the M out of MAD
+|-
+| [[SWITCHBOARD]] || Concurrent Paths
+|-
+| [[IWATANI]] || Paku-paku
+|-
+| [[MATCHES]] || Floppy ears
+|-
+| [[SALVO]] || You sunk their battleship
+|-
+| [[IMABAYASHI]] || Warehouse Keeper
+|-
+| [[SHAKA]] || When the walls fell
+|-
+| [[PANAM]] || Pan American World Airways
+|-
+| [[HOTDOG]] || Foot-long
+|-
+| [[NONSTOP]] || Party people
+|-
+| [[42]] || Hoopy Frood
+|-
+| [[BLUEBOX]] || Tone sequence identified
+|-
+| [[PUBLIC]] || Sharing is Caring
+|-
+| [[TIRED]] || No operating heavy machinery
+|-
+| [[PLAGUE]] || Hack the Gibson
+|-
+| [[PCP]] || Get Connected
+|-
+| [[MONO]] || Chromatic
+|-
+| [[CREATERACE]] || Defeat the Race Creator
+|-
+| [[AERIAL]] || Transmission Received
+|-
+| [[CYPRESS]] || Checkmate, Fool
+|-
+| [[TOODER]] || Side with the Tooders
+|-
+| [[BIOLOGY]] || Summer School
+|-
+| [[VADER]] || Tarkin
+|-
+| [[LUNAR]] || Lunar Lander
+|-
+| [[LEGACY]] || ?static core full
+|-
+| OPER || System Operator (this is an admin badge!)
+|-
+| [[APPLAUSE]] || Standing ovation
+|-
+| [[CREATEFRAG]] || Fragged the Telefrag Creator
+|-
+| [[WRAITH]] || Whispers in the Dark
+|-
+| [[TERMINATOR]] || Connection terminated
+|-
+| [[TELEFRAGGER]] || Get 10 kills in Telefrag
+|-
+| [[MENCO]] || Pirate Island
+|-
+| [[PIONEER]] || Go West
+|-
+| [[SWAMPED]] || My precious
+|-
+| [[CULT]] || It's not a cult, OK?
+|-
+| [[INTERLOPER]] || What are YOU doing here?
+|-
+| [[SAMURAI]] || Keyboard Cowboy
+|-
+|[[GROOM]]
+|Groom Lake
+|-
+| [[RACE10]] || Won 10 races
+|-
+| [[DXCC]] || DeSoto's Legacy
+|-
+| [[ZOT]] || Runestaff
+|-
+| [[WARRIOR]] || Xena
+|-
+| [[PLATFORMER]] || Boing boing boing
+|-
+| [[MOON]] || Tranquility
+|-
+| [[KERNEL]] || Dazed and Confused
+|-
+| [[MORPHY]] || Checkers is for tramps
+|-
+| [[NETADM]]|| Host Creator
+|-
+| [[COUSTEAU]] || Deep diver
+|-
+| [[POLITE]] || You have nice manners
+|-
+| [[ANIMATOR]] || Let's Watch Cartoons
+|-
+| [[DOOTER]] || Side with the Dooters
+|-
+| [[KLONDIKE]] || Extreme patience
+|-
+| [[CANTINA]] || Twelve Systems
+|-
+| [[LEGEND]] || Odysseus the Cunning
+|-
+| [[RACE50]] || Won 50 races
+|-
+| [[UPPERCASE]] || CRUISE CONTROL
+|-
+| [[WIZARD]] || Gandalf the Grey
+|-
+| [[ET]] || Phone home
+|-
+| [[SILVERBOX]] || Please Hold the Line
+|-
+| [[MUD]] || Stuck in the MUD
+|-
+| [[RACE100]] || Won 100 races
+|-
+| [[SNOWFLAKE]] || Santa Muerte
+|-
+| [[REMOTE]] || Astral Projection
+|-
+| [[STRATEGIST]] || Master Tactician
+|-
+| [[HAMMER]] || Enforcer of Rules
+|-
+| [[LIGHTHOUSE]] || Gatekeeper of Wisdom
+|-
+| [[ADMIRABLE]] || Respect earned
+|-
+|[[FLAV]]
+|Yeah, boyeeeeee!
+|-
+| [[MASTER]] || Caissa's Blessing
+|-
+| [[SHANNON]] || Variations in play and in style
+|-
+| [[INSIDER]] || Access All Areas
+|-
+| [[RENOWN]] || Kind of a big deal
+|-
+| [[HEXADECIMAL]] || 16D0
+|}
+[[Category:Badges]]
+[[Category:Saved the Tarty]]

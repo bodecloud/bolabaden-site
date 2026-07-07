@@ -1,0 +1,9 @@
+'''Rootkit.exe''' is an executable program which allows a user to gain [[root]] access, or systems privileges, on a host. It is one of the four basic tools available to all users in the Telehack lobby.
+
+Before it can be run on a host, you must transfer it to the host with FTP.
+
+Enter <code>RUN ROOTKIT</code> on any host to gain [[root]].
+
+In order to use '''rootkit.exe''', the necessary support process must already be running on the host. For example, to root a SunOS system, you must first run [[List of .exes#Rootkits|sunoskit.exe]].
+
+Only one user may obtain root on any given host, but you can oust another user by stopping their processes (see [[killproc]]).

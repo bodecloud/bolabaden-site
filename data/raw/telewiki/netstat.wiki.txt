@@ -1,0 +1,11 @@
+The netstat command displays a list of [[host|hosts]] connected to your current server. You can only [[telnet]] or [[rlogin]] to servers in the netstat list. (You can also dial into hosts if you know their phone number.)
+
+The telehack [[host]] only has only eleven hosts listed for each user. That is because hosts in telehack are arranged in a web. Each host you can connect to has it's own netstat full of other hosts you can connect to. In this way, you can connect to any of telehack's 26,631 hosts.
+
+netstat also displays information about the remote host. It displays an * next to any [[host]] you have login on (via running [[porthack]]) or a ! if you have root on the [[host]], hostname, organization, [http://en.wikipedia.org/wiki/Operating_system OS], and location.
+
+So let's say you want to get to uunet, and it's not in your netstat. How do you get to it?
+
+[[How To Connect To Remote Hosts]]
+[[Category:Hacking]]
+[[Category:Basic Commands]]

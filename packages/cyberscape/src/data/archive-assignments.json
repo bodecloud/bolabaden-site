@@ -1,0 +1,34 @@
+{
+  "source": "../../data/archive-manifest.json",
+  "updated": "2026-06-29",
+  "entries": [
+    {
+      "id": "textfiles-bbs-index",
+      "source_url": "https://textfiles.com/bbs/",
+      "license_class": "dev-only",
+      "assignable_tags": ["bbs", "ansi", "1980s", "1990s"],
+      "notes": "Category index only; fetch individual files after license review"
+    },
+    {
+      "id": "ia-bbs-misc",
+      "source_url": "https://archive.org/details/softwarelibrary_bbs",
+      "license_class": "dev-only",
+      "assignable_tags": ["bbs", "zine", "archive"],
+      "notes": "Check per-item metadata before public assignment"
+    },
+    {
+      "id": "jkirchartz-bbs-notes",
+      "source_url": "https://gist.github.com/JKirchartz/9b0c26ead8130334774a",
+      "license_class": "dev-only",
+      "assignable_tags": ["bbs", "mapping"],
+      "notes": "Research notes; do not redistribute bulk third-party BBS listings"
+    },
+    {
+      "id": "classic-network-manual",
+      "source_url": "https://telehack.com/telehack.html",
+      "license_class": "public",
+      "assignable_tags": ["spec", "commands"],
+      "notes": "Official behavior reference"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+The "finger" command has a number of uses.
+
+When run by itself on a [[host|server]], it will display the users logged into that server. On the telehack server, it will show real users who are also playing telehack. On all other servers, it will display simulated users based on the type of people who might have actually been logged into that server 20 years ago.
+
+There doesn't seem to be much use for fingering those old ghost users, although maybe that is a telehack secret.
+
+But a finger of the real users shows lots of interesting things, for instance what commands they are currently running, their [[status]] message, when they were last active, and where they're from.
+
+<pre>
+> finger
+TELEHACK SYSTEM STATUS  22-Oct-11  16:23:49
+14 users
+
+   port  username   status               last  what       where
+   ----  --------   ------               ----  ----       -----
+   0     operator   System Operator      5s               console
+*  18    jamgrrl    telehack.wikia.com   0s    finger     Bellevue, WA
+   23    camz       hybrid               2m    porthack   Kitchener, Canada
+   36    chuk       Wave Rider 1.20      15m   relay      San Francisco, CA
+   22    h4ck3r     H4ck3r               16m   wardial    Volketswil, Switzerlan
+   20    robm       Robm                 18m              Aurora, CO
+   21    lunde      Purple Peril         31m              Evanston, IL
+   19    jamgrrl    telehack.wikia.com   50m              Bellevue, WA
+   45    -                               1h               Villeveyrac, France
+   30    -                               3h               Plano, TX
+   26    h4ck3r     H4ck3r               6h    wardial    Volketswil, Switzerlan
+   35    -                               9h               Neutraubling, Germany
+   32    h4ck3r     H4ck3r               9h    wardial    Volketswil, Switzerlan
+   23    camz       hybrid               18h   netstat    Kitchener, Canada
+
+</pre>
+
+You can also finger a specific user to learn more about them:
+
+<pre>
+> finger forbin
+
+USER: forbin
+   system level:          20 (META)
+   account age:           387 days
+   last login:            31m
+   location:              Mountain View, CA
+   system connects:       488
+   commands executed:     3484
+
+   user status bits:
+      KILROY        Kilroy was Here                  06-Jan-12  22:29:17
+      IOCOM         Illuminati Online                28-Nov-11  18:03:20
+      SYSADM        User Table Hacked                28-Nov-11  18:03:15
+      PDEBUG        Segmentation Fault               28-Nov-11  18:03:08
+      TURING        AI Complete                      28-Nov-11  18:02:21
+      BABYLON       First Dynasty                    28-Nov-11  18:02:15
+      MOON          Tranquility                      28-Nov-11  18:02:04
+      PIONEER       Go West                          28-Nov-11  18:01:38
+      ROOT          Got root?                        12-Oct-11  09:03:31
+      FOOL          Folly or Wisdom                  06-Oct-11  14:39:20
+      PERMUSER      Permanent User                   10-Jun-11  08:14:26
+      SYSMON        System Monitor                   28-May-11  10:23:52
+      KONAMI        Konami Code                      22-May-11  19:45:11
+      REGUSER       Regular User                     17-May-11  22:16:53
+      RETUSER       Returned User                    17-May-11  22:16:53
+      PTYCON        Invoked PTYCON                   09-May-11  15:07:12
+      HACK10        Hacked 10 network hosts          30-Jan-11  23:19:57
+      HACK5         Hacked 5 network hosts           30-Jan-11  21:00:34
+      HACKER        Hack the Planet                  29-Jan-11  22:31:48
+      ACCT          Registered User                  29-Jan-11  22:23:17
+
+   forbin has LOGIN on 6 systems
+   forbin has SYSOP on 1 system:
+      region3
+
+</pre>
+
+You can see the user's [[system level]], their account age, when they last logged in, their location (based on [[IP Address]]), number of total connections to Telehack, number of commands they've run, a list of their earned [[badge]]s, the number of systems they have login on (using [[porthack]]), and the number and names of the systems they have [[Got Root|root]] on.
+
+You can easily use finger to discover new secrets in the game. For instance, seeing what badges others have earned may give you some clues as to how to earn the badge. (Best used with [http://www.google.com Google].)
+
+You can also finger the users on a remote host with the "finger @host" command. This is helpful for when you're logged into a remote server and want to see the users logged into telehack without going back. It is also possible to use "finger" from outside of telehack.com as well, using the finger command of the OS you are running to gather the data of a user. The result executing "finger user@telehack.com" will give you back the same result.
+
+----
+[[List of all commands|Go back]]
+[[Category:Basic Commands]]
