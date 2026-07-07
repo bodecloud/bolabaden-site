@@ -1,0 +1,109 @@
+A BBS means a Bulletin Board system. A BBS allows users to connect to it by dialing to it. In the past this was the only way, but with the advent of the internet you can also connect to a BBS by using a hostname.
+
+__TOC__
+
+
+==History==
+
+A BBS is a computer system running software which allows users to download software and read files stored on the system. A BBS was a mini social network of the olden times. People could play games talk with each other and also as a plus download software. While most BBS's were free some used to ask for payment. The BBS is controlled by a system operator(sysop for short).
+
+==Inside Telehack==
+You can dial a BBS from the various lists found on the hosts or by using [[wardial]]. To access the BBS use guest or enter or your username and password.The BBS system accepts only one letter commands
+<pre>
+
+
+      ************************************************
+      ************************************************
+      ************************************************
+      ***       Tonic Death   Maple Grove MN       ***
+      ************************************************
+      ***                                          ***
+      ***                                          ***
+      ***    24 hours a day 300/1200/2400 baud     ***
+      ***                                          ***
+      ***               612-426-3037               ***
+      ***                                          ***
+      ***              Ryan Raz Sysop              ***
+      ***                                          ***
+      ************************************************
+      ************************************************
+
+
+Welcome caller from Mumbai, India
+
+Enter your username or GUEST.
+
+Username>
+</pre>
+
+==List of Commands==
+The list of commands available are:
+<pre>
+
+
+
+
+
+  T-NET 84 (tm) XBBS Module Commands
+
+ <F> Files area     <W> Who's online
+ <J> Tell a Joke    <Y> Yell for sysop
+ <X> Exit to CP/M   <Q> Quit / Logoff
+         <?> Print this menu
+
+
+[?,f,j,l,q,w,x,y] Enter command==>
+
+
+
+
+</pre>
+
+
+
+{| border="0" cellspacing="0" cols="2" frame="VOID" rules="NONE"
+| align="LEFT" bgcolor="#008000" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" width="99"|'''Command'''
+| align="LEFT" bgcolor="#008000" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" width="320"|'''Name'''
+| align="LEFT" bgcolor="#008000" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" width="320"|'''Description'''
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< f >
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Files Area
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|You can download files from here and also see the size of the files.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< w >
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Who's Online
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|See the list of users connected to the BBS.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< j >
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"| Tell a joke
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|
+Outputs a joke.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< y >
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Yell for Sysop
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Pages Sysop, use if the BBS is malfunctioning.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< x >
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Exit To CP/M
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Exits to the OS where additional commands are available.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< l >
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|List files
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Lists the files. You can only list files here, to download use < f >.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< q >
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Quit/log off
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Quits the BBS and returns you to where you were last.
+|-
+| align="LEFT" height="17" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|< ? >
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Help
+|align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000"|Lists the available commands.
+|}
+
+
+
+
+
+[[wardial| Go back to Wardial]]
+
+[[List_of_all_commands|Go back to List of all Commands]]

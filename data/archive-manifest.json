@@ -1,0 +1,79 @@
+{
+  "$schema": "./archive-manifest.schema.json",
+  "version": 1,
+  "updated": "2026-06-29",
+  "entries": [
+    {
+      "id": "textfiles-bbs-index",
+      "source_url": "https://textfiles.com/bbs/",
+      "sha256": null,
+      "license_class": "dev-only",
+      "assignable_tags": [
+        "bbs",
+        "ansi",
+        "1980s",
+        "1990s"
+      ],
+      "notes": "Category index only; fetch individual files after license review"
+    },
+    {
+      "id": "ia-bbs-misc",
+      "source_url": "https://archive.org/details/softwarelibrary_bbs",
+      "sha256": null,
+      "license_class": "dev-only",
+      "assignable_tags": [
+        "bbs",
+        "zine",
+        "archive"
+      ],
+      "notes": "Check per-item metadata before public assignment"
+    },
+    {
+      "id": "spencer-usenet-sample",
+      "source_url": "https://archive.org/details/usenet-logs",
+      "sha256": null,
+      "license_class": "dev-only",
+      "assignable_tags": [
+        "usenet",
+        "news"
+      ],
+      "notes": "Henry Spencer / Wiseman rescue corpus; segment for USENET command"
+    },
+    {
+      "id": "np43-hosts",
+      "source_url": "https://gist.github.com/np43/d2fec3d06b44300029bf6ca943d40186",
+      "local_path": "data/raw/np43-host-list.txt",
+      "sha256": "e9da00ec291f29fe362e307f518bfe4c83af10d1794016dce3df6840255dbd80",
+      "license_class": "public",
+      "assignable_tags": [
+        "hosts",
+        "network"
+      ],
+      "notes": "Community host list; committed as research reference"
+    },
+    {
+      "id": "classic-network-manual",
+      "source_url": "https://telehack.com/telehack.html",
+      "local_path": "data/raw/classic-network-manual.html.txt",
+      "sha256": "5556331168166d1bc6b2488b7d1b045364886658534e167b3231fdd19321b132",
+      "license_class": "public",
+      "assignable_tags": [
+        "spec",
+        "commands"
+      ],
+      "notes": "External behavior reference"
+    },
+    {
+      "id": "jkirchartz-bbs-notes",
+      "source_url": "https://gist.github.com/JKirchartz/9b0c26ead8130334774a",
+      "local_path": "data/raw/jkirchartz-bbs-research.txt",
+      "sha256": "db2bf6a6937c158af15a329bfc7f9cd60ee26d66ce12092fa48c6a542ae1c21c",
+      "license_class": "dev-only",
+      "assignable_tags": [
+        "bbs",
+        "mapping"
+      ],
+      "notes": "Research notes; do not redistribute bulk third-party BBS listings"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{{Exe|title1 = Wardial|image1 = Wardial.png|caption1 = Text shown when dialing|os_specific = Yes; TEL/OS|requires_root = No|found_on = Telehack|author = Master Foo}}
+<code>'''wardial.exe'''</code> is an executable program used to find host connections by automatically dialing random numbers in the specified area code. It is one of the three basic tools available to all users in the Telehack lobby. This program is one of the ways in which you can find the various [[BBS]] hosts on Telehack.
+
+To start the application, use <code>wardial</code> or <code>run wardial.exe</code>.
+
+Enter an area code of your choice when prompted, or enter <code>?</code> to bring up a list of available options.
+
+Some screenshots of the application running:
+<pre>@wardial
+[run wardial.exe]
+/*
+ * $Id: WARDIAL v1.32 1126 15-Jul-88 masterfoo $
+ */
+
+    +------------------------------------+
+    |                                    |
+    |              WARDIAL               |
+    |   AC/Prefix Modem Dialing Prober   |
+    |        -=[ by Master Foo ]=-       |
+    |                                    |
+    |                                    |
+    +------------------------------------+</pre>
+ enter area code (? for a list): ?
+ 
+   Alaska: 907,501,317  Alabama: 205,314  Arkansas: 501,405,505
+   Arizona: 602,612,310
+   California: 415,408,619,714,805,818,916,310,213,510,209,707,315,416,403,503,314,715,508,
+     616,816,216
+   Colorado: 303,719,916,406  Connecticut: 203,206,812,502
+   District of Columbia: 202,703,301,612  Delaware: 302,215
+   Florida: 407,305,904,813,416,414,818  Georgia: 404,912,706,216,214
+   Hawaii: 808  Iowa: 319,515,712  Idaho: 208
+   Illinois: 708,312,815,217,309,618,412,206,314,408,402,215
+   Indiana: 317,219,812  Kansas: 913,316,217  Kentucky: 502,606,415,313
+   Louisiana: 504,318
+   Massachusetts: 617,508,413,516,703,212,201,619,580,415,603
+   Maryland: 301,410,202,302,703  Maine: 207  Michigan: 313,616,517,906,704,415
+   Minnesota: 612,218,507,914  Missouri: 314,816,417,315  Mississippi: 601,301
+   Montana: 406  North Carolina: 919,704,403,910  North Dakota: 701
+   Nebraska: 402  New Hampshire: 603,410
+   New Jersey: 201,609,908,516,613,202,604,914,404  New Mexico: 505
+   Nevada: 702,408,619,916
+   New York: 212,914,716,516,718,518,315,607,314,404,702,203,213,313,312,415
+   Ohio: 216,513,614,419  Oklahoma: 405,918,580,504  Oregon: 503
+   Pennsylvania: 215,717,412,814,206,609,908  Rhode Island: 401,619
+   South Carolina: 803  South Dakota: 605  Tennessee: 615,901,601
+   Texas: 512,713,214,817,915,409,806,903,210,516,508  Utah: 801
+   Virginia: 703,804,301,202,310,416,619,730,901  Vermont: 802
+   Washington: 206,509,315,510,919  Wisconsin: 414,608,715  West Virginia: 304
+   Wyoming: 307
+ 
+ enter area code (? for a list): 
+----
+[[List of all executables|Go back to the list of executables]]
+[[Category:Programs]]
+[[Category:Early Game]]

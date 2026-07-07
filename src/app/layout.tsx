@@ -3,20 +3,13 @@
  *
  * CONTEXT: Shared App Shell
  * Base layout for entire site (both portfolio and discovery contexts).
- * Configures fonts (Inter, JetBrains Mono), global metadata, theme providers.
+ * Configures global metadata, theme providers, and the shared shell styling.
  * Does not change based on context; applies consistently across all pages.
  */
 
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { config } from "@/lib/config";
-
-const inter = Inter({ subsets: ["latin"] });
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
 
 export const metadata: Metadata = {
   title: `${config.SITE_NAME} | ${config.SITE_SECTION_LABEL}`,
@@ -85,12 +78,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body
-        className={`${inter.className} ${jetbrainsMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    </head>
+    <body className="antialiased">{children}</body>
+  </html>
   );
 }

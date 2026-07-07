@@ -1,0 +1,464 @@
+The following list contains a list of all commands available within Telehack. The table lists the virtual memory address to each of the commands (where the command can be found in the main telehack's 6502 RAM), the name of the command, it's type as being stored within Telehack VM, and it's description.
+
+{| border="0" cellspacing="0" cols="4" frame="VOID" rules="NONE"
+| align="CENTER" bgcolor="#008000" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE" width="112"|Memory address
+| align="CENTER" bgcolor="#008000" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE" width="148"|Name of the command
+| align="CENTER" bgcolor="#008000" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE" width="85"|Length of command name
+| bgcolor="#008000" style="border-width: 1px; border-style: solid; border-color: rgb(0, 128, 0); text-align: center;" valign="MIDDLE" width="394"|Description
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6672721
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE" |[[help|?]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x01
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Lists possible commands without descriptions
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|5033742
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[AC|ac]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x02
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Lookup an areacode or an areacode-prefix. AC <NPA>-<NXX>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|admin
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Unknown. Not authorized for regular users
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2525361
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|basic
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Start the Dartmouth TeleBASIC interpreter
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6321522
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|baud
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Set baud rate (direct telnet only)
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2255621
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|cal
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print a calendar. CAL <YEAR> to print a calendar for a certain year.
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6211564
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|calc
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Start the calculator
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2364523
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[System memory|call]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Invoke the system monitor to jump to a memory address
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0702640
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|ching
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|The Book of Changes
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3766001
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Clear|clear]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Clear screen
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|cls
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Clear screen
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2702364
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|cmdstat
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x07
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|A statistical display of commands ran by the users
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|1310017
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Cowsay|cowsay]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Configurable speaking cow. COWSAY /LIST for options
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|1253135
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|daytime
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x07
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print day and time
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|df
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x02
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show disk usage
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|5212555
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|dial
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Connect to a telephone number with modem. „dial /log” show modem connection log
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|1710163
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Dir|dir]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|List files
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2610461
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|eliza
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Converse with an AI psychotherapist
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0477762
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|exit
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Terminate and return to previous shell or logout
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4457564
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|factor
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print the prime factors of a number
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3537203
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|fds
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|List of file descriptors. Not authorized for regular users
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6525611
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Figlet|figlet]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Make large letters out of ordinary text
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0764505
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|files
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Lists files using a [[BBS]]-like menu system
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6617747
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Finger|finger]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|
+Show users on current system. FINGER <USER> to shows inforation about a user, FINGER @<HOST> to show users logged into a host
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0107261
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|fnord
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Generate a [http://en.wikipedia.org/wiki/Fnord fnord]
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|fortune
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x07
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Generate a quote from the 'fortune' database
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[FTP|ftp]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Transfer programs between hosts
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0361653
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|geoip
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show location and ISP of an IP address. GEOIP <IP>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7445512
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|halt
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Halt the CPU
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2727545
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Help|help]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show a list of available commands with descriptions. HELP /ALL shows all commands
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3143410
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Hostname|hostname]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x08
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print the hostname of the currently logged on system
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3577605
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|hosts
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show list of major network hosts. HOSTS /ALL for all network hosts, HOSTS /BBS for bulletin board systems, HOSTS /SEARCH=S to search for hosts
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4442155
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|ipaddr
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show current IP address
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7227742
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|joke
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show random joke from unified joke database
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|5273523
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|kill
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Kill local process KILL <PID>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|killuser
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x08
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Kill user or port. KILLUSER <USER or PORT>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Dir|l]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x01
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Displays the list of files in Unix format
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|last
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show the list of last logins for the server the user is logged in
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2460052
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|link
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Link the output from another user or port to this TTY. LINK <USER or PORT>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4246734
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|log
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show user account log
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Dir|ls]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x02
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|List files
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 2065271
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|mail
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Electronic mail system
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|more
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|File perusal filter for paging viewing. MORE <FILE>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|motd
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Display the message of the day seen at login
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0436226
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Netstat|netstat]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x07
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show connected hosts
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3620774
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|octopus
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x07
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Octal/hex/binary/ascii key dumper
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3076537
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|password
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x08
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Change password
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7336556
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|phoon
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show phase of the moon
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7740737
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|ping
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Test a host for availablility. PING  <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Ps|ps]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x02
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Display the running processes
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2425152
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|ptycon
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Console administration
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6056462
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|quest
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Start a hacker quest
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3313443
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Rain|rain]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Animated raindrops display
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Reboot|reboot]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Reboot the running host
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7122061
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Relay|relay]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Enter relay chat system. If relay is backgrounded, RELAY /<COMMAND> to execute relay command and RELAY <MESSAGE> to say message. ^R (Ctrl+R) for quick relay.
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|5356534
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Rem|rem]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Ignore input until ^C (Ctrl+C)
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Remps|remps]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Remote server process listing. REMPS <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|rm
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x02
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Delete a file. RM <FILE>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6645447
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Rlogin|rlogin]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Login to a host using your current authentication data instantly. RLOGIN <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2060645
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|run
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Run any executable/gam/bas file as user. Limitations apply to guest accounts!
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4646312
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|score
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Zrun score leaderboard
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6270445
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Send|send]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Send message to another user. SEND /(UN)BLOCK <USER> to block a user
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Setmotd|setmotd]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x07
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Set the message of the day banner for the host
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|set
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x03
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Type SET ? for a list of options
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|show
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Type SHOW ? for a list of options
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|sleep
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Wait a certain number of seconds before returing to the previous prompt.
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3420755
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|startcpu
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x08
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Start CPU
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|2556533
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|starwars
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x08
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show an ASCIIMATION Starwars movie
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|1175632
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|status
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Set status message for systat/finger
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7430551
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|stty
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print terminal attributes. STTY /ANSI or STTY/DUMP to set terminal mode
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[SU|su]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x02
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Switch to root
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|syslog
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print system log
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4235466
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|systat
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show users on current system
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|5762544
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|talk
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Interactive chat with another user. TALK <USER or PORT>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7104003
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Telnet_to_host|telnet]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Connect to a remote NETSTAT host for login (try guest). TELNET <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7363052
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|timers
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Lists the Perl scripts running on the real host of Telehack for providing the functionalities currently used in the virtual Telehack for a user.
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6437242
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Traceroute|traceroute]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x0A
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show path to a host. TRACEROUTE <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|3146531
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|type
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Print contents of a file. TYPE <FILE>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7335662
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|units
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Unit conversion
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6327631
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|uptime
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Time telehack has been up since last boot
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4430164
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|usenet
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Usenet archive circa 1981-1999
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|7173233
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[Users|users]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show user table
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6064170
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[uumap]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show UUCP map entry for a host. UUMAP <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|1722027
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[uupath]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show path to host. UUPATH <HOST>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|4072661
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[uuplot]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Plot UUPATH to a host
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0561676
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|vmsize
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|The size of the virtual memories used within the real Telehack system
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|wall
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Broadcast message to every user on the host as root. WALL <MESSAGE>
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6233033
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|[[WhoAmI|whoami]]
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x06
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Display the the current username
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|1266770
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|xjoke
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show an animated joke
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| -
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|xyzzy
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"| 0x05
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Starts "The Interactive Original Adventure"
+|-
+| align="CENTER" height="49" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|6753070
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|zrun
+| align="CENTER" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|0x04
+| align="LEFT" style="border-top: 1px solid #008000; border-bottom: 1px solid #008000; border-left: 1px solid #008000; border-right: 1px solid #008000" valign="MIDDLE"|Show list of available Z-code games. ZRUN <GAME>
+|}

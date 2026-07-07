@@ -1,0 +1,116 @@
+Each [http://telehack.wikia.com/wiki/Host host] has a series of open ports. In real life, {{Exe|title1 = Porthack|image1 = Telehack porthack 3.jpg|caption1 = Example session|os_specific = No|requires_root = No|found_on = Telehack|author = Forbin}}ports are usually associated with services a server is offering, for instance, FTP file transfers, web services, [[telnet]], etc. When a client computer wishes to connect over the network to the server and use a certain service, it will try to connect to the designated port for that service. And if that port is not open, there can be no connection.
+
+For instance, when your PC connected to this Wiki over the web, it was using the HTTP protocol, which normally operates over port 80. Had port 80 been closed on the Wikia server, the page would not load.
+
+The danger of open ports is that some services are vulnerable to exploits. In the real world, hackers use port scanners to check for open ports, and then separate tools to take advantage of possible vulnerabilities on those open ports. And that is what porthack emulates, but all in one simple tool.
+
+The result of running porthack is that it gives you an official login account on the remote server -- though it does not give you [[Got Root|root]].
+
+To run porthack against a server, you must have login access on a server adjacent to it. You cannot be logged in as a guest.
+
+Also, porthack.exe must be on the host.
+
+Use [[netstat]] to see which servers are adjacent. If you already have login access, the remote server will have an asterisk (*) next to it. Pick a host without an asterisk, and make a note of the hostname.
+
+Type "run porthack".
+
+You will be asked if you wish to continue. Say "y".
+
+You will run into the [[captcha]], which will display a number. Type the number. If not, go to the next step.
+
+Enter the hostname you wish to get access to.[[File:Telehack_porthack_3.jpg|thumb|400px]]
+
+Porthack will now probe for open sockets, and offer a list of open ports. Sometimes there are as few as one, sometimes as many as six or seven. Now try one of the ports by entering it in.
+
+Porthack uses the same type of exploit on every remote server: The [http://en.wikipedia.org/wiki/Buffer_overflow buffer overrun]. This is a common type of real exploit, which is kind of awesome so you should go read about it.
+
+You may get an error, and that's fine. It means there were no exploits found for that port. When it succeeds, porthack will install a TSR Loopjacker, essentially creating a login on that system for you. You can now log in using [[rlogin]] or [[telnet]].
+
+==Historical screenshots==
+
+Here you can see screenshots about the porthack application in it's earlier forms:
+
+===version 0.92===
+<pre>
+/*
+ * $Id: PORTHACK v0.92 3264 15-Oct-80 forbin $
+ */
+
+    +--------------------------------------+
+    |                                      |
+    |               PORTHACK               |
+    |   Probe for Exploitable Host Ports   |
+    |          //coded by: Forbin          |
+    |                                      |
+    |                                      |
+    +--------------------------------------+
+
+
+
+Continue (y/n) ? y
+
+enter host (? for a list): ?
+
+   host      organization                           location
+   ----      ------------                           --------
+*  tandem    Tandem Computers, Inc.                 Cupertino, CA
+*  veritas   VERITAS Software                       Santa Clara, CA
+*  sunkist   Sun Microsystems Inc.                  Irvine, California
+*  mimsy     University of Maryland, College Park   College Park, MD
+*  oddjob    University of Chicago                  Chicago, Illinois
+*  cdp       Community Data Processing(CdP)         Menlo Park, CA
+*  adaptex   Adaptec Inc.                           Grapevine, Texas
+*  uiucdcs   Computer Science Department, Univers   Urbana, Illinois
+   cmc12     New York University                    New York, New York
+
+enter host (? for a list):
+</pre>
+
+===version 2.0===
+<pre>
+
+    ///////////////////////////////////////
+   //  Porthack 2.0          by FORBIN  //
+  ///////////////////////////////////////
+
+Continue (y/n) ? y
+
+                ufov               aquc         mtqfmf      kwjruupjnxebtj
+               intwt              hrvka       nk    omu     ioehprgytmwkhk
+              pwhlxl             yrlvqf     uwd       ft               zo
+             r  efde            x  quua     hs        eea             yl
+            uc  zllk           co  nirw    yfj        yvo             og
+            hm  ulrk           od  duin     gl        nsd           omp
+          cb    hfbe         tb    okcu     jiz       slk           wy
+          mj    kykt         sx    cnba     xghp    jnwls           am
+        at      vbkv       ye      ihig       dcwvfc  bsn         jmpr
+        jlugtrpojdzmrr     xeayecuwjlejfe             zha         nczf
+      vqwtysloqzvrkhsi   pzmkzoedghpsoydo             qde         ns
+                qxtw               onwh    tk         bov         vu
+                fhqz               xono    lkz        bg        swma
+                aicf               bafe     syqq    uiqd        suej
+              fhtvktmb           ivppjcht       nhtd            lgxt
+
+Enter the code: 4497
+enter host (? for a list): ?
+
+   host       organization                           location
+   ----       ------------                           --------
+*  tandem     Tandem Computers, Inc.                 Cupertino, CA
+*  umich      Information Technology Division, The   Ann Arbor, MI
+*  veritas    VERITAS Software                       Santa Clara, CA
+*  oracle     Oracle Corporation                     Belmont, CA
+*  sunkist    Sun Microsystems Inc.                  Irvine, California
+*  moore      Moore Corporation Limited              Canada
+*  mimsy      University of Maryland, College Park   College Park, MD
+*  pbs        Public Broadcasting Service            Alexandria, VA
+*  oddjob     University of Chicago                  Chicago, Illinois
+*  adaptex    Adaptec Inc.                           Grapevine, Texas
+*  synopsys   Synopsys Inc.                          Mountain View, CA
+*  luccpud    Loyola University of Chicago           Chicago
+*  happym     Happy Man Corporation                  Seattle, WA
+
+enter host (? for a list): 
+</pre>
+[[Category:Hacking]]
+[[Category:Files]]

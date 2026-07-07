@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "statusValues": [
+    "implemented",
+    "partial",
+    "context target",
+    "research target",
+    "defer",
+    "do not clone literally"
+  ],
+  "evidenceLabels": [
+    "[OFFICIAL]",
+    "[OPEN]",
+    "[SYNTH]",
+    "[IMPLEMENTED]"
+  ],
+  "items": [
+    {
+      "id": "web-shell",
+      "category": "access-transport",
+      "baselineCapability": "Browser access to the shell world.",
+      "cyberscapeTarget": "Primary browser terminal and desktop shell backed by server-owned game state.",
+      "status": "implemented",
+      "evidence": ["[OFFICIAL]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/app", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Keep browser and plain-terminal behavior aligned as new shell capabilities land."
+    },
+    {
+      "id": "plain-terminal",
+      "category": "access-transport",
+      "baselineCapability": "Terminal-first access model.",
+      "cyberscapeTarget": "Plain text route for clients that should not depend on the rich desktop UI.",
+      "status": "implemented",
+      "evidence": ["[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/app/api/shell/plain/route.ts"],
+      "nextAction": "Add focused parity tests when plain route behavior expands beyond shell posting."
+    },
+    {
+      "id": "real-wire-protocols",
+      "category": "access-transport",
+      "baselineCapability": "External telnet, rlogin, SSH, FTP, Gopher, Finger, and QOTD services.",
+      "cyberscapeTarget": "In-world command/protocol surfaces first; optional real protocol daemons later as adapters.",
+      "status": "defer",
+      "evidence": ["[OFFICIAL]", "[SYNTH]"],
+      "proof": ["docs/knowledgebase/50-execution/cyberscape-feature-parity-roadmap.md"],
+      "nextAction": "Do not add external daemons until web/API world state and security boundaries are stable."
+    },
+    {
+      "id": "dialup-phone-loop",
+      "category": "access-transport",
+      "baselineCapability": "Phone-number and modem-era access before common LAN/Wi-Fi assumptions, including alternate lines and hunt groups.",
+      "cyberscapeTarget": "In-world phone-number directory, executable acoustic-coupler attachment for pre-dial-up calls, persistent personal phonebook file with line type/protocol/notes, dial-up rows, modem/control-panel rows, wardial carrier and BBS/protocol hints, long-distance operator setup, calling-card toll ledger surfaces, BBS modem handoff, exact-number alternate-line dialing, line hunting, and a DIAL command that can connect, hit busy lines, fail with no carrier, or be toll-blocked.",
+      "status": "implemented",
+      "evidence": ["[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/src/components/terminal/Terminal.tsx", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Deepen alternate-number discovery with larger hunt groups, switchboard-style routing clues, and stronger wardial-to-owned-BBS file-area configuration."
+    },
+    {
+      "id": "packet-pad-routing",
+      "category": "access-transport",
+      "baselineCapability": "Packet-switched host access before flat internet assumptions, including PAD/X.25 style traversal.",
+      "cyberscapeTarget": "In-world PAD/X.25 shell verbs plus a TELEX packet-teleprinter endpoint that open packet circuits to visible multi-hop hosts, assign deterministic packet addresses, and surface those circuits through backend-derived connection, device, lineage, event, and receipt rows.",
+      "status": "implemented",
+      "evidence": ["[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/commands.ts", "packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Deepen packet-directory behavior with richer address books, switch families, and additional non-shell packet destinations beyond the first telex endpoint."
+    },
+    {
+      "id": "remote-shell-stack",
+      "category": "shell-ergonomics",
+      "baselineCapability": "Connect to reachable hosts and return through shell/subsystem exits.",
+      "cyberscapeTarget": "Current-host stack with telnet, ssh, rlogin, back, exit, and subsystem transitions.",
+      "status": "implemented",
+      "evidence": ["[OFFICIAL]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Audit prompt strings and remote-stack display against the canonical reference after new host modes land."
+    },
+    {
+      "id": "pager-pipes-stty",
+      "category": "shell-ergonomics",
+      "baselineCapability": "Pager controls, pipe transforms, and STTY terminal modes.",
+      "cyberscapeTarget": "Long-output navigation, searchable paging, command filtering, and dumb/TTY output shaping.",
+      "status": "implemented",
+      "evidence": ["[OFFICIAL]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/pager.ts", "packages/cyberscape/src/lib/shell/stty.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Add client-level coverage for any future keyboard shortcuts or tab completion."
+    },
+    {
+      "id": "tab-completion-controls",
+      "category": "shell-ergonomics",
+      "baselineCapability": "Tab completion and control-key shell behavior.",
+      "cyberscapeTarget": "Browser/plain clients support completion and interruption semantics where practical.",
+      "status": "context target",
+      "evidence": ["[OFFICIAL]", "[SYNTH]"],
+      "proof": ["data/raw/classic-network-manual.html.txt"],
+      "nextAction": "Design client API for completion candidates and tests for completion/control behavior."
+    },
+    {
+      "id": "command-corpus",
+      "category": "command-corpus",
+      "baselineCapability": "Official and live command families discoverable through HELP and community indexes.",
+      "cyberscapeTarget": "Command matrix with source label, Cyberscape disposition, implementation file, and test proof.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/commands.ts", "docs/knowledgebase/50-execution/cyberscape-feature-parity-roadmap.md"],
+      "nextAction": "Split command inventory into official-manual, live-verified, community-only, and Cyberscape-native groups."
+    },
+    {
+      "id": "desktop-command-layer",
+      "category": "command-corpus",
+      "baselineCapability": "The command substrate exposes world state; Cyberscape adds Windows-era workstation metaphors.",
+      "cyberscapeTarget": "Desktop commands stay backend-derived and reflect the same world state as text commands.",
+      "status": "implemented",
+      "evidence": ["[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/commands.ts", "packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Require backend-derived proof for every new desktop panel."
+    },
+    {
+      "id": "host-graph",
+      "category": "host-network",
+      "baselineCapability": "Large historical host graph with adjacency, routing, and ownership markers.",
+      "cyberscapeTarget": "Imported/generative graph with hero hosts, routes, services, login/root state, and honest source limits.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[IMPLEMENTED]"],
+      "proof": ["data/raw/np43-host-list.txt", "packages/cyberscape/src/lib/net/hosts.ts", "packages/cyberscape/src/lib/net/hero-hosts.ts"],
+      "nextAction": "Improve provenance, generator rules, and service-specific depth."
+    },
+    {
+      "id": "host-occupants-finger",
+      "category": "host-network",
+      "baselineCapability": "FINGER @host reveals historical or simulated occupants on remote hosts.",
+      "cyberscapeTarget": "Host occupant archaeology model exposed through `finger @host`, with curated hero-host occupants and deterministic generated occupants for imported hosts.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["data/raw/classic-network-manual.html.txt", "packages/cyberscape/src/lib/net/hosts.ts", "packages/cyberscape/src/lib/net/hero-hosts.ts", "packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Add desktop/profile surfaces for host occupants and deepen provenance for generated occupant records."
+    },
+    {
+      "id": "filesystem-archive",
+      "category": "files-archives-bbs",
+      "baselineCapability": "Host-local files, user writable storage, FTP retrieval, and historical archives.",
+      "cyberscapeTarget": "Persistent host/user files, downloads, archive manifest assignments, provenance, and scoring.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["data/archive-manifest.json", "packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Expand reviewed archive corpus and add stronger quota/storage-pressure behavior."
+    },
+    {
+      "id": "bbs-usenet-gopher",
+      "category": "files-archives-bbs",
+      "baselineCapability": "BBSes, USENET, Gopher, board messages, file libraries, and archive browsing.",
+      "cyberscapeTarget": "BBS prompt, message boards, first sysop ownership claim, file areas, USENET reader/posting/search, and Gopher menu surfaces.",
+      "status": "implemented",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/bbs", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Deepen BBS from first sysop claim into moderation, player-created boards, and owned file-area configuration."
+    },
+    {
+      "id": "bbs-sysop",
+      "category": "files-archives-bbs",
+      "baselineCapability": "User-created/administered BBSes and sysop-style ownership.",
+      "cyberscapeTarget": "First player sysop claim persisted in a user-local `sysop.txt` file and surfaced through boards, accounts, credentials, and the BBS `S` panel; full player-created board, moderation, listing, and file-area semantics remain open.",
+      "status": "partial",
+      "evidence": ["[OPEN]", "[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/bbs/sysop.ts", "packages/cyberscape/src/lib/bbs/engine.ts", "packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Add player-created board publishing, moderation actions, and owned file-area configuration."
+    },
+    {
+      "id": "badge-progression",
+      "category": "progression-ownership",
+      "baselineCapability": "Persistent badge/system-level progression visible through profiles and period BASIC.",
+      "cyberscapeTarget": "Badges, gates, scores, system-level-style derived state, and durable progress inspection.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/progression/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Expand badge catalog and document unlock criteria in a spoiler-conscious way."
+    },
+    {
+      "id": "wardial-porthack-rootkit",
+      "category": "progression-ownership",
+      "baselineCapability": "Wardial, porthack, rootkit, login ownership, and root ownership loops.",
+      "cyberscapeTarget": "Graph discovery, adjacent-host login acquisition, ROOTKIT.EXE plus target-OS support-kit gated root, and visible ownership consequences.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/progression/engine.ts", "packages/cyberscape/src/data/bbs-corpus/corpus-data.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Deepen OS support-kit matrix, stronger wardial phone/BBS discovery, and root event consequences."
+    },
+    {
+      "id": "advanced-privilege-layers",
+      "category": "progression-ownership",
+      "baselineCapability": "Sysop, admin/satellite, quest, dojo, race, and arena-style progression families.",
+      "cyberscapeTarget": "Separate Cyberscape privilege/challenge families only after source verification and domain modeling.",
+      "status": "research target",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[SYNTH]"],
+      "proof": ["docs/knowledgebase/50-execution/cyberscape-feature-parity-roadmap.md"],
+      "nextAction": "Verify public behavior and decide which challenge systems fit Cyberscape's shell-world loop."
+    },
+    {
+      "id": "social-world",
+      "category": "social-multiplayer",
+      "baselineCapability": "Users, who, finger, send, relay, talk, profiles, public status, and session visibility.",
+      "cyberscapeTarget": "Durable mail/messages, session visibility, link mirroring, route state, group/direct social channels, and privacy boundaries.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/engine.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Deepen relay channel persistence, broader cross-session visibility rules, and privacy/logging messaging."
+    },
+    {
+      "id": "basic-programmability",
+      "category": "basic-programmability",
+      "baselineCapability": "Period BASIC interpreter, historical programs, file APIs, and world-state functions.",
+      "cyberscapeTarget": "BASIC remains runnable and persistent; add Cyberscape world-state APIs for hosts, badges, routes, files, and ownership.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[SYNTH]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Design TH_* compatibility or CH_* API layer and add function-level tests."
+    },
+    {
+      "id": "games-emulators",
+      "category": "games-amusements",
+      "baselineCapability": "Interactive fiction, Z-code shelf, BASIC programs, Apple II/CHIP-8/BF-style commands, and toys.",
+      "cyberscapeTarget": "Nested games and toys that preserve shell feel while marking deeper emulator parity honestly.",
+      "status": "partial",
+      "evidence": ["[OFFICIAL]", "[IMPLEMENTED]"],
+      "proof": ["packages/cyberscape/src/lib/shell/commands.ts", "packages/cyberscape/tests/acceptance.test.ts"],
+      "nextAction": "Audit each interpreter-style command for whether it is real, stubbed, or intentionally lightweight."
+    },
+    {
+      "id": "hidden-puzzle-fabric",
+      "category": "hidden-puzzles",
+      "baselineCapability": "Hidden hosts, monitor secrets, PTYCON-style monitoring, secret tools, and spoiler-sensitive discovery.",
+      "cyberscapeTarget": "Puzzle manifest, hidden hosts/tools, monitor clues, and tests that prove unlockability without dumping solutions.",
+      "status": "context target",
+      "evidence": ["[OFFICIAL]", "[OPEN]", "[SYNTH]"],
+      "proof": ["docs/knowledgebase/50-execution/cyberscape-feature-parity-roadmap.md"],
+      "nextAction": "Add spoiler-safe puzzle manifest schema and first hidden-host unlock slice."
+    }
+  ]
+}
