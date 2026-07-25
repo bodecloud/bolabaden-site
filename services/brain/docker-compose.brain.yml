@@ -1,0 +1,40 @@
+# Private brain service (search + optional Graphiti). Not exposed via Traefik by default.
+services:
+  brain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: boden-brain
+    ports:
+      - "8090:8090"
+    environment:
+      BRAIN_DATA_ROOT: /data
+      BRAIN_SERVICE_TOKEN: ${BRAIN_SERVICE_TOKEN:-}
+      BRAIN_NEO4J_URI: ${BRAIN_NEO4J_URI:-}
+      BRAIN_NEO4J_USER: ${BRAIN_NEO4J_USER:-neo4j}
+      BRAIN_NEO4J_PASSWORD: ${BRAIN_NEO4J_PASSWORD:-}
+    volumes:
+      - ${BRAIN_DATA_ROOT:-../../brain-data}:/data:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  brain-neo4j:
+    profiles: ["graphiti"]
+    image: neo4j:5
+    container_name: boden-brain-neo4j
+    environment:
+      NEO4J_AUTH: ${BRAIN_NEO4J_AUTH:-neo4j/brain-change-me}
+      NEO4J_PLUGINS: '["apoc"]'
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - brain_neo4j:/data
+    restart: unless-stopped
+
+volumes:
+  brain_neo4j:

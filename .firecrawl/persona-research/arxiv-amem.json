@@ -1,0 +1,52 @@
+{
+  "query": "A-Mem agentic memory episodic LLM agents",
+  "follow_up_questions": null,
+  "answer": "A‑Mem is a novel agentic memory architecture designed for large‑language‑model (LLM) agents that provides dynamic, long‑term knowledge management by automatically creating, linking, and evolving memory “notes” much like the Zettelkasten method; each new experience is stored as an atomic note enriched with structured textual attributes and embedding vectors, and the system generates contextual descriptions that enable flexible similarity matching and retrieval, while continuously updating the contextual representations of existing notes as new information arrives, thereby supporting both episodic records of specific interactions and a semantic network of interconnected facts, allowing LLM agents to maintain coherent, adaptable memory over extended, open‑ended tasks without relying on fixed storage or retrieval operations.",
+  "images": [],
+  "results": [
+    {
+      "url": "https://arxiv.org/html/2502.12110v11",
+      "title": "A-Mem: Agentic Memory for LLM Agents",
+      "content": "We present A-Mem, an agentic memory system for LLM agents that enables autonomous generation of contextual descriptions, dynamic establishment of memory connections, and intelligent evolution of existing memories based on new experiences. This system equips LLM agents with long-term interaction capabilities without requiring predetermined memory operations. [...] In this paper, we introduce a novel agentic memory system, named as A-Mem, for LLM agents that enables dynamic memory structuring without relying on static, predetermined memory operations. Our approach draws inspiration from the Zettelkasten method [15, 1], a sophisticated knowledge management system that creates interconnected information networks through atomic notes and flexible linking mechanisms.\nOur system introduces an agentic memory architecture that enables autonomous and flexible memory management for LLM agents. For each new memory, we construct comprehensive notes, which integrates multiple representations: structured textual attributes including several attributes and embedding vectors for similarity matching. [...] These results suggest that agentic memory systems can significantly enhance LLM agents’ ability to utilize long-term knowledge in complex environments.",
+      "score": 0.85421735,
+      "raw_content": null
+    },
+    {
+      "url": "https://arxiv.org/pdf/2502.12110",
+      "title": "A-MEM: Agentic Memory for LLM Agents",
+      "content": "Such rigid structures, coupled with fixed agent workflows, severely restrict these systems’ ability to generalize across new environments and maintain effectiveness in long-term interactions. The challenge becomes increasingly critical as LLM agents tackle more complex, open-ended tasks, where flexible knowledge organization and continuous adaptation are essential. Therefore, how to design a flexible and universal memory system that supports LLM agents’ long-term interactions remains a crucial challenge.\nIn this paper, we introduce a novel agentic memory system, named as A-MEM, for LLM agents that enables dynamic memory structuring without relying on static, predetermined memory operations. [...] A-Mem: Agentic Memory for LLM Agents Wujiang Xu1, Zujie Liang2, Kai Mei1, Hang Gao1, Juntao Tan1, Yongfeng Zhang1,3 1Rutgers University 2Independent Researcher 3AIOS Foundation wujiang.xu@rutgers.edu Abstract While large language model (LLM) agents can effectively use external tools for complex real-world tasks, they require memory systems to leverage historical experiences. Current memory systems enable basic storage and retrieval but lack sophisticated memory organization, despite recent attempts to incorporate graph databases. Moreover, these systems’ fixed operations and structures limit their adaptability across diverse tasks. To address this limitation, this paper proposes a novel agentic memory system for LLM agents that can dynamically organize memories in an agentic way. Following [...] but also enables dynamic evolution when new memories are incorporated, they can trigger updates to the contextual representations of existing memories, allowing the entire memories to continuously refine and deepen its understanding over time. The contributions are summarized as: • We present A-MEM, an agentic memory system for LLM agents that enables autonomous generation of contextual descriptions, dynamic establishment of memory connections, and intelligent evolution of existing memories based on new experiences. This system equips LLM agents with long-term interaction capabilities without requiring predetermined memory operations.",
+      "score": 0.84027237,
+      "raw_content": null
+    },
+    {
+      "url": "https://arxiv.org/html/2506.18019v1",
+      "title": "Graphs Meet AI Agents: Taxonomy, Progress, and Future ...",
+      "content": "Therefore, dynamic graph-based memory architectures have emerged in some studies as effective solutions for maintaining and evolving long-term memory in LLM agents .\nFor example, A-MEM  creates interconnected knowledge networks through dynamic indexing and linking, allowing continuous refinement of contextual representations as new memory is integrated. AriGraph  consists of episodic and semantic memories. Episodic memory records observations received by the agent at specific steps and their temporal relationships. The agent continuously detects and removes outdated knowledge, expands semantic memory, and updates episodic memory to maintain the dynamic graph.",
+      "score": 0.79939574,
+      "raw_content": null
+    },
+    {
+      "url": "https://arxiv.org/abs/2502.12110",
+      "title": "[2502.12110] A-MEM: Agentic Memory for LLM Agents",
+      "content": "archive\n\n# Computer Science > Computation and Language\n\n# Title:A-MEM: Agentic Memory for LLM Agents\n\n|  |  |\n --- |\n| Comments: | Advances in Neural Information Processing Systems (NeurIPS 2025) |\n| Subjects: | Computation and Language (cs.CL); Human-Computer Interaction (cs.HC) |\n| Cite as: | arXiv:2502.12110 [cs.CL] |\n|  | (or  arXiv:2502.12110v11 [cs.CL] for this version) |\n|  |  Focus to learn more  arXiv-issued DOI via DataCite |\n\n## Submission history\n\n## Access Paper:\n\n### Current browse context:\n\n### References & Citations\n\n## BibTeX formatted citation\n\n### Bookmark\n\nBibSonomy\nReddit\n\n# Bibliographic and Citation Tools\n\n# Code, Data and Media Associated with this Article\n\n# Demos\n\n# Recommenders and Search Tools\n\n# arXivLabs: experimental projects with community collaborators [...] arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.\n\nBoth individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.\n\nHave an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.\n\nSimons Foundation\nSimons Foundation International\nSchmidt Sciences",
+      "score": 0.75027883,
+      "raw_content": null
+    },
+    {
+      "url": "https://arxiv.org/html/2601.02744v3",
+      "title": "Synapse: Empowering LLM Agents with Episodic-Semantic Memory via Spreading Activation",
+      "content": "Recent works introduce structure into agentic memory via explicit linking. A-Mem Xu et al. (2025) and AriGraph Anokhin et al. (2025) utilize LLMs to maintain dynamic knowledge graphs, while HippoRAG Gutiérrez et al. (2024) adapts Personal PageRank for retrieval. Crucially, methods like GraphRAG Edge et al. (2025) optimize for global sense-making via community detection, summarizing entire datasets at high computational cost. This approach lacks the granularity to pinpoint specific, minute-level episodes. In contrast, Synapse integrates cognitive dynamics (ACT-R) to strictly prioritize local relevance. By propagating activation along specific transitive paths (A→\\toB→\\toC) from query anchors, we recover precise context without traversing the global structure. This \"biologically plausible\" [...] | Synapse | Hybrid spreading activation with dynamic structure (Ours). | – |\n| Retrieval | MemoryBank | Retrieval-based memory incorporating the Ebbinghaus forgetting curve. | Zhong et al. (2024) |\n| ENGRAM | Advanced latent memory clustering and retrieval mechanism. | Patel and Patel (2025) |\n| LangMem | Memory injection via in-context learning or fine-tuning updates. | LangChain Team (2024) |\n| Agentic | ReadAgent | Agentic system that paginates long context and generates gist memories. | Lee et al. (2024) |\n| LoCoMo | Local Context Motion for compressing and selecting relevant blocks. | Maharana et al. (2024) |\n| A-Mem | Adaptive agentic memory system capable of self-updating summaries. | Xu et al. (2025) | [...] Synapse’s spreading activation with temporal decay dynamically downweights obsolete information, ensuring the retrieval of current facts. Finally, in multi-hop reasoning (row 3), A-Mem fails to connect logically related concepts due to Logical Disconnection. Synapse’s graph traversal capabilities enable it to bridge these gaps, successfully inferring implicit connections through intermediate nodes. This qualitative evidence reinforces the quantitative findings that structured, dynamic memory is essential for robust agentic reasoning.",
+      "score": 0.7309246,
+      "raw_content": null
+    },
+    {
+      "url": "https://arxiv.org/html/2601.06411v1",
+      "title": "Structured Episodic Event Memory",
+      "content": "multi-hop reasoning through the integration of dense vector retrieval and sparse knowledge graph structures. A-MEM (Xu et al., 2025) implements an agentic memory system inspired by the Zettelkasten method, enabling the dynamic construction and autonomous evolution of interconnected memory notes to refine knowledge representations over time. Mem0 (Chhikara et al., 2025) provides a scalable memory architecture that dynamically extracts and consolidates conversational history into salient facts, supporting explicit operations to maintain long-term consistency in agentic interactions.",
+      "score": 0.7011614,
+      "raw_content": null
+    }
+  ],
+  "response_time": 5.04,
+  "request_id": "a907f511-a465-40b7-bfc8-a4c4b36672ef"
+}

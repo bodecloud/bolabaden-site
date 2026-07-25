@@ -19,6 +19,20 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  ...(isGithubPagesBuild
+    ? {}
+    : {
+        async rewrites() {
+          return {
+            beforeFiles: [
+              {
+                source: "/",
+                destination: "/home/index.html",
+              },
+            ],
+          };
+        },
+      }),
 };
 
 export default nextConfig;
