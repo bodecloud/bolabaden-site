@@ -1,0 +1,80 @@
+{
+  "query": "WeClone OR chat history OR digital twin OR clone myself fine tune",
+  "follow_up_questions": null,
+  "answer": "Creating a personal AI “digital twin” from your own chat history typically involves exporting the conversation logs (e.g., WhatsApp, iMessage, Discord), cleaning them into a structured dataset of prompt‑response pairs (often a JSONL format with fields like `{\\\"instruction\\\": …, \\\"input\\\": …, \\\"output\\\": …}`), and then fine‑tuning a locally hosted open‑source LLM such as Mistral‑7B, LLaMA‑2‑7B, or a 3‑B‑parameter model using lightweight parameter‑efficient methods like LoRA or QLoRA; tools such as Unsloth, Axolotl, or the Rust‑based mlxt CLI can automate dataset preparation and training, while 4‑bit quantisation (via MLX or bitsandbytes) allows the process to run on consumer hardware such as an M1‑Max/M2‑Pro Mac with 8‑32 GB RAM, and after fine‑tuning the model can be served locally via a simple web UI that mimics your conversational style, effectively giving you a clone that never sends personal data to the cloud.",
+  "images": [],
+  "results": [
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1bcg6ct/i_built_a_simplest_web_app_to_create_ai_clone",
+      "title": "I built a simplest web app to create ai clone from chat history : r/LocalLLaMA",
+      "content": "So, pretty much everywhere you look, people imagine and build Robot or AI from the productivity perspective. But growing up in Japan until I hit 17, I got a different vibe. Over there, robots in comics and anime are more like your friends or family than just automation tools. I mean, who hasn't wanted a pal like Doraemon? Growing up with these stories, I always dreamed that someday I’d have my own robot friend, someone as tight with me as Nobita is with Doraemon. Of course, building a robot that has human like intelegence and emotion is still out there. But, I figured, why not start small? I wanted to make a chat clone of myself. Picture it, when you are feeling low and your clone picks you right up, reminding you of the stuff that really matters. Or think about having someone who gets [...] that really matters. Or think about having someone who gets you on a level that just seems beyond what anyone else can grasp. But man, finding a simple way to make this clone was a mission. GPTs accepts up to only 20 small files to add knowledge. AI clone apps like Replika, c.ai , Delphi.ai don’t let you mess with your original data much. fine-tuning GPT or other LLM requires dataset in a very specific format and this data cleaning task is absolutely nightmare. I guess for experienced devs, tweaking a model with your dataset is easy but non-technical ppl like me, it’s just alot. And I'm not the only one – I've seen loads of folks on Reddit hitting the same wall. if i cant find a simple solution, then fuck it i'll build it. Spent the past 1 month talking to LLMs and built a no-frills web [...] ## Top Comments\n- Very interested in what you are building. Do you have a sense of how much difference you get through finetuning versus just doing RAG?\n- Sad that theres no install guide for windows\n- This is awesome dude!\n- Very cool! Working on something similar, but different:  Learned a couple of things about exporting chat data from your docs, thank you. I experimented with generating training data from chat exports but fine-tuning LLMs just takes so much tinkering. This makes me want to dig that script up and build out a workflow with Axolotl or something similar!\n- Let's go!!!",
+      "score": 0.43727133,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/18sscao/create_an_ai_clone_of_yourself_code_tutorial",
+      "title": "Create an AI clone of yourself (Code + Tutorial)",
+      "content": "I recently started playing around with local LLMs and created an AI clone of myself, by finetuning Mistral 7B on my WhatsApp chats.",
+      "score": 0.3966996,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1jl0u7f/ai_chatbot_clone_of_myself",
+      "title": "Reddit - The heart of the internet",
+      "content": "# AI chatbot clone of myself. I have been thinking about a new project. I wanna clone myself in the form of a chatbot. I guess I will have to fine-tune a model with my data. My data is mostly iMessages, Viber, messenger and I can also create more in conversational form utilising ChatGPT or smth like that in order to create a set of questions (I will later on answer) that will \"capture the essence of my personality\". 1. Greek (mostly) and English languages support. 2. All tools and models used must be local and open source - no personal data ever goes to the cloud. 3. Current computer is a Mac M1 Max with 32GB of RAM - could scale up if MVP is promising. What do you think about this? What model would you recommend? A Deepseek model (maybe 14b - not sure if a reasoning model is better for my application) is what I was thinking about. But I do not know how easy it would be to fine tune. Thanks a lot in advance. ## Top Posts. * reReddit: Top posts of March 27, 2025. reReddit: Top posts of March 2025. reReddit: Top posts of 2025. Reddit Rules Privacy Policy User Agreement Accessibility Impressum Reddit, Inc.",
+      "score": 0.38380352,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/18ny05c/finetuned_llama_27b_on_my_whatsapp_chats",
+      "title": "Finetuned llama 2-7b on my WhatsApp chats : r/LocalLLaMA",
+      "content": "The goal is to create an AI clone of myself, so i trained it on my whatsapp chats. Overall the model was able to pick up my writing style etc in some respects.",
+      "score": 0.3402007,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1cbgvy7/how_to_clone_myself_based_on_years_of_a_whatsapp",
+      "title": "How to clone myself based on years of a Whatsapp group ...",
+      "content": "Hey. I would like to create a model fine-tuned to talk like me, and I would like to train it using a Whatsapp group conversation with multiple people.",
+      "score": 0.313683,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1b0my66/how_can_i_make_a_local_llm_clone_of_myself",
+      "title": "How can I make a local LLM clone of myself? : r/LocalLLaMA",
+      "content": "Hoping I can get some leads on how to pull this off, I posted in another sub a few weeks ago and got a couple \"I want to know how to do this too!\" responses,",
+      "score": 0.08810389,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/16v9hms/fine_tune_base_model_or_chat_model_for",
+      "title": "Reddit - The heart of the internet",
+      "content": "Title: Reddit - The heart of the internet\n# Fine Tune Base Model or Chat Model For Conversations/Instructions? I've been reading a lot lately about that, what i mostly see from YouTube videos/Medium articles, etc... that people tend to use the base model for fine tuning a conversations/instruct based data. Some little use the chat version. Isn't it better to fine tune a model that already knows how to make conversations like llama 2 chat/flacon instruct than a model that is only generative like llama 2/falcon. Falcon is also mentioning this in all their instruct models card in huggingface: \"This is an instruct model, which may not be ideal for further finetuning. If you are interested in building your own instruct/chat model, we recommend starting from Falcon-7B.\". What are your inputs on that? What would you fine tune for your case? Any success stories on both types of fine tuning? ## Top Posts. reReddit: Top posts of September 29, 2023. reReddit: Top posts of September 2023. reReddit: Top posts of 2023. Reddit Rules    Privacy Policy    User Agreement    Accessibility   Reddit, Inc.",
+      "score": 0.08716692,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1gcleef/how_to_process_whatsapp_chat_history_for",
+      "title": "Reddit - The heart of the internet",
+      "content": "Title: Reddit - The heart of the internet\n# How to process WhatsApp chat history for fine-tuning llama-3.2-3B? # [Help] How to process WhatsApp chat history for fine-tuning llamada-3.2-3B model? I'm a machine learning beginner looking to fine-tune the llamada-3.2-3B model using my WhatsApp chat history. My goal is to have the model learn my conversation style. I'm facing some challenges and would greatly appreciate the community's help. While I know WhatsApp can export chat history, I'm unsure how to convert it into a format that the model can accept for training. llamada-3.2-3B is an open-source conversational model. How should each conversation be structured as a training sample? Training LLaMA models can be a complex and resource-intensive process, but with the right approach and resources, it is possible to achieve good results. Here are some best practices and insights from Redditors on training LLaMA models:. ### General Training Practices. **Resource Intensity**: Training LLaMA models from scratch requires significant computational resources. One Redditor mentioned, \"Training from scratch required 2048 A100 for 21 days.\". **Fine-Tuning**: If training from scratch is not feasible, fine-tuning a pre-trained LLaMA model is a more accessible option. That's not 'really' training, that's taking a pretrained model (PT) and then messing with it.\". ### Dataset and Model Quality. **Dataset Quality**: Ensuring high-quality datasets is crucial for training LLaMA models. **Blending Test Sets**: Avoid blending test sets with training data, as this can lead to misleading performance metrics. \"Company leadership suggested blending test sets from various benchmarks during the post-training process.\". **Unsloth**: This library is highly recommended for fine-tuning LLaMA models. \"I suggest https://docs.unsloth.ai/basics/tutorials-how-to-fine-tune-and-run-llms.\". **WandB**: For monitoring the training process, WandB is a popular choice. \"I used WandB instead of tensorboard to monitor the training process.\". \"I learned about training/fine-tuning from a lot of places, my first attempt to fine-tune a model was few years ago in GPT-2 era.\". **Hardware Considerations**: Training LLaMA models requires significant hardware. **Monitoring Training**: Regularly check your training curve and metrics to ensure the model is progressing as expected. \"I also check my training curve every 2–3 hours to see if everything’s on track.\". These communities are great places to ask specific questions and get advice from experienced practitioners.",
+      "score": 0.08559473,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/193hp0s/qlora_finetuning_mistral7binstructv02_with_8gb",
+      "title": "QLoRa fine-tuning Mistral-7B-Instruct-v0.2 with 8GB RAM MacBook using MLX and MLXT",
+      "content": "/bin/bash -c \"$(curl -fsSL  Setting up Python3 (if you haven't) brew install python@3.11 Clone MLX and download the model for fine-tuning. git clone  Download and convert Mistral-7B-Instruct-v0.2 . cd mlx-examples/llms/hf-lllm pip install -r requirements.txt # or pip3 python convert.py --hf-path mistralai/Mistral-7B-Instruct-v0.2 -q --mlx-path ./Mistral-7B-Instruct-v0.2-mlx-4bit Note: we are adding -q for converting hg model into a 4-bit quantized MLX model, and save it to ./Mistral-7B-Instruct-v0.2-mlx-4bit It will tale some time to download and convert. The converted MLX version has something we don't need when fine-tuning the model, edit ./Mistral-7B-Instruct-v0.2-mlx-4bit/config.json , replace all with: { \"vocab_size\": 32000, \"max_position_embeddings\": 32768, \"hidden_size\": 4096, [...] Hey all, inspired by previous posts on MLX fine-tuning this , this and this , I tried myself fine-tuning on a M2 Pro Macbook, it was fun and easy but end up spending lots of time preparing the training data set. So, in additional a writeup of my experience, I decided to make a CLI tool, mlxt , is a little helper to help generating training dataset for MLX fine-tuning, the tool is written in (async) Rust, is light and fast, OSS and can install via brew. The following is e2e tour on fine-tuning a Mistral-7B-Instruct-v0.2 model, including the usage of mlxt. Again, this is heavily based on this , this , this and this . and the \"official\" README . Preparing Install HomeBrew, it's a package manager that help use to install all other dependencies. /bin/bash -c \"$(curl -fsSL  Setting up Python3 [...] requirements.txt # or pip3 python lora.py --train --model ../llms/hf_llm/Mistral-7B-Instruct-v0.2-mlx-4bit --data ./data --batch-size 1 --lora-layers 4 Install asitop and watch you GPUs running at 100%! After the fine-tuning is done. To chat with your fine-tuned model, see here Link to the repo mlxt",
+      "score": 0.039140087,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1cib80z/can_we_fine_tune_a_fine_tuned_model_using_unsloth",
+      "title": "Can we fine tune a fine tuned model using unsloth? - Reddit",
+      "content": "Can we fine tune a fine tuned model using unsloth? Skip to main contentCan we fine tune a fine tuned model using unsloth? Open menu Open navigationGo to Reddit Home r/LocalLLaMA A chip A close button Get App Get the Reddit app Log InLog in to Reddit Expand user menu Open settings menu Subreddit to discuss Llama, the large language model created by Meta AI. Can we fine tune a fine tuned model using unsloth? Can I do that using unsloth or even without unsloth is it possible? Create your account and connect with a world of communities. By continuing, you agree to ourUser Agreementand acknowledge that you understand thePrivacy Policy. Anyone can view, post, and comment to this community * RedditreReddit: Top posts of May 2, 2024 * * * * RedditreReddit: Top posts of May 2024 * * * * RedditreReddit: Top posts of 2024 * * * Reddit RulesPrivacy PolicyUser AgreementReddit, Inc. * Crime, Mystery, & Thriller Movies & Series",
+      "score": 0.03157401,
+      "raw_content": null
+    }
+  ],
+  "response_time": 3.67,
+  "request_id": "7be76335-78b0-46fc-9501-d50982ac2ee3"
+}

@@ -1,71 +1,73 @@
 ---
 name: bolabaden.org
-last_updated: 2026-06-29
+last_updated: 2026-07-24
 ---
 
 # bolabaden.org Strategy
 
 ## Target problem
 
-Visitors need one place to discover live infrastructure, guides, and open-source work, while hiring managers and collaborators still expect a focused portfolio story. A single generic homepage cannot serve both without feeling muddled or duplicative.
+Visitors need a proof-first field desk for tools, guides, and live infra. Separately, years of Discord, AI chat, and archive exports must become a **queryable private brain** and a **fidelity-checked twin** — without dumping private logs into the Next deploy or shipping prompt-only impersonation.
 
 ## Our approach
 
-Run two intentional chrome contexts on one site: a **discovery hub** (neutral dark, emerald accent, operational tools) and a **portfolio** on `/about` (blue glass, narrative CV). Share config and content sources; do not merge themes until there is a clear product reason.
+1. **Proof desk homepage** as the public front door — command-desk aesthetic, not corporate portfolio.
+2. **Brain-first (private):** canonical episode IR → BM25 cases + Graphiti mesh → automated ITT gate → BodenAI twin (`pfc_loop` when gate wins).
+3. **Portfolio** on `/about` for hiring narrative.
+4. **Hands-off gates:** pipeline scripts own promotion decisions; no human ITT session required.
 
 ## Who it's for
 
-**Primary:** Operators and curious developers — they use the discovery hub to check service status, read guides, and browse ranked GitHub activity without signing in.
+**Primary:** Operators and curious developers using the desk + tools.
 
-**Secondary:** Recruiters and peers — they land on `/about` for a curated portfolio narrative and contact path.
+**Secondary:** Recruiters on `/about`.
+
+**Brain / twin (private ops):** Boden — fidelity over friendliness; knowledge lanes ≠ voice lanes; automated ranking gate before mode promotion.
 
 ## Key metrics
 
-- **Discovery route engagement** — repeat visits to `/`, `/dashboard`, `/guides` (analytics when wired; manual observation until then)
-- **Dashboard freshness** — services API success rate and time-since-last-refresh on `/dashboard`
-- **GitHub data quality** — share of project views backed by live API vs fallback when `GITHUB_TOKEN` absent
-- **Guide usefulness** — guide page depth (scroll to prev/next), return visits to `/guides` (analytics when wired)
-- **Build health** — `npm run build` succeeds on default env (zero `.env.local`)
+- **Desk usefulness** — visits that reach projects/guides/dashboard from `/`
+- **Brain IR coverage** — episodes by `source_family` with provenance
+- **ITT gate quality** — `eval/itt_gate_report.json` method mean ranks (`cognitive_pfc_loop` vs `case_select`)
+- **Mesh density** — Neo4j episodic node count; mesh context hit rate on probe tokens
+- **Build health** — `npm run build` with brain/twin flags off (default)
 
 ## Tracks
 
-### Discovery hub cohesion
+### Proof desk cohesion
 
-Keep discovery routes on `PageLayout`, shared heroes, and config-driven section builders so new lanes ship without one-off page layouts.
+Ship command desk homepage + public-safe bot shell. Brain/twin APIs stay private until explicitly enabled.
 
-_Why it serves the approach:_ Reinforces the site as an operational front door, not a brochure.
+### Private brain warehouse
 
-### Portfolio depth on `/about`
+`$BRAIN_DATA_ROOT` off-git → adapters → episodes → cases → Graphiti (xAI) + BM25 → overlays. `scripts/brain/` + `services/brain/`.
 
-Maintain a distinct portfolio experience with about-specific sections and cross-links back to discovery tools.
+### BodenAI twin (gate-promoted)
 
-_Why it serves the approach:_ Preserves the hiring narrative without diluting the hub.
+Case/mesh cognitive loop consuming brain APIs. Default mode from `eval_itt_gate.py` (currently `pfc_loop`). Not embedded in Next by default.
 
-### Config-first content
+### LoRA voice lane (cloud)
 
-Extend `src/lib/config.ts` and JSON env overrides for copy, section order, and toggles before adding hardcoded UI.
-
-_Why it serves the approach:_ Lets the same codebase serve demo, staging, and production personas.
-
-### Guides and playbook content
-
-Grow bundled guides and imported knowledge (infra playbooks, exported threads) as durable discovery content — not a separate blog product.
-
-_Why it serves the approach:_ Operators hire the hub for answers and live context, not only status tiles.
+SFT export staged; train on GPU/HF Jobs after gate — not on local RX 460.
 
 ## Milestones
 
-- **2026-06-29** — Discovery hub cohesion shipped (shared `PageLayout`, heroes, dashboard UI, OG palette, guide nav polish)
+- **2026-06-29** — Discovery hub cohesion shipped
+- **2026-07-08** — Static proof desk homepage assets
+- **2026-07-18** — Brain-first IR + case mining (30k cases); premature twin ship undone
+- **2026-07-24** — Cognitive loop + automated ITT gate; `pfc_loop` promoted over `case_select`
 
 ## Not working on
 
-- Collapsing dual chrome into one theme (optional single-theme env flag is a deployment convenience, not a product merge)
-- Auth, accounts, or write paths on public discovery routes
-- Unified cross-site search with a new backend (in-app SearX results may reuse existing API proxy)
-- Full in-app replacement of iframe embeds (Research Wizard, SearX)
+- Prompt-only “act like Boden” without brain grounding
+- Public dump of private Discord/Xfire/AI chat corpora
+- Human ITT ranking as a required gate (automated gate replaces it)
+- LoRA on this host (RX 460 4GB)
+- Full 20GB day-one graph (slice + paced load first)
+- Cyberscape homepage revival (parked)
 
 ## Marketing
 
-**One-liner:** Personal discovery hub for self-hosted infrastructure, guides, and open-source work — with a separate portfolio for the human behind it.
+**One-liner:** Proof-first command desk for tools and infra — private brain for memory; twin only after automated fidelity gate.
 
-**Key message:** Live status and playbooks first; curated story on `/about` when you want the résumé view.
+**Key message:** Show the surface. Keep private logs private. Organize once as episodes; let the graph map relations; promote twin modes only when eval says so.

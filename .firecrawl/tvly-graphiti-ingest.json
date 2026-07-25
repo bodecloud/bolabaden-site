@@ -1,0 +1,52 @@
+{
+  "query": "Graphiti Zep add_episode Discord conversation ingest self-hosted Neo4j",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+    {
+      "url": "https://github.com/666ghj/MiroFish/issues/235",
+      "title": "Add graphiti / neo4j support · Issue #235 · 666ghj/MiroFish · GitHub",
+      "content": "## Navigation Menu. # Search code, repositories, users, issues, pull requests... You signed in with another tab or window. Reload to refresh your session. You switched accounts on another tab or window. * Notifications  You must be signed in to change notification settings. # Add graphiti / neo4j support #235. enhancementNew feature or requestNew feature or request. ## Description. opened on Mar 17, 2026. # Feature request: self-hosted graphiti / neo4j support. It would be great to have **self-hosted Graphiti / neo4j**, so users aren’t forced to rely on Zep’s cloud. ## Benefits. * Use in offline or restricted environments. Please consider adding self-hosted support! ## Metadata. ### Labels. No branches or pull requests. ## Issue actions. You can’t perform that action at this time.",
+      "score": 0.63777614,
+      "raw_content": null
+    },
+    {
+      "url": "https://help.getzep.com/graphiti/core-concepts/adding-episodes",
+      "title": "Adding Episodes - Zep Documentation",
+      "content": "# Adding Episodes. Refer to the Custom Entity Types page for detailed instructions on adding user-defined ontology to your graph. Episodes represent a single data ingestion event. An `episode` is itself a node, and any nodes identified while ingesting the. episode are related to the episode via `MENTIONS` edges. Episodes enable querying for information at a point in time and understanding the provenance of nodes and their edge relationships. The graph below was generated using the code in the Quick Start. #### Adding a `text` or `message` Episode. Using the `EpisodeType.text` type:. Using the `EpisodeType.message` type supports passing in multi-turn conversations in the `episode_body`. The text should be structured in `{role/name}: {message}` pairs. #### Adding an Episode using structured data in JSON format. | 15 | # Add the episode to the graph |. | 18 | episode\\_body=json.dumps(product\\_data), # episode\\_body must be a JSON string, not a dict |. #### Loading Episodes in Bulk. | 27 | # Prepare the episodes for bulk loading |.",
+      "score": 0.57064295,
+      "raw_content": null
+    },
+    {
+      "url": "https://help.getzep.com/graphiti/getting-started/quick-start",
+      "title": "Quick Start - Zep Documentation",
+      "content": "*   [Welcome](https://help.getzep.com/graphiti/getting-started/welcome). *   [Overview](https://help.getzep.com/graphiti/getting-started/overview). *   [Quick Start](https://help.getzep.com/graphiti/getting-started/quick-start). *   [Adding Episodes](https://help.getzep.com/graphiti/core-concepts/adding-episodes). *   [Searching](https://help.getzep.com/graphiti/working-with-data/searching). *   [Welcome](https://help.getzep.com/graphiti/getting-started/welcome). *   [Overview](https://help.getzep.com/graphiti/getting-started/overview). *   [Quick Start](https://help.getzep.com/graphiti/getting-started/quick-start). *   [Searching](https://help.getzep.com/graphiti/working-with-data/searching). *   [Installation](https://help.getzep.com/graphiti/getting-started/quick-start#installation). *   [Alternative LLM Providers](https://help.getzep.com/graphiti/getting-started/quick-start#alternative-llm-providers). *   [Default to Slower, Low Concurrency; LLM Provider 429 Rate Limit Errors](https://help.getzep.com/graphiti/getting-started/quick-start#default-to-slower-low-concurrency-llm-provider-429-rate-limit-errors). *   [Environment Variables](https://help.getzep.com/graphiti/getting-started/quick-start#environment-variables). *   [Optional Variables](https://help.getzep.com/graphiti/getting-started/quick-start#optional-variables). *   [Required Imports](https://help.getzep.com/graphiti/getting-started/quick-start#required-imports). *   [Configuration](https://help.getzep.com/graphiti/getting-started/quick-start#configuration). *   [Main Function](https://help.getzep.com/graphiti/getting-started/quick-start#main-function). *   [Initialization](https://help.getzep.com/graphiti/getting-started/quick-start#initialization). *   [Adding Episodes](https://help.getzep.com/graphiti/getting-started/quick-start#adding-episodes). *   [Basic Search](https://help.getzep.com/graphiti/getting-started/quick-start#basic-search). *   [Center Node Search](https://help.getzep.com/graphiti/getting-started/quick-start#center-node-search). *   [Node Search Using Search Recipes](https://help.getzep.com/graphiti/getting-started/quick-start#node-search-using-search-recipes). *   [Complete Example](https://help.getzep.com/graphiti/getting-started/quick-start#complete-example). *   [Next Steps](https://help.getzep.com/graphiti/getting-started/quick-start#next-steps). [Getting Started](https://help.getzep.com/graphiti/getting-started/welcome). *   Neo4j 5.26 or higher or FalkorDB 1.1.2 or higher (see [Graph Database Configuration](https://help.getzep.com/graphiti/configuration/graph-db-configuration) for setup options). For more details on search capabilities, see the [Searching the Graph](https://help.getzep.com/graphiti/working-with-data/searching) page:. This is particularly useful for entity-specific queries as described in the [Searching the Graph](https://help.getzep.com/graphiti/working-with-data/searching) page:. For a complete list of available search recipes and reranking approaches, see the [Configurable Search Strategies](https://help.getzep.com/graphiti/working-with-data/searching#configurable-search-strategies) section in the Searching documentation:. *   [Advanced Search Techniques](https://help.getzep.com/graphiti/working-with-data/searching): Explore more search strategies, including different reranking approaches and configurable search recipes.",
+      "score": 0.47358477,
+      "raw_content": null
+    },
+    {
+      "url": "https://medium.com/@godcodevo/building-ai-knowledge-graph-using-graphiti-neo4j-8e92a8a9eb29",
+      "title": "Building AI Knowledge Graph Using Graphiti & Neo4j",
+      "content": "Why Graphiti for AI Agent Memory? Insert Episodes into Your AI Knowledge Graph. Query Your AI Agent Memory (Hybrid Search)\"). # Building AI Knowledge Graph Using Graphiti & Neo4j. Graphiti is a compact yet powerful Python library that converts raw text or JSON into an AI Knowledge Graph — a structured store of facts that acts as AI Agent Memory. Below is the exact workflow I used to load FutureSmart AI data into Neo4j, explore the resulting AI Graph Memory, and run hybrid (semantic + keyword) searches. *   Perfect for AI Agent Memory — Your agent can recall structured facts on demand. Graphiti stores each triple as Neo4j nodes (Entity) and edges (RELATES_TO), plus an Episode node that records the original text — together forming your AI Graph Memory. pip install graphiti-core # build your AI Knowledge Graph in minutes import os. 5.   Graph write → Neo4j (your AI Graph Memory). Fact: FutureSmart Agent is a product of FutureSmart AI.",
+      "score": 0.27090964,
+      "raw_content": null
+    },
+    {
+      "url": "https://neo4j.com/blog/news/neo4j-community-is-migrating-from-slack-to-discord",
+      "title": "Neo4j community is migrating from Slack to Discord",
+      "content": "The Discord platform allows us to create a dedicated space for the Neo4j Community to hang out, text, (video) chat, or stream.",
+      "score": 0.16531023,
+      "raw_content": null
+    },
+    {
+      "url": "https://neo4j.com/blog/developer/graphiti-knowledge-graph-memory",
+      "title": "Graphiti: Knowledge graph memory for an agentic world",
+      "content": "+ AuraDB  Store and query connected data at scale. + Virtual Graph  Create and query a knowledge graph on existing data. + Aura Graph Analytics  Run graph algorithms on any data, any cloud. + Graph Database  Store connected data with a graph database. + Graph Data Science  Run graph algorithms on connected data. # Graphiti: Knowledge graph memory for an agentic world. To do this effectively, agents need more than static retrieval; they need a dynamic memory that continuously integrates user interactions, enterprise data, and external knowledge. To solve this, Zep AI’s Graphiti framework introduces a flexible, real-time memory layer built on temporally aware knowledge graphs and stored in Neo4j. Microsoft’s approach to GraphRAG builds entity-centric knowledge graphs by extracting entities and relationships and grouping them into thematic clusters or “communities.” It relies on LLMs to precompute summaries of these communities. This latency and lack of dynamic updates make this approach to GraphRAG unsuitable as a comprehensive and holistic memory for agentic applications. ## Graphiti with Neo4j: Real-time dynamic agent memory.",
+      "score": 0.16506785,
+      "raw_content": null
+    }
+  ],
+  "response_time": 0.68,
+  "request_id": "5edc026d-9920-4234-89d1-dffb9199d036"
+}

@@ -736,6 +736,21 @@ export const config = {
     return envFlag("HOME_CONTACT_ENABLED", true);
   },
 
+  /** Private brain + twin — default off */
+  get BRAIN_ENABLED() {
+    return envFlag("BRAIN_ENABLED", false);
+  },
+  BRAIN_BASE_URL: envString("BRAIN_BASE_URL", "http://127.0.0.1:8090"),
+  BRAIN_SERVICE_TOKEN: envString("BRAIN_SERVICE_TOKEN", ""),
+  get BODENAI_ENABLED() {
+    return envFlag("BODENAI_ENABLED", false);
+  },
+  BODENAI_BASE_URL: envString("BODENAI_BASE_URL", "http://127.0.0.1:8080"),
+  BODENAI_SERVICE_TOKEN: envString("BODENAI_SERVICE_TOKEN", ""),
+  get BODENAI_UI_PUBLIC() {
+    return envFlag("NEXT_PUBLIC_BODENAI_UI", false);
+  },
+
   /** Computed helpers — call as functions */
   get SITE_URL() {
     const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();

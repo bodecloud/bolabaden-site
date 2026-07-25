@@ -12,6 +12,8 @@ This is a single Next.js 16 (App Router) portfolio website. No database, Docker,
 
 - `npm run dev` starts the dev server on `http://localhost:3000`.
 - See `README.md` for env-driven configuration; the site works with zero `.env.local` configuration.
+- **Private brain** (optional): `scripts/brain` + `services/brain` normalize Discord/ChatGPT/Perplexity into `$BRAIN_DATA_ROOT` (off git). Twin (`services/bodenai`) consumes brain search; both default disabled.
+- **MassiveHDD corpus** (private, off git): `$BRAIN_DATA_ROOT/massivehdd/` holds audits/transcripts for `/run/media/brunner56/MassiveHDD/Downloads/` and deferred video work. See `massivehdd/audit/downloads_inventory.json` and `massivehdd/audit/xfire_summary.json`. **All six Xfire accounts** (`th3w1zard1`, `th3w1zard3`, `sumrand0mguy`, `mast3rrchief`, `nooberpwner`, `dwmwizard`) are **Boden/Wizard identity aliases** — ingest as `role:self`, not separate people. **Video batch (14GB / 86 files in `MassiveHDD/Videos/`) is deferred** — use `ffmpeg` + local `whisper` CLI when scheduled.
 
 ### Lint
 

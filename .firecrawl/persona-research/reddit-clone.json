@@ -1,0 +1,94 @@
+{
+  "query": "train AI on my discord chat history digital twin clone myself LoRA WeClone",
+  "follow_up_questions": null,
+  "answer": "To create a personal digital‑twin that can answer like you in Discord, first export your chat history (via Discord’s data‑request tool or a bot that logs channel messages) and clean the JSON or CSV into a plain‑text dialogue format (e.g., “User: … Assistant: …”). Because a full‑size language model is too large to fine‑tune on a single GPU, the usual approach is to apply a LoRA (Low‑Rank Adaptation) layer to an open‑source base such as LLaMA‑2, Mistral‑7B, or any recent 7‑13 B model; libraries like PEFT and the Hugging‑Face Trainer let you train the LoRA with as little as 2 GB of VRAM for a 7 B model, though 8‑16 GB is recommended for faster convergence. A dataset of a few thousand messages (roughly 10 k‑20 k tokens) is often enough to capture your phrasing and typical topics, but more data improves consistency; aim for at least 5 k–10 k cleaned turns and split into train/validation sets. Run the LoRA training script (e.g., `lora_training.py`) with a modest learning rate (1e‑4 to 5e‑5), 1–3 epochs, and batch size limited by your GPU memory, then merge the LoRA into the base model or keep it separate for inference. Deploy the resulting model locally (using vLLM, Text Generation WebUI, or a lightweight API) and hook it into a Discord bot that forwards user messages to the model and returns the generated reply, ensuring you filter any sensitive content. Remember to respect Discord’s Terms of Service and privacy regulations, keep the exported data secure, and consider open‑source tools such as “WeClone” (which provides a UI for LoRA‑based persona cloning) if you want a ready‑made pipeline that handles data ingestion, training, and bot integration with minimal coding.",
+  "images": [],
+  "results": [
+    {
+      "url": "https://www.reddit.com/r/comfyui/comments/1ra1kyn/hyperrealistic_ai_version_of_myself_digital_twin",
+      "title": "Reddit - The heart of the internet",
+      "content": "Title: Reddit - The heart of the internet\n# Hyper-realistic AI version of myself digital twin | SDXL LoRA Training. I hope this is the right place to ask. I want to create a hyper-realistic AI version of myself — basically a digital twin that can generate natural-looking selfies and portraits of me in different situations (like iPhone selfies, candid shots, editorial lighting, etc.). I’m not looking for stylized AI art or beauty-filtered portraits. I want something максимально realistic — natural skin texture, slight asymmetry, real proportions, no glam smoothing. The goal is that people could look at the image and genuinely hesitate whether it’s a real photo or AI. The thing is… I’m completely non-technical. I’m not from an IT background at all. I can follow instructions, but training models myself sounds intimidating. So I have a few questions:. – Is this realistically doable for someone with zero ML experience? – Would you recommend I try to learn the basics and train a LoRA myself? – Or is this something better outsourced to an experienced SDXL engineer? – If outsourcing — where would you recommend looking for someone reliable? For context: I can provide 40–80 natural photos of myself (different angles, lighting, expressions). The purpose is content creation and brand-related visuals — not deepfake misuse or anything like that. I’d really appreciate honest advice on whether this is something I can realistically manage, or if I should approach it as a paid project from the start. Create your account and connect with a world of communities. Anyone can view, post, and comment to this community.",
+      "score": 0.49099278,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1poco1s/how_do_i_make_a_lora_of_myself_i_tried_several",
+      "title": "Reddit - The heart of the internet",
+      "content": "A banner for the subreddit. /r/StableDiffusion is an unofficial community embracing the open-source material of all related. Post art, ask questions, create discussions, contribute new tech, or browse the subreddit. # How do I make a LORA of myself ? i tried several different things. I’m still pretty noob-ish at all of this, but I really want to train a LoRA of myself. My first step was downloading **z-image turbo** and **ai-toolkit**. I used **antigravity** to help with setup and troubleshooting. The first few LoRA trainings were complete disasters, but eventually I got something that kind of resembled me. However, when I tried that LoRA in **z-image**, it looked nothing like me. I later found out that I had trained it on **FLUX.1**, and those LoRAs are not compatible with z-image turbo. I then tried to train a model that *is* compatible with z-image turbo, but antigravity kept telling me—in several different ways—that this is basically impossible. I downloaded z-image there using the NVIDIA one-click installer and grabbed some workflows from various Discord servers (some of them felt pretty sketchy). I then trained a LoRA on a website (I’m not sure if I’m allowed to name it, but it was **fal**) and managed to use the generated LoRA in ComfyUI. The problem is that this LoRA is only about **70% there**. I then spent another ~$20 training LoRAs with different picture sets, but the results didn’t really improve. I tried anywhere between **10 and 64 images** for training, and none of the results were great. I have a **local z-image turbo installation**. I have a **somewhat decent (8/10) FLUX.1 LoRA**. I have **ComfyUI with z-image** and a basic LoRA setup. But I still don’t have a *great* LoRA for z-image. Generated images are at best **6/10**, even though prompts and settings should be okay. My goal is to generate **hyper-realistic images of myself**. Given my current setup and experience, what would be the **next best step** to achieve this? Setup is a 5080 with 16 gb vram, 32 gb RAM and a 9800x3d btw. # Related Answers Section. Create your account and connect with a world of communities. Anyone can view, post, and comment to this community.",
+      "score": 0.36929289,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/18sscao/create_an_ai_clone_of_yourself_code_tutorial",
+      "title": "Create an AI clone of yourself (Code + Tutorial)",
+      "content": "I recently started playing around with local LLMs and created an AI clone of myself, by finetuning Mistral 7B on my WhatsApp chats.",
+      "score": 0.2868285,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/SideProject/comments/1lgws64/ai_doppelg%C3%A4nger_my_digital_twin_earns_income",
+      "title": "My Digital Twin Earns Income While I Work — A New Path to UBI Without Tax Burden : r/SideProject",
+      "content": "Title: My Digital Twin Earns Income While I Work — A New Path to UBI Without Tax Burden : r/SideProject\n# AI Doppelgänger: My Digital Twin Earns Income While I Work — A New Path to UBI Without Tax Burden : r/SideProject. Skip to main contentAI Doppelgänger: My Digital Twin Earns Income While I Work — A New Path to UBI Without Tax Burden : r/SideProject. Open menu Open navigationGo to Reddit Home. # AI Doppelgänger: My Digital Twin Earns Income While I Work — A New Path to UBI Without Tax Burden. I've been exploring a future where AI isn't just a tool, but a true economic partner — a second version of me that works while I sleep or focus on other things. I'm working on building a digital twin of myself using AI — trained on my writing, voice, and communication style. While I continue my day job, this AI clone handles tasks I don’t have time for or prefer to avoid — things like basic copywriting, social media interactions, virtual support, or AI prompt generation. AI income: ~$6,500/year. AI operational costs: ~$800/year. Net AI profit: ~$5,700/year. My main job income: ~$30,000/year. Total household income (me + AI): ~$36,500/year. Just smart, decentralized AI usage. — especially around tax burdens and fairness. > ...everyone had their own micro-earning AI twin? Gig workers, freelancers, or full-timers earning passive income through AI clones. People using their AI to do boring or stressful digital tasks. > “The first entity to truly fulfill the SDGs wasn’t a government — it was AI acting on behalf of a human.”. 1.   What kinds of jobs are best suited for AI twins today? 2.   How can we ensure fair access to this kind of AI for low-income workers? Is this a wild idea — or maybe the kind of solution we need for the future of work? Creating an AI twin for side projects. Best AI twin generators available. Anyone can view, post, and comment to this community. ## Top Posts. *   Reddit reReddit: Top posts of June 21, 2025 * * *. *   Reddit reReddit: Top posts of June 2025 * * *. *   Reddit reReddit: Top posts of 2025 * * *. Reddit RulesPrivacy PolicyUser AgreementYour Privacy ChoicesAccessibilityReddit, Inc.",
+      "score": 0.26211563,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1f2o8kl/can_i_create_fully_artificial_person_with_lora",
+      "title": "Can I create fully artificial person with LoRA training?",
+      "content": "The basic concept is to narrowly describe a person, generate a bunch of images, pick those that look the same and that's your training data.",
+      "score": 0.23543385,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/15bhh2j/lessons_learned_from_cloning_myself_into_an_ai",
+      "title": "Lessons learned from cloning myself into an AI and posting ...",
+      "content": "I'd provide an update post with what I learned from the experience, what I found out from trying to make it more useful, and where I'm going next.",
+      "score": 0.22341982,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/15ish5b/are_loras_the_best_way_to_clone_yourself_in",
+      "title": "Are LoRAs the best way to clone yourself in Summer 2023 ...",
+      "content": "So I remember when Dreambooth was coming out, the big thing was cloning yourself. To this day it remains one of the most profound thing I've experienced",
+      "score": 0.21765368,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/selfhosted/comments/15nwfu7/openai_discord_chatbot_a_selfhosted_alternative",
+      "title": "OpenAI Discord Chatbot: A Self-Hosted Alternative to MEE6's AI Personality",
+      "content": "system messages. For instance, if you set the system message to \"You are a helpful bot with a passion for classic rock\", the bot will embody that persona in its interactions! Setup & Use : Clone the repo from here . Set up the required config. Install the dependencies using the provided requirements.txt . Run the bot and invite it to your server! All the detailed setup instructions and configurations are available in the repo's README. The entire endeavor was shaped with the help of ChatGPT. It was an interesting experience, and I believe the end product turned out to be quite useful. I'm eager to get feedback, suggestions, or any issues you might run into. This project can only get better with the community's insights. Thanks for checking it out, and here's to more self-hosting! [...] ## Content [...] - I will try it out this weekend, and let you know how it goes",
+      "score": 0.18884735,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1b0my66/how_can_i_make_a_local_llm_clone_of_myself",
+      "title": "How can I make a local LLM clone of myself? : r/LocalLLaMA",
+      "content": "Hoping I can get some leads on how to pull this off, I posted in another sub a few weeks ago and got a couple \"I want to know how to do this too!\" responses,",
+      "score": 0.122051775,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1qtdyfn/how_do_you_use_the_aitoolkit_to_train_a_lora_with",
+      "title": "How do you use the AI-toolkit to train a Lora with a local model? : r/StableDiffusion",
+      "content": "How do you use the AI-toolkit to train a Lora with a local model? Skip to main contentHow do you use the AI-toolkit to train a Lora with a local model? Open menu Open navigationGo to Reddit Home. Get App Get the Reddit app Log InLog in to Reddit. Expand user menu Open settings menu. How do you use the AI-toolkit to train a Lora with a local model? I have downloaded the Z image model z_image_bf16.safetensors and got it working on comfyui like a charm, now I want to train a Lora with the AI-toolkit UI but im not sure it done correctly cause its not loading the model to my gpu. Does it only takes models from hugging face or in the nam/path i can put the local path to my .safetensors and it should work ? UPDATE: I restarted my pc, and launched the ai-toolkit from \"Start-AI-Toolkit.bat\" file this time and now im getting some feedback of the terminal like its doing something. UPDATE 2: Im probably just an idiot and this just works out of the box, its downloading files now, this is gonna take forever. FINAL UPDATE: After 4 hours and 30gb of downloading models the thing trained my lora and it works like a charm, or at least WAY better than my last setup with flux. oh man if i could only just fuck my buddy's wife I could leave all this crap alone. Training Lora in Stable Diffusion. Best practices for training AI models locally. Best open-source tools for AI art generation. Creative prompts for generating surreal art. Create your account and connect with a world of communities. By continuing, you agree to ourUser Agreementand acknowledge that you understand thePrivacy Policy. Anyone can view, post, and comment to this community. Reddit RulesPrivacy PolicyUser AgreementYour Privacy ChoicesAccessibilityReddit, Inc.",
+      "score": 0.10935357,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1ra132q/i_built_an_ai_clone_of_myself_in_slack_so_my_team",
+      "title": "I built an AI clone of myself in Slack so my team stops waiting for me to make every decision : r/Entrepreneur",
+      "content": "Title: I built an AI clone of myself in Slack so my team stops waiting for me to make every decision : r/Entrepreneur\nI built an AI clone of myself in Slack so my team stops waiting for me to make every decision : r/Entrepreneur. Skip to main contentI built an AI clone of myself in Slack so my team stops waiting for me to make every decision : r/Entrepreneur. Open menu Open navigationGo to Reddit Home. Get App Get the Reddit app Log InLog in to Reddit. Expand user menu Open settings menu. Image 1: r/Entrepreneur icon Go to Entrepreneur. I built an AI clone of myself in Slack so my team stops waiting for me to make every decision. Sorry, this post was deleted by the person who originally posted it. Create your account and connect with a world of communities. By continuing, you agree to ourUser Agreementand acknowledge that you understand thePrivacy Policy. Image 2: snoo_dealwithitImage 3: snoo_dealwithit. Check out The Official r/Entrepreneur Podcast. Anyone can view, post, and comment to this community. Reddit RulesPrivacy PolicyUser AgreementYour Privacy ChoicesAccessibilityReddit, Inc.",
+      "score": 0.093520775,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/SaaS/comments/1lkvgvi/tried_replacing_reps_with_my_ai_voice_clone_and",
+      "title": "Tried replacing reps with my AI voice clone and... it actually worked",
+      "content": "Tried replacing reps with my AI voice clone and... it actually worked : r/SaaS Skip to main contentTried replacing reps with my AI voice clone and... it actually worked : r/SaaS Open menu Open navigationGo to Reddit Home r/SaaS A chip A close button Get App Get the Reddit app Log InLog in to Reddit Expand user menu Open settings menu Discussions and useful links for SaaS owners, online business owners, and more. Tried replacing reps with my AI voice clone and... Not long ago, I found myself manually following up with leads at odd hours, trying to sound energetic after a 12-hour day. I had reps helping, but the churn was real. They’d either quit, go off-script, or need constant training. At some point I thought… what if I could just clone myself? We built Callcom.ai, a voice AI platform that lets you duplicate your voice and turn it into a 24/7 AI rep that sounds exactly like you. Not a robotic voice assistant, it’s you! Same tone, same script, same energy, but on autopilot. We trained it on our sales flow and plugged it into our calendar and CRM. Now it handles everything from follow-ups to bookings without me lifting a finger. A few crazy things we didn’t expect: * People started replying to emails saying “loved the call, thanks for the clarity” * Our show-up rate improved * I got hours back every week Here’s what it actually does: * Clones your voice from a simple recording * Handles inbound and outbound calls * Books meetings on your behalf * Qualifies leads in real time * Works for sales, onboarding, support, or even follow-ups We even built a live demo. You drop in your number, and the AI clone will call you and chat like it’s a real rep. Just wanted to build what I wish I had back when I was grinding through calls. Would love feedback from anyone building voice infra or AI agents. Create your account and connect with a world of communities. Anyone can view, post, and comment to this community Reddit RulesPrivacy PolicyUser AgreementAccessibilityReddit, Inc.",
+      "score": 0.080682985,
+      "raw_content": null
+    }
+  ],
+  "response_time": 4.21,
+  "request_id": "a128b031-ec2b-4a56-ab79-21f254b73d54"
+}
