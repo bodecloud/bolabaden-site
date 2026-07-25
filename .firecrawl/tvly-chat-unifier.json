@@ -1,0 +1,66 @@
+{
+  "query": "open source unify ChatGPT Discord Claude Perplexity chat export archive SQLite",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+    {
+      "url": "https://univik.com/help/export-perplexity-chats.html",
+      "title": "How to Export All Perplexity Chats - Download Your Complete Thread History | Univik",
+      "content": "# How to Export All Perplexity Chats. Complete guide to download your Perplexity AI thread history. Export individual searches or bulk download all conversations using multiple methods. **For individual threads:** Click the share icon → Export to PDF or Copy link. **For all conversations:** Submit a data request at perplexity.typeform.com/datarequest (30-day response) or use browser extensions for instant bulk export. **Note:** Unlike ChatGPT or Claude, Perplexity does not have a one-click \"Export All\" button in settings. This guide covers all available methods to export your data. * What's in the Export. Export one thread at a time using the share/export button. Submit a formal data request to receive all your account data. How to export Perplexity conversations? This is the formal method to get all your account data. Bulk export all conversations to Notion or download as Markdown. You can export **individual threads** via the share menu, submit an **official data request** (30-day wait), or use **browser extensions** for instant bulk export.",
+      "score": 0.62824833,
+      "raw_content": null
+    },
+    {
+      "url": "https://x.com/tarrooon/status/1946827765887778952",
+      "title": "tarun on X: \"chatgpt already has a way to export conversation history. perplexity, claude, etc will need to have a way to import them, which will probably happen soon ig.\" / X",
+      "content": "## Post. chatgpt already has a way to export conversation history. perplexity, claude, etc will need to have a way to import them, which will probably happen soon ig. I used Perplexity yesterday but I'm back ChatGPT because the experience was a bit poor overall The reasons are: (a) ChatGPT has memory since April '25; porting this isn't possible (b) I've configured my Projects in ChatGPT; migrating these means re-starting (c) For work use,. 7:01 AM · Jul 20, 2025734Views. Don't miss what's happening. People on X are the first to know. ## Trending now.",
+      "score": 0.5377946,
+      "raw_content": null
+    },
+    {
+      "url": "https://github.com/1ch1n/mychatarchive",
+      "title": "GitHub - 1ch1n/mychatarchive: Local-first AI memory archive. Import ChatGPT, Claude, and Grok exports, generate semantic embeddings, and search via MCP server. Zero cloud, zero cost. · GitHub",
+      "content": "Import your chat exports from ChatGPT, Claude, Grok, Claude Code, and Cursor. > **Open core:** The local pipeline (import, embed, summarize, search, MCP server) is free and AGPL-licensed. Cloud sync and hosted MCP are on the roadmap at mychatarchive.com. **Your archive, searchable.** Drop your ChatGPT, Claude, or Grok exports into the import folder, or let MyChatArchive auto-discover Claude Code and Cursor sessions from your machine. | **Developer-native** | Auto-discovers Claude Code sessions and Cursor conversations from your local machine on day one. | **MCP server** | Claude Desktop, Cursor, Claude Code, and any MCP client can search your archive. Import everything in one command ## Auto-discovers Claude Code + Cursor, scans your drop folder ## 3. Then connect from Claude Desktop or Cursor: run `mychatarchive mcp-config` and add the output to your client config. # import from all sources ## LLM thread summaries (optional, needs API key) # # generate vector embeddings locally # # start MCP server #.",
+      "score": 0.46614134,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.facebook.com/groups/claudeaicommunity/posts/1301863178647513",
+      "title": "How to export Perplexity Pro chats for Claude AI",
+      "content": "Simple way: use perplexity export function for your data, store it locally, and then use Claude Cowork to extract the information.",
+      "score": 0.46424627,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.linkedin.com/posts/kristiancsontos_claude-web-chat-conversation-exporter-activity-7479908184342773760-gend",
+      "title": "Export Claude Web Chat to Markdown Locally",
+      "content": "Useful for: - Backing up important Claude chat threads. - Moving context between Claude, ChatGPT, Perplexity, and other AI tools. - Keeping ...Read more",
+      "score": 0.42993253,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.llmnesia.com/blog/how-to-export-perplexity-conversation-history",
+      "title": "How to Export Perplexity Conversation History (Save Your Research) | LLMnesia",
+      "content": "# How to Export Perplexity Conversation History (Save Your Research). Perplexity saves your research threads in your Library — but there's no bulk export option. This guide covers every method for saving, sharing, and archiving your Perplexity searches and answers. Perplexity is built for research — AI-generated answers with citations, follow-up questions, source links, and a Library that saves your research threads. This guide covers every available method for saving, sharing, and archiving your Perplexity research. * **Citations:** Each answer includes links to the sources Perplexity used — these are visible in the thread and preserved in the Library. * A way to export your Library as a searchable file. 1. Open a thread from your Perplexity Library. The shareable link gives you (and anyone you share it with) access to read the thread in its original form — questions, answers, and citations.",
+      "score": 0.38408068,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.reddit.com/r/perplexity_ai/comments/16n2g3d/i_made_an_extension_to_export_perplexity_threads",
+      "title": "I made an extension to export Perplexity threads into ...",
+      "content": "This extension allows you to extract the content of a Perplexity thread into a formatted Markdown file. It is available for Chrome browsers (",
+      "score": 0.26123476,
+      "raw_content": null
+    },
+    {
+      "url": "https://medium.com/@aluotslan/turn-perplexityai-into-a-searchable-reusable-second-brain-with-one-click-batch-export-6a601aa49d6b",
+      "title": "Turn PerplexityAI into a searchable, reusable “second ...",
+      "content": "It lets you batch export PerplexityAI conversations (including Spaces threads) to Airtable with one click, and also download them as Markdown",
+      "score": 0.25764644,
+      "raw_content": null
+    }
+  ],
+  "response_time": 1.09,
+  "request_id": "a45fb805-b466-4930-9125-640d0cd5f7a7"
+}

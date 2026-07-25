@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boden Crouch | Proof desk</title>
+    <meta
+      name="description"
+      content="Boden Crouch's proof-first field desk for old game tools, AI/tool notes, server traces, public guides, and useful routes."
+    />
+    <meta name="theme-color" content="#080b0d" />
+    <meta property="og:title" content="Boden Crouch | Proof desk" />
+    <meta
+      property="og:description"
+      content="I keep taking broken tools, old games, weird archives, and vague answers apart until there is proof."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bolabaden.org/" />
+    <meta property="og:image" content="/opengraph-image" />
+    <link rel="stylesheet" href="/home/home.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="topline" aria-label="Site routes">
+      <a class="brand" href="/" aria-current="page">bolabaden.org</a>
+      <nav class="nav">
+        <a href="/search">Search</a>
+        <a href="/projects">Projects</a>
+        <a href="/guides">Guides</a>
+        <a href="/dashboard">Status</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <form class="search" action="/search" method="get" role="search">
+        <label for="q">Search</label>
+        <input id="q" name="q" type="search" placeholder="kotor, pykotor, agents..." />
+        <button type="submit">go</button>
+      </form>
+    </header>
+
+    <main id="content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="kicker">Boden Crouch / field desk</p>
+          <h1 id="hero-title">I keep taking broken tools, old games, weird archives, and vague answers apart until there is proof.</h1>
+          <p class="lede">
+            This is the useful front door: old game tooling, AI workflow notes,
+            self-hosting experiments, server traces, public guides, and the
+            parts of the archive that can be summarized without turning private
+            logs into content.
+          </p>
+          <div class="hero-actions" aria-label="Primary routes">
+            <a class="action primary" href="/projects">inspect projects</a>
+            <a class="action" href="/guides">read guides</a>
+            <a class="action" href="/about">normal portfolio</a>
+          </div>
+        </div>
+
+        <aside class="artifact-panel" aria-label="Artifact index">
+          <div class="panel-head">
+            <span>artifact index</span>
+            <span>public-safe</span>
+          </div>
+          <ol class="artifact-list">
+            <li>
+              <span>KOTOR / Holocron / PyKotor</span>
+              <a href="/projects">tools, formats, editors</a>
+            </li>
+            <li>
+              <span>Wizard manual</span>
+              <a href="#ledger">server commands, aliases</a>
+            </li>
+            <li>
+              <span>Xfire / Halo captures</span>
+              <a href="#archive">old internet proof</a>
+            </li>
+            <li>
+              <span>AI and agents</span>
+              <a href="/guides">notes that survived contact</a>
+            </li>
+            <li>
+              <span>Infra / services</span>
+              <a href="/dashboard">what is running</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="ledger" id="ledger" aria-labelledby="ledger-title">
+        <div class="section-title">
+          <p class="kicker">proof ledger</p>
+          <h2 id="ledger-title">Every row needs a thing you can inspect.</h2>
+        </div>
+        <div class="table-wrap" role="region" aria-label="Proof ledger table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">thread</th>
+                <th scope="col">what exists</th>
+                <th scope="col">why it matters</th>
+                <th scope="col">route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">old game tooling</th>
+                <td>Holocron Toolset, PyKotor, TPC/TGA workflows, dialogue graphs</td>
+                <td>sealed game data becomes inspectable instead of folklore</td>
+                <td><a href="/projects">/projects</a></td>
+              </tr>
+              <tr>
+                <th scope="row">AI workflow notes</th>
+                <td>exports, agent plans, RAG complaints, real-tool boundaries</td>
+                <td>answers should touch files, docs, routes, builds, or logs</td>
+                <td><a href="/guides">/guides</a></td>
+              </tr>
+              <tr>
+                <th scope="row">servers and infra</th>
+                <td>status surfaces, deployment notes, self-hosted search, fallbacks</td>
+                <td>if a service is broken, the page should not pretend it is fine</td>
+                <td><a href="/dashboard">/dashboard</a></td>
+              </tr>
+              <tr>
+                <th scope="row">old internet archive</th>
+                <td>Xfire clips, Halo server screenshots, Wizard command docs</td>
+                <td>the pattern was already there: save the weird thing, debug it</td>
+                <td><a href="#archive">#archive</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="toolbench" aria-labelledby="toolbench-title">
+        <div class="section-title">
+          <p class="kicker">toolbench routes</p>
+          <h2 id="toolbench-title">Useful first. Weird second.</h2>
+        </div>
+        <div class="route-grid">
+          <a href="/search">
+            <span>search --thing-that-is-annoying</span>
+            <strong>Search</strong>
+            <p>Find the useful note without walking through the whole house.</p>
+          </a>
+          <a href="/projects">
+            <span>open ~/projects</span>
+            <strong>Projects</strong>
+            <p>Code, experiments, tools, and proof that something actually exists.</p>
+          </a>
+          <a href="/guides">
+            <span>less field-notes.md</span>
+            <strong>Guides</strong>
+            <p>Plain notes for problems I do not want to solve twice.</p>
+          </a>
+          <a href="/dashboard">
+            <span>watch services</span>
+            <strong>Status</strong>
+            <p>What is running, stale, broken, or pretending everything is fine.</p>
+          </a>
+          <a href="/contact">
+            <span>mail boden</span>
+            <strong>Contact</strong>
+            <p>Send a note without navigating a maze.</p>
+          </a>
+          <a href="/about">
+            <span>open normal-portfolio</span>
+            <strong>About</strong>
+            <p>The calmer React page with background, projects, and contact.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="archive" id="archive" aria-labelledby="archive-title">
+        <div class="section-title">
+          <p class="kicker">archive boundary</p>
+          <h2 id="archive-title">The archive can shape the site without becoming the site.</h2>
+          <p>
+            Discord exports, Xfire files, private-server command manuals, and
+            old notes inform the voice and taxonomy here. Raw private logs stay
+            private. That is not a footnote; it is the design rule.
+          </p>
+        </div>
+        <div class="boundary-grid">
+          <article>
+            <span>public</span>
+            <h3>Projects and guides</h3>
+            <p>Things already meant for people to inspect, reuse, or judge.</p>
+          </article>
+          <article>
+            <span>summarized</span>
+            <h3>Archive patterns</h3>
+            <p>Topics, habits, old tool energy, and source boundaries.</p>
+          </article>
+          <article>
+            <span>private</span>
+            <h3>Messages and DMs</h3>
+            <p>Used for internal taste, not dumped as public material.</p>
+          </article>
+          <article>
+            <span>not indexed</span>
+            <h3>Future shelves</h3>
+            <p>Anything not cleaned, sourced, and bounded stays out.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="notes" aria-labelledby="notes-title">
+        <div class="section-title">
+          <p class="kicker">now / recent</p>
+          <h2 id="notes-title">Current operating notes.</h2>
+        </div>
+        <ul class="note-list">
+          <li>
+            <time datetime="2026-07-18">2026-07-18</time>
+            <span>Private multi-source brain (Discord / ChatGPT / Perplexity) comes before any public twin UI.</span>
+          </li>
+          <li>
+            <time datetime="2026-07-08">2026-07-08</time>
+            <span>Root page moved to static HTML/CSS so it stops feeling like a React portfolio template.</span>
+          </li>
+          <li>
+            <time>always</time>
+            <span>If a claim is broad, show the boundary. If something works, show the surface.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="boden-chat"
+        class="boden-chat"
+        hidden
+        aria-label="BodenAI desk twin"
+      >
+        <div class="boden-chat-head">
+          <strong>bodenai · brain twin</strong>
+          <span data-boden-status>checking…</span>
+        </div>
+        <div class="boden-log" data-boden-log aria-live="polite"></div>
+        <form class="boden-form" data-boden-form>
+          <label class="visually-hidden" for="boden-input">Message</label>
+          <input
+            id="boden-input"
+            data-boden-input
+            type="text"
+            autocomplete="off"
+            placeholder="say something he'd actually answer…"
+          />
+          <button type="submit">send</button>
+        </form>
+        <p class="boden-chat-note">
+          Voice-lane cases from the private brain. Silence is valid. Flags off by default.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Boden Crouch</span>
+      <a href="mailto:boden.crouch@gmail.com">boden.crouch@gmail.com</a>
+      <a href="https://github.com/bolabaden">github.com/bolabaden</a>
+    </footer>
+    <script src="/home/boden-chat.js" defer></script>
+  </body>
+</html>

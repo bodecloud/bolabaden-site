@@ -255,3 +255,10 @@ export const getGuides = cache(async (): Promise<Guide[]> => {
 
   return readGuidesFromDirectory(FALLBACK_GUIDES_DIR);
 });
+
+export const getGuideBySlug = cache(async (slug: string): Promise<Guide | null> => {
+  const normalized = slug.trim().toLowerCase();
+  if (!normalized) return null;
+  const guides = await getGuides();
+  return guides.find((guide) => guide.slug === normalized) ?? null;
+});

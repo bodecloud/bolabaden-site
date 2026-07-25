@@ -49,6 +49,13 @@ design-backups/
 # compound engineering local overrides
 .compound-engineering/*.local.yaml
 
+# Private brain warehouse / indexes (never ship in public image)
+brain-data/
+**/brain-data/
+scripts/brain/.venv/
+services/brain/.venv/
+*.pkl
+
 # chatgpt export tooling (keep exported markdown; ignore browser session)
 scripts/.chatgpt-browser-profile/
 scripts/.chatgpt-patchright-profile/

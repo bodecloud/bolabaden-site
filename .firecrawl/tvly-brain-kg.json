@@ -1,0 +1,66 @@
+{
+  "query": "self-hosted personal knowledge graph Graphiti Mem0 Letta open source chat history",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+    {
+      "url": "https://particula.tech/blog/agent-memory-frameworks-tested-mem0-zep-letta-cognee-2026",
+      "title": "Agent Memory Frameworks Tested: Mem0 vs Zep vs Letta",
+      "content": "How Mem0, Zep, Letta, and Cognee differ on persistence, temporal reasoning, and compliance. Mem0 (~47K GitHub stars) is a hybrid vector+graph+key-value store with automatic extraction and a free tier, best for personalization. Zep wraps Graphiti, a temporal knowledge graph that tracks fact-validity windows, and it posts 63.8% on LongMemEval (GPT-4o) against Mem0's 49.0%, a 15-point gap on temporal retrieval. Letta carries the MemGPT lineage: an OS-style runtime where main context is RAM and archival memory is disk, and the agent self-manages allocation through memory tools and a REST API. The best AI agent memory framework for 2026 is the one that survives that gap, and the four serious open-source candidates (Mem0, Zep, Letta, and Cognee) solve it in four genuinely different ways. We will walk through what each of the four frameworks actually is (proxy-simple Mem0, temporal-graph Zep, OS-runtime Letta, typed-graph Cognee), where the benchmark gaps come from, and a decision matrix across persistence model, multi-agent coordination, self-host versus managed, latency, and SOC 2 / HIPAA readiness.",
+      "score": 0.5559422,
+      "raw_content": null
+    },
+    {
+      "url": "https://codepointer.substack.com/p/agent-memory-systems-and-knowledge",
+      "title": "Agent Memory Systems and Knowledge Graphs: Letta, Mem0, Graphiti, and Cognee",
+      "content": "# Agent Memory Systems and Knowledge Graphs: Letta, Mem0, Graphiti, and Cognee. ### Design · A close look at four approaches to long-term agent memory, from text blocks to temporal graphs. Four popular agent-memory libraries each pick a different answer to the same design question. Mem0 keeps a vector store with entity hints. Cognee runs an entity extraction pipeline. Letta is a full agent framework that runs the agent for you. Mem0, Graphiti, and Cognee are memory layers you bolt onto your own agent. To walk through the full flow end to end, say you give the agent a human block that reads “Lives in Boston.” You send “I moved from Boston to SF.” The agent reads its own block, sees the contradiction, and calls `core_memory_replace` to swap “Boston” for “SF” in the text. Letta’s “Is a Filesystem All You Need?” post (Aug 2025) dumped LOCOMO (a multi-session dialogue recall benchmark) conversation transcripts into files attached to a plain agent and scored 74.0%, above the 68.5% for Mem0’s graph variant (arXiv 2504.19413, Apr 2025).",
+      "score": 0.5170594,
+      "raw_content": null
+    },
+    {
+      "url": "https://evermind.ai/blogs/zep-alternative",
+      "title": "Best Zep Alternatives for AI Agent Memory in 2026: A Comprehensive Comparison - EverMind AI Long-Term Memory System Updates & Breakthroughs | EverMind Blog",
+      "content": "Its underlying open-source engine, Graphiti, is designed around **temporal context graphs** that track how facts change over time, preserve provenance through episodes, and support hybrid retrieval across semantic search, keyword search, and graph traversal. That model is powerful when an agent needs to answer questions such as “What did this customer prefer before the contract changed?” or “Which policy was valid at the time of the user’s request?”. In our work with long-term agent memory, we see teams look for a Zep alternative for three recurring reasons: they want more predictable cost, they need a simpler self-hosted deployment, or they want a memory architecture that manages conflicts, staleness, and personalization without requiring a graph database team. If you are leaving Zep because you need **temporal validity windows**, you should compare against systems that can represent change over time. | Full autonomous agent runtime |  | Letta is not just a memory layer; it is an agent runtime with memory built in.",
+      "score": 0.47913864,
+      "raw_content": null
+    },
+    {
+      "url": "https://github.com/getzep/graphiti",
+      "title": "getzep/graphiti: Build Real-Time Knowledge Graphs for AI ...",
+      "content": "You signed in with another tab or window. ## Graphiti and Zep. Graphiti is the open-source temporal context graph engine at the core of Zep's context infrastructure for AI agents. ## Build Temporal Context Graphs for AI Agents. Check out the new MCP server for Graphiti! Graphiti is a framework for building and querying temporal context graphs for AI agents. Unlike static knowledge graphs, Graphiti's context graphs track how facts change over time, maintain provenance to source data, and support both prescribed and learned ontology — making them purpose-built for agents operating on evolving, real-world data. ## What is a Context Graph? A **context graph** is a temporal graph of entities, relationships, and facts — like *\"Kendra loves Adidas shoes (as of March 2026).\"* Unlike traditional knowledge graphs, each fact in a context graph has a validity window: when it became true, and when (if ever) it was superseded.",
+      "score": 0.29521516,
+      "raw_content": null
+    },
+    {
+      "url": "https://forum.letta.com/t/agent-memory-letta-vs-mem0-vs-zep-vs-cognee/88",
+      "title": "Agent memory: Letta vs Mem0 vs Zep vs Cognee",
+      "content": "# Agent memory: Letta vs Mem0 vs Zep vs Cognee. If you’re building AI agents, you’ve probably run into a fundamental limitation: LLMs forget everything the moment you close the conversation. This article explains how agent memory works and compares five popular solutions to the problem: Mem0, Zep, Cognee, Letta Platform, and AI Memory SDK. ## Agent memory. When you call an LLM like GPT-4 or Claude, it only knows what’s in the current prompt. This stateless design works fine for one-off questions, but breaks down when building agents that need to maintain context across multiple interactions. Agent memory solves this by adding persistent storage that agents can read from and write to. The simplest form of memory is keeping the conversation history in the context window. A memory system like Letta automatically compiles context from persistent state storage into these organized blocks. The challenge is deciding what information to store, how to organize it, and when to retrieve it. ## How agent memory works.",
+      "score": 0.20529656,
+      "raw_content": null
+    },
+    {
+      "url": "https://fountaincity.tech/resources/blog/agent-memory-knowledge-systems-compared",
+      "title": "Agent Memory: 8 Knowledge Systems Compared for Production AI Agents (2026)",
+      "content": "# Agent Memory: 8 Knowledge Systems Compared for Production AI Agents (2026). Most companies deploying AI agents hit the same wall about two months in: the agent forgets everything between sessions, can’t read the company’s actual knowledge (strategy docs, pricing logic, customer notes), and has no clean way to write what it learns back to the team’s knowledge base for human review. The toolkit for solving this is strong, but the question that matters for a mid-market team is different from the question developers ask. It isn’t “which API surface is cleanest.” It’s “how does a company actually maintain its knowledge, feed it to agents, let agents add to it, and keep humans in the loop?”. As of April 2026, there are five named systems worth comparing (Mem0, Zep, Letta, Cognee, and Cloudflare Agent Memory) plus a sixth path: maintaining knowledge as plain markdown and giving agents read/write access through a semantic search index.",
+      "score": 0.16122806,
+      "raw_content": null
+    },
+    {
+      "url": "https://medium.com/@wasowski.jarek/i-compared-5-ai-agent-memory-systems-across-6-dimensions-none-wins-6a658335ed0a",
+      "title": "AI Agent Memory 2026 — Comparing Mem0, Zep, Graphiti ...",
+      "content": "# I Compared 5 AI Agent Memory Systems Across 6 Dimensions — None Wins. ## A decision matrix for Mem0, Zep, Graphiti, Letta, and LangMem — when to pick which and why ‘which is best’ is the wrong question. It’s an architecture bug that nobody planned for, because **agent memory is still synonymous with a vector DB for most teams** — even though in 2026 we have three taxonomic axes, nine representation formats, four mature benchmarks, five dedicated systems, ten production vector databases, four graph databases, and five commercial platforms with closed memory. Over the next thirty minutes, you’ll internalize the decision matrix worth drawing before your next pitch deck — and you’ll understand the dimensions where each system wins, where each one loses, and the three traps the vendor’s marketing never mentions. In 2026, agent memory is a multi-layer cognitive infrastructure, not a library choice. I build enterprise AI systems — RAG, agents, LLMOps — and write the production receipts, not the hype.",
+      "score": 0.15376535,
+      "raw_content": null
+    },
+    {
+      "url": "https://www.graphlit.com/blog/survey-of-ai-agent-memory-frameworks",
+      "title": "AI Agent Memory Frameworks in 2026: Memory vs. Context",
+      "content": "AI Agent Memory Frameworks in 2026: Memory vs. The state of the art in AI agent memory has moved toward structured, scoped, temporal, self-editable context systems. The interesting question is no longer only \"what did the user say before?\" It is:. What should the agent know right now, where did that knowledge come from, is it still true, who is allowed to see it, and how should it be assembled into context for this task? This article is a 2026 survey of AI agent memory frameworks - Mem0, Supermemory, Membase, Memory Store, Zep, Graphiti, LangMem, Cognee, CrewAI, LlamaIndex, and Graphlit - but it is also an argument: memory and context are related, but they are not the same layer. Graphlit is focused on the context layer. We have been writing about this distinction in a few recent pieces: the operational context layer AI agents actually need, the event clock for temporal facts, and context graphs as organizational memory.",
+      "score": 0.14469214,
+      "raw_content": null
+    }
+  ],
+  "response_time": 2.16,
+  "request_id": "e23d7bc5-f083-4b2b-8497-94f612382e02"
+}
