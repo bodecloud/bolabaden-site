@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useCallback, useId, useRef, useState } from "react";
 import { config } from "@/lib/config";
 import { DeskHotspot } from "@/components/desk-hotspot";
 import { DeskArtifactCard } from "@/components/desk-artifact-card";
@@ -66,19 +66,21 @@ export function DeskScene() {
     ? config.HOME_DESK_ARTIFACTS.find((artifact) => artifact.id === activeId)
     : undefined;
 
-  function handleActivate(artifactId: string) {
+  const handleActivate = useCallback((artifactId: string) => {
     // Toggle when re-activating the same hotspot; replace (not stack)
     // when a different hotspot is activated while a card is open.
     setActiveId((current) => (current === artifactId ? null : artifactId));
-  }
+  }, []);
 
-  function handleClose() {
-    const previousId = activeId;
-    setActiveId(null);
-    if (previousId) {
-      triggerRefs.current[previousId]?.focus();
-    }
-  }
+  // Stable identity matters here: DeskArtifactCard's Escape-key listener
+  // effect is keyed on this callback, so a new identity every render would
+  // remove and re-add the document listener on every DeskScene re-render.
+  const handleClose = useCallback(() => {
+    setActiveId((current) => {
+      if (current) triggerRefs.current[current]?.focus();
+      return null;
+    });
+  }, []);
 
   return (
     <>
