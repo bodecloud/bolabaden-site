@@ -1618,6 +1618,25 @@ iframe {
   border-color: rgba(102, 217, 255, 0.22);
 }
 
+/* Mobile-only stand-in for scoreboard/manual/sticky content, which the
+   640px breakpoint below hides (display:none, not just visually) from
+   the decorative scene. Hidden at >=640px via Tailwind's sm:hidden in
+   markup, so it only ever renders where the scene furniture is gone. */
+.command-desk-mobile-summary {
+  margin: 1rem 1.5rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(102, 217, 255, 0.14);
+  border-radius: 1rem;
+  background: var(--desk-panel);
+  color: var(--desk-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.command-desk-mobile-summary p + p {
+  margin-top: 0.3rem;
+}
+
 @keyframes commandBlink {
   50% {
     opacity: 0;

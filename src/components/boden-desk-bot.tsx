@@ -44,30 +44,37 @@ function DeskBotChat() {
   }
 
   return (
-    <form onSubmit={ask} className="max-w-xl">
-      <div className="flex flex-col sm:flex-row gap-2">
+    <form onSubmit={ask} className="command-desk-bot max-w-xl">
+      <div className="command-desk-bot__bar">
+        <span />
+        <span />
+        <span />
+        <code>ask-the-desk</code>
+      </div>
+      <label htmlFor="desk-bot-question">Ask the desk</label>
+      <div className="command-desk-bot__input">
         <input
+          id="desk-bot-question"
           type="text"
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
           placeholder="What are you looking for?"
-          className="flex-1 rounded-md border border-[#2a2a2a] bg-[#0a0a0a] px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500/50"
         />
         <button
           type="submit"
           disabled={state === "sending"}
-          className="inline-flex items-center justify-center rounded-md bg-white text-black font-medium text-sm px-5 py-2.5 hover:bg-zinc-100 transition-colors disabled:opacity-50"
+          className="command-desk-secondary disabled:opacity-50"
         >
           {state === "sending" ? "Asking…" : "Ask"}
         </button>
       </div>
       {answer && (
-        <p className="mt-4 text-sm text-zinc-300 leading-relaxed rounded-lg border border-[#1f1f1f] bg-[#0f0f0f] px-4 py-3">
-          {answer}
-        </p>
+        <div className="command-desk-bot__answer">
+          <p>{answer}</p>
+        </div>
       )}
       {state === "error" && (
-        <p className="mt-4 text-sm text-red-400">
+        <p className="mt-4 text-sm text-[var(--desk-red)]">
           The desk guide didn&apos;t respond. Try /projects, /guides, or
           /contact instead.
         </p>
@@ -78,18 +85,19 @@ function DeskBotChat() {
 
 export function BodenDeskBot() {
   return (
-    <section className="border-b border-[#1f1f1f]" id="desk-bot">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-12">
-        <p className="text-xs font-semibold text-zinc-500 uppercase tracking-[0.2em] mb-2">
-          {config.HOME_BOT_TITLE}
-        </p>
-        <p className="text-sm text-zinc-400 mb-6 max-w-xl">
-          {config.HOME_BOT_SUBTITLE}
-        </p>
+    <section
+      className="border-b border-[rgba(102,217,255,0.14)]"
+      id="desk-bot"
+    >
+      <div className="command-desk-section max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-12">
+        <div className="command-desk-section-heading mb-6">
+          <p className="command-desk-kicker">{config.HOME_BOT_TITLE}</p>
+          <p>{config.HOME_BOT_SUBTITLE}</p>
+        </div>
         {config.BODENAI_UI_PUBLIC ? (
           <DeskBotChat />
         ) : (
-          <p className="text-sm text-zinc-500 max-w-xl rounded-lg border border-dashed border-[#2a2a2a] bg-[#0a0a0a] px-4 py-3">
+          <p className="command-desk-artifact max-w-xl">
             {config.HOME_BOT_DISABLED_MESSAGE}
           </p>
         )}
