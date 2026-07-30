@@ -6,8 +6,6 @@
 
 This is a single Next.js 16 (App Router) portfolio website. No database, Docker, or external services are required for local development. All external dependencies (GitHub API, SearXNG, Docker socket proxy, Prometheus) have built-in fallbacks/demo data.
 
-- `docs/solutions/` — documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`). Relevant when implementing or debugging in documented areas.
-
 ### Running the application
 
 - `npm run dev` starts the dev server on `http://localhost:3000`.
@@ -17,7 +15,7 @@ This is a single Next.js 16 (App Router) portfolio website. No database, Docker,
 
 ### Lint
 
-- `npm run lint` calls `next lint --max-warnings=0`, but `next lint` was removed in Next.js 16. The project has ESLint 10 + `eslint-config-next` 16.1.6 configured in `eslint.config.mjs`, but running `npx eslint .` currently hits a circular-reference error in `@eslint/eslintrc`'s FlatCompat. This is a **pre-existing upstream issue** and not a Cloud environment problem.
+- `npm run lint` calls `eslint . --max-warnings=0` directly (the old `next lint` invocation was removed in Next.js 16). `eslint.config.mjs` is a flat config on `eslint-config-next` 16.1.6 with no `FlatCompat` shim, and runs clean — 0 errors, only a handful of pre-existing `no-unused-vars` warnings in standalone `scripts/*.mjs` archive-export tooling, unrelated to the Next app itself.
 
 ### Build
 
