@@ -72,7 +72,7 @@ function StatLink({
 }
 
 /** Calculate language percentages from byte counts */
-function calculateLanguagePercentages(languages: {
+export function calculateLanguagePercentages(languages: {
   [lang: string]: number;
 }): Array<{ name: string; percentage: number; bytes: number }> {
   const entries = Object.entries(languages);
