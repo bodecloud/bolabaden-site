@@ -11,7 +11,7 @@
  * Contrast: AboutNavigation uses internal anchors to portfolio section navigation.
  */
 
-import { useState, useCallback, FormEvent } from "react";
+import { useState, useCallback, useId, FormEvent } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Search } from "lucide-react";
@@ -72,6 +72,7 @@ export function MainNavbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const mobileMenuId = useId();
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
@@ -159,6 +160,8 @@ export function MainNavbar() {
             aria-label={
               isMenuOpen ? "Close navigation menu" : "Open navigation menu"
             }
+            aria-expanded={isMenuOpen}
+            aria-controls={mobileMenuId}
           >
             <svg
               className="h-5 w-5"
@@ -188,7 +191,10 @@ export function MainNavbar() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-[#1f1f1f] bg-[#0a0a0a]">
+        <div
+          id={mobileMenuId}
+          className="md:hidden border-t border-[#1f1f1f] bg-[#0a0a0a]"
+        >
           <div className="px-4 py-4 space-y-1">
             {config.NAV_ITEMS.map((item) => (
               <NavLink
