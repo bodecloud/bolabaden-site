@@ -11,7 +11,11 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: isGithubPagesBuild
     ? undefined
     : {
-        "/*": ["./src/content/guides/**/*.md", "./guides/**/*.md"],
+        "/*": [
+          "./src/content/guides/**/*.md",
+          "./guides/**/*.md",
+          "./src/content/field-notes/**/*.md",
+        ],
       },
   basePath: isGithubPagesBuild ? pagesBasePath : undefined,
   assetPrefix: isGithubPagesBuild ? `${pagesBasePath}/` : undefined,

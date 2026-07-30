@@ -62,6 +62,20 @@ export interface Guide {
   slug: string;
 }
 
+export interface FieldNote {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  /** Explicit publish date from frontmatter -- not derived from file stat. */
+  date: Date;
+  /** True when this note references or is derived from the private corpus. */
+  derivedFromPrivateCorpus: boolean;
+  /** Required and validated non-blank when derivedFromPrivateCorpus is true. */
+  approvedBy: string | null;
+}
+
 export interface TechStack {
   name: string;
   category:
