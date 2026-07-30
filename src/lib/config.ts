@@ -219,17 +219,17 @@ export const config = {
   CHROME_MODE: envChromeMode("NEXT_PUBLIC_CHROME_MODE", "dual"),
   SITE_SECTION_LABEL: envString(
     "NEXT_PUBLIC_SITE_SECTION_LABEL",
-    "Independent Web Hub",
+    "Field Desk",
   ),
   SITE_META_DESCRIPTION: envString(
     "NEXT_PUBLIC_SITE_META_DESCRIPTION",
-    "Independent web hub for guides, projects, live services, and evolving digital spaces.",
+    "Boden Crouch's field desk for old game tools, AI workflow notes, self-hosted services, and field-tested guides.",
   ),
   SITE_META_KEYWORDS: envCsv("NEXT_PUBLIC_SITE_META_KEYWORDS", [
-    "developer website",
+    "Boden Crouch",
+    "field desk",
     "guides",
     "projects",
-    "independent web hub",
     "self-hosted services",
     "docker",
     "kubernetes",
@@ -238,11 +238,11 @@ export const config = {
   ]),
   SITE_OG_DESCRIPTION: envString(
     "NEXT_PUBLIC_SITE_OG_DESCRIPTION",
-    "Explore guides, projects, live dashboards, and future web spaces.",
+    "Old game tools, AI workflow notes, live services, and guides that actually got used.",
   ),
   SITE_JSONLD_DESCRIPTION: envString(
     "NEXT_PUBLIC_SITE_JSONLD_DESCRIPTION",
-    "Independent web hub featuring guides, projects, service dashboards, and future creative spaces.",
+    "Boden Crouch's field desk: old game tools, AI workflow notes, live services, and practical guides.",
   ),
 
   /** Home page — "Proof desk" (see docs/plans/2026-07-07-001) */
