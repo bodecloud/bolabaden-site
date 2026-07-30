@@ -1218,6 +1218,64 @@ iframe {
   color: #061018;
 }
 
+.command-desk-hotspot:focus-visible,
+.command-desk-active-card__close:focus-visible,
+.command-desk-active-card:focus-visible {
+  outline: 2px solid var(--desk-cyan);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* Hotspot placement -- position:absolute here since the base
+   .command-desk-hotspot rule sets no position, unlike its scene
+   siblings. Percentage coordinates follow the same pattern, placed
+   near the scene furniture each hotspot's artifact relates to. */
+.command-desk-hotspot--pos-scoreboard {
+  position: absolute;
+  left: 63%;
+  top: 27%;
+}
+
+.command-desk-hotspot--pos-manual {
+  position: absolute;
+  left: 20%;
+  top: 30%;
+}
+
+.command-desk-hotspot--pos-monitor {
+  position: absolute;
+  left: 38%;
+  top: 36%;
+}
+
+.command-desk-hotspot--pos-workbench {
+  position: absolute;
+  right: 12%;
+  bottom: 32%;
+}
+
+.command-desk-hotspot--pos-sticky {
+  position: absolute;
+  right: 15%;
+  top: 40%;
+}
+
+.command-desk-active-card__close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgba(246, 231, 193, 0.24);
+  border-radius: 999px;
+  background: rgba(5, 10, 14, 0.6);
+  color: var(--desk-ink);
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .command-desk-active-card,
 .command-desk-bot,
 .command-desk-notes,
@@ -1237,7 +1295,7 @@ iframe {
   bottom: 1.2rem;
   max-width: 24rem;
   border-radius: 1.3rem;
-  padding: 1.2rem;
+  padding: 2.4rem 1.2rem 1.2rem;
 }
 
 .command-desk-active-card span,
@@ -1628,5 +1686,13 @@ iframe {
     bottom: 10%;
     transform: scale(0.8);
     transform-origin: right bottom;
+  }
+
+  /* The visible label hides above, leaving the orb (2.35rem) as the
+     only tappable target -- pad the button's hit area to at least
+     44x44px without resizing the visible glyph itself. */
+  .command-desk-hotspot {
+    padding: 0.4rem;
+    margin: -0.4rem;
   }
 }

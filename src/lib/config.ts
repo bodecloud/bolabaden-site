@@ -53,6 +53,8 @@ export type DeskArtifact = {
   id: string;
   title: string;
   note: string;
+  /** Who approved this content for public display. Required, non-blank. */
+  approvedBy: string;
 };
 
 export type ProofLedgerRow = {
@@ -467,26 +469,31 @@ export const config = {
         id: "artifact-scoreboard",
         title: "Old Halo postgame carnage report",
         note: "Found while sorting an Xfire archive. Still not sure why I screenshotted the loss.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-rcon",
         title: "A server command I forgot I wrote",
         note: "An RCON alias from a game server I ran years ago. It still works.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-toolset",
         title: "Holocron Toolset issue thread",
         note: "A KOTOR modding bug report that turned into three days of file-format archaeology.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-glitch",
         title: "A glitch I never reported",
         note: "Caught it on camera once. Never filed the bug. It's probably still there.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-debug-log",
         title: "A debug log that solved itself",
         note: "Spent an hour reproducing it. It stopped happening before I finished the reproduction steps.",
+        approvedBy: "Boden Crouch",
       },
     ],
   ),
