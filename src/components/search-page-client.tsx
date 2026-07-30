@@ -61,8 +61,6 @@ export function SearchResults() {
 
   useEffect(() => {
     if (!query || isStaticExport) {
-      setResults([]);
-      setError(null);
       return;
     }
     let cancelled = false;
