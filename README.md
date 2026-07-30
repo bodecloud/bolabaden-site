@@ -114,7 +114,11 @@ See `docker-compose.override.yml` for Traefik labels and env passthrough (`DOCKE
 
 ## Lint
 
-`npm run lint` targets removed `next lint` (Next.js 16). ESLint flat config exists but may hit upstream FlatCompat issues — see `AGENTS.md`.
+`npm run lint` runs `eslint . --max-warnings=0` directly (flat config, no `FlatCompat` shim — `next lint` was removed in Next.js 16).
+
+## Test
+
+`npm run test` runs Vitest against `src/**/*.test.ts` — pure `src/lib/`/`src/components` logic only, not components/pages/DOM.
 
 ## License
 
