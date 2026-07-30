@@ -9,12 +9,14 @@
 import { MetadataRoute } from "next";
 import { config } from "@/lib/config";
 import { getGuides } from "@/lib/guides";
+import { getFieldNotes } from "@/lib/field-notes";
 
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = config.SITE_URL;
   const guides = await getGuides();
+  const fieldNotes = await getFieldNotes();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -53,6 +55,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/notes`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
   ];
 
   const guideRoutes: MetadataRoute.Sitemap = guides.map((guide) => ({
@@ -62,5 +70,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...guideRoutes];
+  const fieldNoteRoutes: MetadataRoute.Sitemap = fieldNotes.map((note) => ({
+    url: `${baseUrl}/notes/${note.slug}`,
+    lastModified: note.date,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
+  return [...staticRoutes, ...guideRoutes, ...fieldNoteRoutes];
 }

@@ -676,6 +676,29 @@ export const config = {
     "On this page",
   ),
 
+  /** Field notes -- short, frequent posts; separate from Guides */
+  NOTES_PAGE_TITLE: envString("NEXT_PUBLIC_NOTES_PAGE_TITLE", "Field Notes"),
+  NOTES_PAGE_DESCRIPTION: envString(
+    "NEXT_PUBLIC_NOTES_PAGE_DESCRIPTION",
+    "Short, frequent posts -- less how-to, more what happened.",
+  ),
+  NOTES_INDEX_SECTION_TITLE: envString(
+    "NEXT_PUBLIC_NOTES_INDEX_SECTION_TITLE",
+    "All Notes",
+  ),
+  NOTES_EMPTY_STATE_LABEL: envString(
+    "NEXT_PUBLIC_NOTES_EMPTY_STATE_LABEL",
+    "No notes yet.",
+  ),
+  NOTE_NOT_FOUND_TITLE: envString(
+    "NEXT_PUBLIC_NOTE_NOT_FOUND_TITLE",
+    "Note Not Found",
+  ),
+  NOTE_BACK_TO_INDEX_LABEL: envString(
+    "NEXT_PUBLIC_NOTE_BACK_TO_INDEX_LABEL",
+    "← All Notes",
+  ),
+
   /** Navigation */
   /**
    * NAV_ITEMS: Main site navigation emphasizing discovery and reference

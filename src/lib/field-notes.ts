@@ -31,6 +31,19 @@ const FIELD_NOTES_DIR = path.join(
 
 export class FieldNoteValidationError extends Error {}
 
+/**
+ * Parses a "YYYY-MM-DD" frontmatter date as a local calendar day, not a
+ * UTC instant -- `new Date("2026-07-30")` parses as UTC midnight, which
+ * a negative-UTC-offset host then displays as the previous day. Returns
+ * an invalid Date for anything that doesn't match the plain-date shape.
+ */
+export function parseFieldNoteDate(value: string): Date {
+  const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return new Date(value);
+  const [, year, month, day] = match;
+  return new Date(Number(year), Number(month) - 1, Number(day));
+}
+
 function normalizeSlug(fileName: string): string {
   return path
     .basename(fileName, path.extname(fileName))
@@ -113,7 +126,10 @@ export function validateFieldNoteFrontmatter(
   frontmatter: FieldNoteFrontmatter,
   fileName: string,
 ): void {
-  if (!frontmatter.date || isNaN(new Date(frontmatter.date).getTime())) {
+  if (
+    !frontmatter.date ||
+    isNaN(parseFieldNoteDate(frontmatter.date).getTime())
+  ) {
     throw new FieldNoteValidationError(
       `Field note "${fileName}" is missing a valid "date" frontmatter field.`,
     );
@@ -166,7 +182,7 @@ async function readFieldNotesFromDirectory(
         title,
         description: frontmatter.description || "",
         content,
-        date: new Date(frontmatter.date!),
+        date: parseFieldNoteDate(frontmatter.date!),
         derivedFromPrivateCorpus,
         approvedBy: derivedFromPrivateCorpus
           ? frontmatter.approvedBy!.trim()

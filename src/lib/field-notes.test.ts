@@ -1,9 +1,35 @@
 import { describe, expect, it } from "vitest";
 import {
   FieldNoteValidationError,
+  parseFieldNoteDate,
   parseFieldNoteFrontmatter,
   validateFieldNoteFrontmatter,
 } from "./field-notes";
+
+describe("parseFieldNoteDate", () => {
+  it("parses a plain YYYY-MM-DD date as the same local calendar day", () => {
+    const date = parseFieldNoteDate("2026-07-30");
+    expect(date.getFullYear()).toBe(2026);
+    expect(date.getMonth()).toBe(6);
+    expect(date.getDate()).toBe(30);
+  });
+
+  it("does not shift the day backward regardless of host timezone", () => {
+    // new Date("2026-07-30") parses as UTC midnight, which a negative-UTC
+    // host renders as July 29 -- this is exactly the bug parseFieldNoteDate
+    // exists to avoid.
+    const naive = new Date("2026-07-30");
+    const local = parseFieldNoteDate("2026-07-30");
+    expect(local.getDate()).toBe(30);
+    if (naive.getTimezoneOffset() > 0) {
+      expect(local.getDate()).not.toBe(naive.getDate());
+    }
+  });
+
+  it("returns an invalid Date for a malformed date string", () => {
+    expect(isNaN(parseFieldNoteDate("not-a-date").getTime())).toBe(true);
+  });
+});
 
 describe("parseFieldNoteFrontmatter", () => {
   it("parses description, date, and derivedFromPrivateCorpus from frontmatter", () => {
