@@ -88,6 +88,10 @@ scripts/identity-grok-manifest.json
 scripts/identity-grok-export-status.json
 .playwright-mcp/
 .autoclaw/
+
+# Claude Code session/local-only state (not project config)
+.claude/*.local.*
+.claude/scheduled_tasks.lock
 agentdecompile_projects/
 data/archive-cache/
 data/archives/
