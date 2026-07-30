@@ -1,5 +1,6 @@
 import { MainNavbar } from "@/components/main-navbar";
 import { MainFooter } from "@/components/main-footer";
+import { SkipToContentLink } from "@/components/skip-to-content-link";
 
 /**
  * Main Site Page Layout - Discovery/Reference Context
@@ -16,8 +17,9 @@ import { MainFooter } from "@/components/main-footer";
 export function PageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="theme-main min-h-screen bg-[#0a0a0a] text-white">
+      <SkipToContentLink />
       <MainNavbar />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <MainFooter />
     </div>
   );
