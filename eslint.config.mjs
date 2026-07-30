@@ -29,7 +29,7 @@ const eslintConfig = [
       "src/app/about/opengraph-image.tsx",
       "src/app/contact/opengraph-image.tsx",
       "src/app/guides/opengraph-image.tsx",
-      "src/app/guides/[slug]/opengraph-image.tsx",
+      "src/app/guides/\\[slug\\]/opengraph-image.tsx",
       "src/app/dashboard/opengraph-image.tsx",
       "src/app/projects/opengraph-image.tsx",
     ],

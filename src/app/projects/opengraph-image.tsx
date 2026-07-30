@@ -28,6 +28,7 @@ import {
 export const runtime = "edge";
 export const size = OG_DISCOVERY_SIZE;
 export const contentType = OG_DISCOVERY_CONTENT_TYPE;
+export const revalidate = 3600;
 
 export default function ProjectsOpenGraphImage() {
   return new ImageResponse(

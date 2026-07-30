@@ -13,6 +13,11 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
+export async function generateStaticParams() {
+  const guides = await getGuides();
+  return guides.map((guide) => ({ slug: guide.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {
