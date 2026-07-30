@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * Generic contact form section for main site discovery context.
  *
