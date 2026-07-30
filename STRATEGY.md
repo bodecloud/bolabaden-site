@@ -65,6 +65,7 @@ SFT export staged; train on GPU/HF Jobs after gate — not on local RX 460.
 - LoRA on this host (RX 460 4GB)
 - Full 20GB day-one graph (slice + paced load first)
 - Cyberscape homepage revival (parked)
+- **Status subscriptions (webhook/email alerts on service health)** — Phase 2 product bet, needs a durable store, signed webhook tokens, a background poller, and anonymous-registration abuse controls before any implementation. See `docs/plans/2026-06-29-002-feat-discovery-backlog-plan.md` § Deferred: P5.
 
 ## Marketing
 
