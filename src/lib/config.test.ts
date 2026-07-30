@@ -9,6 +9,8 @@ import {
   envString,
   formatDate,
   getRelativeTime,
+  sanitizeDeskArtifacts,
+  type DeskArtifact,
   type NormalizedSection,
 } from "./config";
 
@@ -99,6 +101,34 @@ describe("envJson", () => {
   it("rejects a non-object override when the default is an object", () => {
     process.env[ENV_KEY] = "[1, 2]";
     expect(envJson(ENV_KEY, { a: 1 })).toEqual({ a: 1 });
+  });
+});
+
+describe("sanitizeDeskArtifacts", () => {
+  const artifact = (approvedBy: string): DeskArtifact => ({
+    id: "a",
+    title: "t",
+    note: "n",
+    approvedBy,
+  });
+
+  it("keeps artifacts with a non-blank approvedBy", () => {
+    expect(sanitizeDeskArtifacts([artifact("Boden Crouch")])).toEqual([
+      artifact("Boden Crouch"),
+    ]);
+  });
+
+  it("drops artifacts with a blank or whitespace-only approvedBy", () => {
+    expect(sanitizeDeskArtifacts([artifact(""), artifact("   ")])).toEqual([]);
+  });
+
+  it("drops artifacts injected via an env override with no approvedBy", () => {
+    // Simulates NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON supplying an entry
+    // that skips the approval gate entirely.
+    const injected = { id: "x", title: "t", note: "n" } as DeskArtifact;
+    expect(sanitizeDeskArtifacts([injected, artifact("Real Approver")])).toEqual(
+      [artifact("Real Approver")],
+    );
   });
 });
 

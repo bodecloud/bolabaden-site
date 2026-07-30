@@ -86,6 +86,11 @@ scripts/identity-chatgpt-manifest.json
 scripts/identity-chatgpt-export-status.json
 scripts/identity-grok-manifest.json
 scripts/identity-grok-export-status.json
+
+# Raw AI-chat export archives -- personal conversation content, never tracked.
+# Keep locally for the content pipeline to read; publish only curated,
+# explicitly-reviewed derivatives (see docs/knowledgebase/90-meta, field notes).
+docs/knowledgebase/90-meta/
 .playwright-mcp/
 .autoclaw/
 

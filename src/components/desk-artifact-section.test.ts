@@ -3,9 +3,9 @@ import { pickDailyArtifact } from "./desk-artifact-section";
 import type { DeskArtifact } from "@/lib/config";
 
 const artifacts: DeskArtifact[] = [
-  { id: "a", title: "A", note: "note a" },
-  { id: "b", title: "B", note: "note b" },
-  { id: "c", title: "C", note: "note c" },
+  { id: "a", title: "A", note: "note a", approvedBy: "Tester" },
+  { id: "b", title: "B", note: "note b", approvedBy: "Tester" },
+  { id: "c", title: "C", note: "note c", approvedBy: "Tester" },
 ];
 
 describe("pickDailyArtifact", () => {

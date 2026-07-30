@@ -47,12 +47,15 @@ export type HomeLayoutSectionId =
   | "proof-ledger"
   | "desk-artifact"
   | "archive-boundary"
-  | "desk-bot";
+  | "desk-bot"
+  | "field-notes";
 
 export type DeskArtifact = {
   id: string;
   title: string;
   note: string;
+  /** Who approved this content for public display. Required, non-blank. */
+  approvedBy: string;
 };
 
 export type ProofLedgerRow = {
@@ -144,6 +147,16 @@ export function envJson<T>(name: string, defaultValue: T): T {
   } catch {
     return defaultValue;
   }
+}
+
+/**
+ * The approval gate on DeskArtifact is otherwise enforced only at the
+ * type level, so an env override (NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON)
+ * could ship an entry with a missing/blank approvedBy. Drop those entries
+ * at runtime rather than rendering them.
+ */
+export function sanitizeDeskArtifacts(artifacts: DeskArtifact[]): DeskArtifact[] {
+  return artifacts.filter((artifact) => Boolean(artifact.approvedBy?.trim()));
 }
 
 export function envFlag(name: string, defaultValue: boolean = true): boolean {
@@ -335,8 +348,9 @@ export const config = {
       { id: "explore-lanes", label: "Explore", enabled: true, order: 5 },
       { id: "archive-boundary", label: "Archive", enabled: true, order: 6 },
       { id: "desk-artifact", label: "Desk Notes", enabled: true, order: 7 },
-      { id: "desk-bot", label: "Ask the desk", enabled: true, order: 8 },
-      { id: "future-blocks", label: "Future", enabled: true, order: 9 },
+      { id: "field-notes", label: "Field Notes", enabled: true, order: 8 },
+      { id: "desk-bot", label: "Ask the desk", enabled: true, order: 9 },
+      { id: "future-blocks", label: "Future", enabled: true, order: 10 },
     ],
   ),
   HOME_SHOWCASE_TITLE: envString(
@@ -460,35 +474,39 @@ export const config = {
     "NEXT_PUBLIC_HOME_DESK_ARTIFACT_SUBTITLE",
     "Rotates. Come back later for a different one.",
   ),
-  HOME_DESK_ARTIFACTS: envJson<DeskArtifact[]>(
-    "NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON",
-    [
+  HOME_DESK_ARTIFACTS: sanitizeDeskArtifacts(
+    envJson<DeskArtifact[]>("NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON", [
       {
         id: "artifact-scoreboard",
         title: "Old Halo postgame carnage report",
         note: "Found while sorting an Xfire archive. Still not sure why I screenshotted the loss.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-rcon",
         title: "A server command I forgot I wrote",
         note: "An RCON alias from a game server I ran years ago. It still works.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-toolset",
         title: "Holocron Toolset issue thread",
         note: "A KOTOR modding bug report that turned into three days of file-format archaeology.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-glitch",
         title: "A glitch I never reported",
         note: "Caught it on camera once. Never filed the bug. It's probably still there.",
+        approvedBy: "Boden Crouch",
       },
       {
         id: "artifact-debug-log",
         title: "A debug log that solved itself",
         note: "Spent an hour reproducing it. It stopped happening before I finished the reproduction steps.",
+        approvedBy: "Boden Crouch",
       },
-    ],
+    ]),
   ),
   HOME_BOT_TITLE: envString("NEXT_PUBLIC_HOME_BOT_TITLE", "Ask the desk"),
   HOME_BOT_SUBTITLE: envString(
@@ -667,6 +685,44 @@ export const config = {
   GUIDE_INLINE_TOC_ARIA: envString(
     "NEXT_PUBLIC_GUIDE_INLINE_TOC_ARIA",
     "On this page",
+  ),
+
+  /** Field notes -- short, frequent posts; separate from Guides */
+  NOTES_PAGE_TITLE: envString("NEXT_PUBLIC_NOTES_PAGE_TITLE", "Field Notes"),
+  NOTES_PAGE_DESCRIPTION: envString(
+    "NEXT_PUBLIC_NOTES_PAGE_DESCRIPTION",
+    "Short, frequent posts -- less how-to, more what happened.",
+  ),
+  NOTES_INDEX_SECTION_TITLE: envString(
+    "NEXT_PUBLIC_NOTES_INDEX_SECTION_TITLE",
+    "All Notes",
+  ),
+  NOTES_EMPTY_STATE_LABEL: envString(
+    "NEXT_PUBLIC_NOTES_EMPTY_STATE_LABEL",
+    "No notes yet.",
+  ),
+  NOTE_NOT_FOUND_TITLE: envString(
+    "NEXT_PUBLIC_NOTE_NOT_FOUND_TITLE",
+    "Note Not Found",
+  ),
+  NOTE_BACK_TO_INDEX_LABEL: envString(
+    "NEXT_PUBLIC_NOTE_BACK_TO_INDEX_LABEL",
+    "← All Notes",
+  ),
+  HOME_NOTES_TITLE: envString("NEXT_PUBLIC_HOME_NOTES_TITLE", "Field notes"),
+  HOME_NOTES_SUBTITLE: envString(
+    "NEXT_PUBLIC_HOME_NOTES_SUBTITLE",
+    "Short, frequent -- separate from Guides.",
+  ),
+  HOME_NOTES_MAX_ITEMS: envNumber("NEXT_PUBLIC_HOME_NOTES_MAX_ITEMS", 5),
+  /** Days since the newest note before the homepage feed shows a resting state instead. */
+  HOME_NOTES_STALE_THRESHOLD_DAYS: envNumber(
+    "NEXT_PUBLIC_HOME_NOTES_STALE_THRESHOLD_DAYS",
+    45,
+  ),
+  HOME_NOTES_RESTING_LABEL: envString(
+    "NEXT_PUBLIC_HOME_NOTES_RESTING_LABEL",
+    "No recent notes -- browse the full archive.",
   ),
 
   /** Navigation */
