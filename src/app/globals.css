@@ -2038,22 +2038,6 @@ iframe {
   stroke: #f97316;
 }
 
-.chart-gradient-blue {
-  fill: url(#gradient-blue);
-}
-
-.chart-gradient-green {
-  fill: url(#gradient-green);
-}
-
-.chart-gradient-purple {
-  fill: url(#gradient-purple);
-}
-
-.chart-gradient-orange {
-  fill: url(#gradient-orange);
-}
-
 .chart-gradient-stop-blue {
   stop-color: #3b82f6;
 }

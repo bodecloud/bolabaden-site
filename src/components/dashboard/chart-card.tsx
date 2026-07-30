@@ -34,16 +34,18 @@ export function ChartCard({
 }: ChartCardProps) {
   const [expanded, setExpanded] = useState(false);
   const panelId = useId();
+  const gradientId = useId();
 
-  // Get gradient class for chart fill - ONLY returns class names
-  const getGradientClass = (colorClass: string): string => {
-    const gradientMap: Record<string, string> = {
-      "chart-line-blue": "chart-gradient-blue",
-      "chart-line-green": "chart-gradient-green",
-      "chart-line-purple": "chart-gradient-purple",
-      "chart-line-orange": "chart-gradient-orange",
+  // Stop color for this card's own gradient (one per instance, not one per
+  // known color -- see gradientId comment below for why).
+  const getGradientStopClass = (colorClass: string): string => {
+    const stopMap: Record<string, string> = {
+      "chart-line-blue": "chart-gradient-stop-blue",
+      "chart-line-green": "chart-gradient-stop-green",
+      "chart-line-purple": "chart-gradient-stop-purple",
+      "chart-line-orange": "chart-gradient-stop-orange",
     };
-    return gradientMap[colorClass] || "chart-gradient-blue";
+    return stopMap[colorClass] || "chart-gradient-stop-blue";
   };
   const chartValues = data.map((item) => item.value);
   const chartWidth = 600; // Will be responsive
@@ -116,8 +118,15 @@ export function ChartCard({
         {/* Sparkline */}
         <svg width="100%" height="100%" className="overflow-visible">
           <defs>
+            {/* One gradient per card instance, id-scoped via useId(). Previously
+                every card rendered all four color variants under fixed ids
+                (id="gradient-blue" etc.) -- harmless while every instance's
+                defs were byte-identical duplicates, but invalid markup
+                (duplicate ids resolve to the *first* match in the document)
+                that would silently render the wrong color the moment this
+                became per-instance-customized. */}
             <linearGradient
-              id="gradient-blue"
+              id={gradientId}
               x1="0%"
               y1="0%"
               x2="0%"
@@ -125,66 +134,12 @@ export function ChartCard({
             >
               <stop
                 offset="0%"
-                className="chart-gradient-stop-blue"
+                className={getGradientStopClass(color)}
                 stopOpacity="0.2"
               />
               <stop
                 offset="100%"
-                className="chart-gradient-stop-blue"
-                stopOpacity="0"
-              />
-            </linearGradient>
-            <linearGradient
-              id="gradient-green"
-              x1="0%"
-              y1="0%"
-              x2="0%"
-              y2="100%"
-            >
-              <stop
-                offset="0%"
-                className="chart-gradient-stop-green"
-                stopOpacity="0.2"
-              />
-              <stop
-                offset="100%"
-                className="chart-gradient-stop-green"
-                stopOpacity="0"
-              />
-            </linearGradient>
-            <linearGradient
-              id="gradient-purple"
-              x1="0%"
-              y1="0%"
-              x2="0%"
-              y2="100%"
-            >
-              <stop
-                offset="0%"
-                className="chart-gradient-stop-purple"
-                stopOpacity="0.2"
-              />
-              <stop
-                offset="100%"
-                className="chart-gradient-stop-purple"
-                stopOpacity="0"
-              />
-            </linearGradient>
-            <linearGradient
-              id="gradient-orange"
-              x1="0%"
-              y1="0%"
-              x2="0%"
-              y2="100%"
-            >
-              <stop
-                offset="0%"
-                className="chart-gradient-stop-orange"
-                stopOpacity="0.2"
-              />
-              <stop
-                offset="100%"
-                className="chart-gradient-stop-orange"
+                className={getGradientStopClass(color)}
                 stopOpacity="0"
               />
             </linearGradient>
@@ -213,7 +168,7 @@ export function ChartCard({
           {/* Area fill */}
           <polygon
             points={`${sparklinePoints} ${chartWidth},${height - 10} 0,${height - 10}`}
-            className={getGradientClass(color)}
+            fill={`url(#${gradientId})`}
           />
 
           {/* Data points */}
