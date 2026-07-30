@@ -33,6 +33,12 @@ jobs:
       - name: Remove API routes for static export
         run: if [ -d src/app/api ]; then rm -rf src/app/api; fi
 
+      - name: Drop force-dynamic pages for static export
+        run: |
+          grep -rl '^export const dynamic = "force-dynamic";$' src/app | while read -r file; do
+            sed -i '/^export const dynamic = "force-dynamic";$/d' "$file"
+          done
+
       - name: Build static site
         env:
           DEPLOY_TARGET: github-pages
