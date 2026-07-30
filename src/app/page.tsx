@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
-import { DiscoveryPageHero } from "@/components/discovery-page-hero";
+import { DeskScene } from "@/components/desk-scene";
 import { SectionErrorBoundary } from "@/components/section-error-boundary";
 import { SideToc, type TocItem } from "@/components/side-toc";
 import { EmbedsSection } from "@/components/embeds-section";
@@ -198,36 +198,37 @@ export default async function HomePage() {
   return (
     <PageLayout>
       {homeTocItems.length > 1 && <SideToc items={homeTocItems} />}
-      <DiscoveryPageHero
-        eyebrow={config.HOME_HERO_EYEBROW}
-        title={config.HOME_HERO_TITLE}
-        description={config.HOME_HERO_DESCRIPTION}
-        size="large"
-        eyebrowTone="accent"
-      >
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 bg-white text-black font-medium text-sm px-5 py-2.5 rounded-md hover:bg-zinc-100 transition-colors"
-          >
-            Inspect projects
-          </Link>
-          <Link
-            href="/guides"
-            className="inline-flex items-center gap-2 border border-[#2f2f2f] text-white font-medium text-sm px-5 py-2.5 rounded-md hover:border-[#444] transition-colors"
-          >
-            Read guides
-          </Link>
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-2 border border-[#2f2f2f] text-zinc-300 font-medium text-sm px-5 py-2.5 rounded-md hover:border-[#444] hover:text-white transition-colors"
-          >
-            Normal portfolio
-          </Link>
-        </div>
-      </DiscoveryPageHero>
+      <div className="command-desk-shell">
+        <div className="command-desk-hero">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 pt-20 pb-18">
+            <div className="command-desk-hero__stage">
+              <div className="command-desk-hero__copy">
+                <p className="command-desk-kicker">
+                  {config.HOME_HERO_EYEBROW}
+                </p>
+                <h1>{config.HOME_HERO_TITLE}</h1>
+                <p>{config.HOME_HERO_DESCRIPTION}</p>
 
-      {homeSections.map((section) => renderHomeSection(section, releases))}
+                <div className="command-desk-hero__actions">
+                  <Link href="/projects" className="command-desk-primary">
+                    Inspect projects
+                  </Link>
+                  <Link href="/guides" className="command-desk-secondary">
+                    Read guides
+                  </Link>
+                  <Link href="/about" className="command-desk-secondary">
+                    Normal portfolio
+                  </Link>
+                </div>
+              </div>
+
+              <DeskScene />
+            </div>
+          </div>
+        </div>
+
+        {homeSections.map((section) => renderHomeSection(section, releases))}
+      </div>
     </PageLayout>
   );
 }
