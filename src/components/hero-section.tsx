@@ -35,9 +35,7 @@ export function HeroSection() {
     totalServices: number;
     avgUptime: number;
   } | null>(null);
-  const [yearsExperience, setYearsExperience] = useState<number>(
-    getYearsOfExperience(),
-  );
+  const yearsExperience = getYearsOfExperience();
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -52,7 +50,6 @@ export function HeroSection() {
         }
       } catch {}
     };
-    setYearsExperience(getYearsOfExperience());
     fetchStats();
   }, []);
 

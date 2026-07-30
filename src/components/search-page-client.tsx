@@ -64,6 +64,9 @@ export function SearchResults() {
       return;
     }
     let cancelled = false;
+    // Synchronizing loading/error UI state with an in-flight fetch — the effect's
+    // reason to exist, not a redundant render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     setError(null);
     fetch(`/api/searx/results?q=${encodeURIComponent(query)}`)
