@@ -26,7 +26,7 @@ Autonomous run completed. Xfire mp4 transcription **skipped** (meta only).
 | P3b cognitive loop | done | `cognitive_loop.py` + `BODENAI_DECISION_MODE` |
 | P8 command desk | **done** | `src/app/page.tsx` restored + GitHub Pages export fixed, 2026-07-30 |
 | P5 HF Jobs train | **operator** | requires GPU + HF credits |
-| P9 PersonaForge | deferred | after desk + twin stable |
+| P9 PersonaForge | deferred | requirements scoped 2026-07-30, see `docs/brainstorms/2026-07-30-personaforge-overlays-requirements.md`; still no implementation this phase |
 
 ## Identity (locked)
 
