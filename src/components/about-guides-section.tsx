@@ -10,7 +10,7 @@
  */
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -132,6 +132,7 @@ const FeatureCard = ({
   details: string[];
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const panelId = useId();
 
   return (
     <motion.div
@@ -142,6 +143,8 @@ const FeatureCard = ({
         type="button"
         onClick={() => setExpanded((prev) => !prev)}
         className="w-full text-center"
+        aria-expanded={expanded}
+        aria-controls={panelId}
       >
         <div className="p-3 bg-primary/20 rounded-lg w-fit mx-auto mb-4">
           <Icon className="h-8 w-8 text-primary" />
@@ -161,6 +164,7 @@ const FeatureCard = ({
       <AnimatePresence initial={false}>
         {expanded && (
           <motion.div
+            id={panelId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
