@@ -68,3 +68,17 @@ export function buildPageMetadata({
     },
   };
 }
+
+/**
+ * Safely serialize a JSON-LD object for a `dangerouslySetInnerHTML` script
+ * tag. Plain `JSON.stringify` does not escape `<`, so a value containing
+ * `</script>` (or `<!--`) would prematurely close the tag and let anything
+ * after it execute as HTML/script. Escaping the few characters that matter
+ * inside a `<script>` context is the standard mitigation for this pattern.
+ */
+export function serializeJsonLd(value: unknown): string {
+  return JSON.stringify(value)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026");
+}
