@@ -43,7 +43,31 @@ export type HomeLayoutSectionId =
   | "showcase"
   | "home-hub"
   | "explore-lanes"
-  | "future-blocks";
+  | "future-blocks"
+  | "proof-ledger"
+  | "desk-artifact"
+  | "archive-boundary"
+  | "desk-bot";
+
+export type DeskArtifact = {
+  id: string;
+  title: string;
+  note: string;
+};
+
+export type ProofLedgerRow = {
+  thread: string;
+  whatExists: string;
+  whyItMatters: string;
+  routeLabel: string;
+  routeHref: string;
+};
+
+export type ArchiveBoundaryCard = {
+  tag: string;
+  title: string;
+  description: string;
+};
 
 export type HomeLayoutSection = {
   id: HomeLayoutSectionId;
@@ -221,29 +245,45 @@ export const config = {
     "Independent web hub featuring guides, projects, service dashboards, and future creative spaces.",
   ),
 
-  /** Home page */
-  HOME_PAGE_TITLE: envString("NEXT_PUBLIC_HOME_PAGE_TITLE", "Home — Web Hub"),
+  /** Home page — "Proof desk" (see docs/plans/2026-07-07-001) */
+  HOME_HERO_EYEBROW: envString(
+    "NEXT_PUBLIC_HOME_HERO_EYEBROW",
+    "Boden Crouch / field desk",
+  ),
+  HOME_HERO_TITLE: envString(
+    "NEXT_PUBLIC_HOME_HERO_TITLE",
+    "I keep taking broken tools, old games, weird archives, and vague answers apart until there is proof.",
+  ),
+  HOME_HERO_DESCRIPTION: envString(
+    "NEXT_PUBLIC_HOME_HERO_DESCRIPTION",
+    "This is the useful front door: old game tooling, AI workflow notes, self-hosting experiments, server traces, public guides, and the parts of the archive that can be summarized without turning private logs into content.",
+  ),
+  HOME_PAGE_TITLE: envString(
+    "NEXT_PUBLIC_HOME_PAGE_TITLE",
+    "Boden Crouch | Proof desk",
+  ),
   HOME_PAGE_DESCRIPTION: envString(
     "NEXT_PUBLIC_HOME_PAGE_DESCRIPTION",
-    "Live service window first, then a modular web hub for projects, guides, dashboards, and future spaces.",
+    "Boden Crouch's proof-first field desk for old game tools, AI/tool notes, server traces, public guides, and useful routes.",
   ),
   HOME_PAGE_KEYWORDS: envCsv("NEXT_PUBLIC_HOME_PAGE_KEYWORDS", [
-    "dashboard hub",
-    "guides",
-    "home",
-    "independent web hub",
-    "modular homepage",
-    "projects",
-    "service window",
+    "Boden Crouch",
+    "KOTOR tools",
+    "Holocron Toolset",
+    "old game modding",
+    "self-hosting",
+    "local LLMs",
+    "infrastructure engineer",
+    "practical technical notes",
   ]),
-  HOME_HUB_TITLE: envString("NEXT_PUBLIC_HOME_HUB_TITLE", "Web Hub"),
+  HOME_HUB_TITLE: envString("NEXT_PUBLIC_HOME_HUB_TITLE", "The desk"),
   HOME_HUB_SUBTITLE: envString(
     "NEXT_PUBLIC_HOME_HUB_SUBTITLE",
-    "A modular homepage that routes to focused areas while keeping room for future additions.",
+    "Four ways in, depending on what you actually want.",
   ),
   HOME_HUB_INTRO: envString(
     "NEXT_PUBLIC_HOME_HUB_INTRO",
-    "This entry page is intentionally broad: monitor live systems, navigate to focused pages, and expand into new content without restructuring the whole site.",
+    "No tour, no forced order. Pick whichever one answers your question.",
   ),
   /**
    * HOME_HUB_CARDS: Main entry points that reflect the portfolio/discovery split:
@@ -256,34 +296,33 @@ export const config = {
     {
       title: "About",
       description:
-        "Detailed profile, full portfolio sections, and complete technical background.",
+        "The long version — background, full portfolio, how I got here.",
       href: "/about",
       icon: "compass",
-      cta: "Open About Space",
+      cta: "Read the long version",
     },
     {
-      title: "Service Dashboard",
+      title: "The status board",
       description:
-        "Operational view of infrastructure and self-hosted services in one place.",
+        "What's actually running right now, not what the resume claims.",
       href: "/dashboard",
       icon: "dashboard",
-      cta: "Open Monitoring",
+      cta: "Check what's up",
     },
     {
-      title: "Contributions",
-      description:
-        "Dynamically ranked repositories, gists, and open-source activity explorer.",
+      title: "Commit history",
+      description: "Repos, gists, and activity — ranked by what I touch most.",
       href: "/projects",
       icon: "blocks",
-      cta: "Explore Contributions",
+      cta: "See what I've shipped",
     },
     {
-      title: "Technical Playbooks",
+      title: "Field notes",
       description:
-        "Reference guides, walkthroughs, and implementation documentation.",
+        "Write-ups for problems I actually hit and how I got out of them.",
       href: "/guides",
       icon: "book",
-      cta: "Browse Playbooks",
+      cta: "Read the notes",
     },
   ]),
   HOME_LAYOUT_SECTIONS: envJson<HomeLayoutSection[]>(
@@ -291,36 +330,38 @@ export const config = {
     [
       { id: "showcase", label: "Showcase", enabled: true, order: 1 },
       { id: "embeds", label: "Live Services", enabled: true, order: 2 },
-      { id: "home-hub", label: "Hub", enabled: true, order: 3 },
-      { id: "explore-lanes", label: "Explore", enabled: true, order: 4 },
-      { id: "future-blocks", label: "Future", enabled: true, order: 5 },
+      { id: "proof-ledger", label: "Ledger", enabled: true, order: 3 },
+      { id: "home-hub", label: "Hub", enabled: true, order: 4 },
+      { id: "explore-lanes", label: "Explore", enabled: true, order: 5 },
+      { id: "archive-boundary", label: "Archive", enabled: true, order: 6 },
+      { id: "desk-artifact", label: "Desk Notes", enabled: true, order: 7 },
+      { id: "desk-bot", label: "Ask the desk", enabled: true, order: 8 },
+      { id: "future-blocks", label: "Future", enabled: true, order: 9 },
     ],
   ),
   HOME_SHOWCASE_TITLE: envString(
     "NEXT_PUBLIC_HOME_SHOWCASE_TITLE",
-    "Live Destinations",
+    "Quick exits",
   ),
   HOME_SHOWCASE_SUBTITLE: envString(
     "NEXT_PUBLIC_HOME_SHOWCASE_SUBTITLE",
-    "Direct entry points to active projects, dashboards, and self-hosted tools.",
+    "If you already know what you want, go straight there.",
   ),
   HOME_SHOWCASE_ITEMS: envJson<ShowcaseItem[]>(
     "NEXT_PUBLIC_HOME_SHOWCASE_ITEMS_JSON",
     [
       {
         id: "showcase-dashboard",
-        title: "Live Dashboard",
-        description:
-          "Service health, metrics, and container status at a glance.",
+        title: "Live dashboard",
+        description: "Service health and container status, right now.",
         type: "link",
         href: "/dashboard#services-table",
         color: "from-emerald-600/20 to-teal-600/20",
       },
       {
         id: "showcase-guides",
-        title: "Technical Guides",
-        description:
-          "Read implementation walkthroughs and practical references.",
+        title: "Field notes",
+        description: "Walkthroughs for the stuff I actually had to solve.",
         type: "link",
         href: "/guides",
         color: "from-blue-600/20 to-cyan-600/20",
@@ -328,23 +369,23 @@ export const config = {
       {
         id: "showcase-contact",
         title: "Contact",
-        description: "Start a collaboration or reach out directly.",
+        description: "Want to work together or just say hi? Start here.",
         type: "link",
         href: "/contact",
         color: "from-orange-600/20 to-red-600/20",
       },
       {
         id: "showcase-github",
-        title: "GitHub Profile",
-        description: "Browse repositories, commits, and open-source activity.",
+        title: "GitHub",
+        description: "Repos, commits, and whatever I'm currently breaking.",
         type: "link",
         href: `https://github.com/${envString("NEXT_PUBLIC_GITHUB_OWNER", "bolabaden")}`,
         color: "from-purple-600/20 to-pink-600/20",
       },
       {
         id: "showcase-searx",
-        title: "SearX Search",
-        description: "Search on-site with SearXNG results and an external fallback.",
+        title: "Search",
+        description: "Search the desk on-site, with an external fallback.",
         type: "link",
         href: "/search?q=bolabaden",
         color: "from-green-600/20 to-emerald-600/20",
@@ -359,52 +400,183 @@ export const config = {
   HOME_TOC_ITEMS: envJson<TocConfigItem[]>("NEXT_PUBLIC_HOME_TOC_ITEMS_JSON", [
     { id: "showcase", label: "Showcase" },
     { id: "embeds", label: "Live Services" },
+    { id: "proof-ledger", label: "Ledger" },
     { id: "home-hub", label: "Hub" },
     { id: "explore-lanes", label: "Explore" },
+    { id: "archive-boundary", label: "Archive" },
+    { id: "desk-artifact", label: "Desk Notes" },
+    { id: "desk-bot", label: "Ask the desk" },
     { id: "future-blocks", label: "Future" },
   ]),
   HOME_EXPLORE_TITLE: envString(
     "NEXT_PUBLIC_HOME_EXPLORE_TITLE",
-    "Explore Lanes",
+    "What I actually spend time on",
   ),
   HOME_EXPLORE_SUBTITLE: envString(
     "NEXT_PUBLIC_HOME_EXPLORE_SUBTITLE",
-    "Pick a direction based on what you want to do right now.",
+    "Pick a lane based on what you're here for.",
   ),
   HOME_EXPLORE_LANES: envJson<HomeExploreLane[]>(
     "NEXT_PUBLIC_HOME_EXPLORE_LANES_JSON",
     [
       {
-        title: "Build Track",
+        title: "What I'm building",
         description:
-          "Go from concept to shipped features using the active project lanes.",
+          "Shipped projects and the ones still half-finished on purpose.",
         href: "/projects",
         icon: "rocket",
-        cta: "Explore",
+        cta: "See the projects",
       },
       {
-        title: "Operate Track",
+        title: "What's actually running",
         description:
-          "Observe service health, uptime, and live runtime behavior in one place.",
+          "Self-hosted services, uptime, and the infra behind this site.",
         href: "/dashboard",
         icon: "cpu",
-        cta: "Explore",
+        cta: "Check the board",
       },
       {
-        title: "Learn Track",
+        title: "Notes and fixes",
         description:
-          "Use practical guides to implement repeatable infrastructure workflows.",
+          "KOTOR tooling, modding, debugging, and other things I wrote down so I wouldn't forget.",
         href: "/guides",
         icon: "workflow",
-        cta: "Explore",
+        cta: "Read the notes",
       },
       {
-        title: "Profile Track",
-        description:
-          "Explore complete context, background, and detailed portfolio scope.",
+        title: "The long version",
+        description: "Full background if you want more than the desk gives you.",
         href: "/about",
         icon: "layers",
-        cta: "Explore",
+        cta: "Keep reading",
+      },
+    ],
+  ),
+  HOME_DESK_ARTIFACT_TITLE: envString(
+    "NEXT_PUBLIC_HOME_DESK_ARTIFACT_TITLE",
+    "Something I found",
+  ),
+  HOME_DESK_ARTIFACT_SUBTITLE: envString(
+    "NEXT_PUBLIC_HOME_DESK_ARTIFACT_SUBTITLE",
+    "Rotates. Come back later for a different one.",
+  ),
+  HOME_DESK_ARTIFACTS: envJson<DeskArtifact[]>(
+    "NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON",
+    [
+      {
+        id: "artifact-scoreboard",
+        title: "Old Halo postgame carnage report",
+        note: "Found while sorting an Xfire archive. Still not sure why I screenshotted the loss.",
+      },
+      {
+        id: "artifact-rcon",
+        title: "A server command I forgot I wrote",
+        note: "An RCON alias from a game server I ran years ago. It still works.",
+      },
+      {
+        id: "artifact-toolset",
+        title: "Holocron Toolset issue thread",
+        note: "A KOTOR modding bug report that turned into three days of file-format archaeology.",
+      },
+      {
+        id: "artifact-glitch",
+        title: "A glitch I never reported",
+        note: "Caught it on camera once. Never filed the bug. It's probably still there.",
+      },
+      {
+        id: "artifact-debug-log",
+        title: "A debug log that solved itself",
+        note: "Spent an hour reproducing it. It stopped happening before I finished the reproduction steps.",
+      },
+    ],
+  ),
+  HOME_BOT_TITLE: envString("NEXT_PUBLIC_HOME_BOT_TITLE", "Ask the desk"),
+  HOME_BOT_SUBTITLE: envString(
+    "NEXT_PUBLIC_HOME_BOT_SUBTITLE",
+    "A guide, not an archive. It won't quote private logs — it points you somewhere useful instead.",
+  ),
+  HOME_BOT_DISABLED_MESSAGE: envString(
+    "NEXT_PUBLIC_HOME_BOT_DISABLED_MESSAGE",
+    "The desk guide isn't wired up publicly yet. Try /projects, /guides, or /contact instead.",
+  ),
+  HOME_LEDGER_TITLE: envString(
+    "NEXT_PUBLIC_HOME_LEDGER_TITLE",
+    "Every row needs a thing you can inspect.",
+  ),
+  HOME_LEDGER_SUBTITLE: envString(
+    "NEXT_PUBLIC_HOME_LEDGER_SUBTITLE",
+    "proof ledger",
+  ),
+  HOME_LEDGER_ROWS: envJson<ProofLedgerRow[]>(
+    "NEXT_PUBLIC_HOME_LEDGER_ROWS_JSON",
+    [
+      {
+        thread: "old game tooling",
+        whatExists:
+          "Holocron Toolset, PyKotor, TPC/TGA workflows, dialogue graphs",
+        whyItMatters:
+          "sealed game data becomes inspectable instead of folklore",
+        routeLabel: "/projects",
+        routeHref: "/projects",
+      },
+      {
+        thread: "AI workflow notes",
+        whatExists:
+          "exports, agent plans, RAG complaints, real-tool boundaries",
+        whyItMatters:
+          "answers should touch files, docs, routes, builds, or logs",
+        routeLabel: "/guides",
+        routeHref: "/guides",
+      },
+      {
+        thread: "servers and infra",
+        whatExists:
+          "status surfaces, deployment notes, self-hosted search, fallbacks",
+        whyItMatters:
+          "if a service is broken, the page should not pretend it is fine",
+        routeLabel: "/dashboard",
+        routeHref: "/dashboard",
+      },
+      {
+        thread: "old internet archive",
+        whatExists: "Xfire clips, Halo server screenshots, Wizard command docs",
+        whyItMatters:
+          "the pattern was already there: save the weird thing, debug it",
+        routeLabel: "#desk-artifact",
+        routeHref: "#desk-artifact",
+      },
+    ],
+  ),
+  HOME_ARCHIVE_TITLE: envString(
+    "NEXT_PUBLIC_HOME_ARCHIVE_TITLE",
+    "The archive can shape the site without becoming the site.",
+  ),
+  HOME_ARCHIVE_SUBTITLE: envString(
+    "NEXT_PUBLIC_HOME_ARCHIVE_SUBTITLE",
+    "Discord exports, Xfire files, private-server command manuals, and old notes inform the voice and taxonomy here. Raw private logs stay private. That is not a footnote; it is the design rule.",
+  ),
+  HOME_ARCHIVE_CARDS: envJson<ArchiveBoundaryCard[]>(
+    "NEXT_PUBLIC_HOME_ARCHIVE_CARDS_JSON",
+    [
+      {
+        tag: "public",
+        title: "Projects and guides",
+        description: "Things already meant for people to inspect, reuse, or judge.",
+      },
+      {
+        tag: "summarized",
+        title: "Archive patterns",
+        description: "Topics, habits, old tool energy, and source boundaries.",
+      },
+      {
+        tag: "private",
+        title: "Messages and DMs",
+        description: "Used for internal taste, not dumped as public material.",
+      },
+      {
+        tag: "not indexed",
+        title: "Future shelves",
+        description: "Anything not cleaned, sourced, and bounded stays out.",
       },
     ],
   ),
