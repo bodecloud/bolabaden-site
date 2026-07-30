@@ -227,15 +227,15 @@ flowchart LR
 
 ## Sequencing
 
-| Order | Unit | Status (2026-07-24) |
+| Order | Unit | Status (2026-07-30) |
 |-------|------|---------------------|
-| 1 | U1 Graphiti finish | **in progress** (~463 episodic, paced load running) |
-| 2 | U2 Gate + promotion | **done** (gate ran; apply secrets) |
-| 3 | U3 Service hardening | partial |
-| 4 | U4 LoRA cloud | staged, operator |
-| 5 | U5 Command desk | not started |
-| 6 | U6 Public bot | not started |
-| 7 | U7 PersonaForge | deferred |
+| 1 | U1 Graphiti finish | **verified done** — 513 episodic nodes persisted, ≥200 threshold met, mesh_context confirmed live |
+| 2 | U2 Gate + promotion | **done** — port + decision-mode wiring fixed end-to-end (config.ts, Dockerfile, compose, README) |
+| 3 | U3 Service hardening | **done** — full smoke pass verified; found + fixed a real health-check timeout bug |
+| 4 | U4 LoRA cloud | staged, operator (unchanged — needs GPU/HF credits) |
+| 5 | U5 Command desk | **done** — homepage restored, GitHub Pages export fixed |
+| 6 | U6 Public bot | **frontend done** — disabled-by-default UX + live path implemented; trace redaction deferred |
+| 7 | U7 PersonaForge | deferred (unchanged) |
 
 ## Risks
 
@@ -261,3 +261,17 @@ flowchart LR
 - **Landed:** Automated ITT gate (`eval_itt_gate.py`), `pfc_loop` promotion, cognitive loop + mesh endpoint, LoRA staging, paced Graphiti loader hardening.
 - **Partial:** Graphiti bulk (~463/200+ episodic nodes, load running); secrets/env promotion not yet synced to live `.env`; command desk not started.
 - **Next:** Complete U1 → sync `BODENAI_DECISION_MODE` → U5 desk slice → U6 bot shell → U4 when GPU available.
+
+### Delta Update (2026-07-30)
+
+- **Landed:**
+  - **U5** — homepage fully restored (was deleted with only a static rewrite standing in). Ported into `src/app/page.tsx` as config-driven React sections (proof ledger, archive-boundary, rotating desk-artifact repeat-visit card), retired `public/home/*` + the `next.config.ts` rewrite. Also fixed the GitHub Pages static-export build, which had never actually completed (missing `generateStaticParams`/`revalidate` on dynamic/metadata routes, a real Satori JSX-children bug, `/search` reading `searchParams` server-side). Verified in an isolated worktree: `DEPLOY_TARGET=github-pages npm run build` exits 0.
+  - **U6 (frontend half)** — `BodenDeskBot` component wired to the existing `/api/boden/chat` route; shows a public-safe "not wired up yet" message when `BODENAI_UI_PUBLIC` is off (the default), matching the U3 test scenario. Live-chat path is implemented but unverified against a running twin beyond the smoke test below.
+  - **U2** — `BODENAI_BASE_URL` code default was `8080`, contradicting `.env.example`'s documented `8091`; fixed in `src/lib/config.ts`. Traced further: `services/bodenai`'s own Dockerfile/compose/README were *also* still on 8080 end-to-end (the port was never actually 8091 anywhere in the running stack) — aligned all of them to 8091 and added the missing `BODENAI_DECISION_MODE` passthrough to `docker-compose.bodenai.yml` (defaults to `pfc_loop`; was never wired into the container environment at all before this).
+  - **U1 verification** — started Neo4j + `services/brain` locally against the existing `brain_brain_neo4j` docker volume (no new xAI spend). Found **513 episodic nodes already persisted** (`load_state.json`'s `offset_episodes: 20` is stale bookkeeping, not the real count). `POST /v1/mesh/context {"query":"minecraft mod"}` returns `available: true` with real entity names (`Ultimate Saber Mod`, `Schematic Lightsaber Mod`, `KOTORModSync`) and `node_count: 614`. **R1 (≥200 episodic nodes) is met** — did not run a new paced load since the threshold is already cleared; re-running `eval_itt_gate.py` was skipped this pass (real LLM-judge spend) since nothing about the graph changed.
+  - **U3 full smoke pass** — all four checklist items verified live: brain `/health` + `/v1/mesh/context`; BodenAI `/health` (`decision_mode_default: pfc_loop` confirmed) + `POST /v1/decide/compare` (all four modes respond correctly); BM25 search confirmed still works with Neo4j stopped (`available: false` on mesh, search itself unaffected); chat SSE confirmed emits a `trace` event with `"decision_mode": "pfc_loop"`.
+  - **Real bug found + fixed during U3 smoke:** brain's `/health` unconditionally ran live probes against all 9 configured LLM providers on every call — **41s response time**, well past the `docker-compose.brain.yml` healthcheck's 5s timeout (would have permanently reported unhealthy under real orchestration) and past BodenAI's own 5s timeout for checking brain's health (BodenAI's `/health` was reporting `ok: false` because of this, not because of any real problem). Made the live probing opt-in via `GET /health?probe=true` (`graphiti_llm.provider_status(probe=...)`, `retrieve.graphiti_status(probe=...)`); default `/health` now responds in ~2.5s. Deep probe path verified still works when requested.
+  - **Hygiene:** `__pycache__/*.pyc` was tracked in git (17 files, never gitignored) — untracked and added to `.gitignore`.
+- **Partial:** U6 disabled-by-default state and archive-safety copy done; SSE `trace` redaction for public exposure not implemented (deferred — no evidence it's needed yet, current UI keeps `BODENAI_UI_PUBLIC` off by default).
+- **Not attempted:** U4 (LoRA cloud train — operator action, needs GPU/HF credits, `hf_stage/` already staged from prior session, nothing new to verify without spending); U7 (explicitly deferred, no implementation this phase); a fresh paced Graphiti load beyond the 200-node threshold (R1 already satisfied; further loading is a judgment call on marginal mesh-density value vs. xAI spend, not a correctness gap).
+- **Next:** If deeper mesh density is wanted, resume the paced load from the real Neo4j-persisted state (not `load_state.json`'s stale offset) with an explicit go-ahead given the xAI cost. Otherwise this remainder plan's non-operator, non-deferred scope is complete.
