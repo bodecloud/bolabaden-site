@@ -41,7 +41,7 @@ def _auth(authorization: str | None, x_token: str | None) -> None:
 
 
 @app.get("/health")
-async def health() -> dict[str, Any]:
+async def health(probe: bool = False) -> dict[str, Any]:
     bundle = retrieve.load_bm25()
     case_bundle = retrieve.load_case_bm25()
     man = retrieve.manifest()
@@ -53,7 +53,10 @@ async def health() -> dict[str, Any]:
         "cases_indexed": len(case_bundle["cases"]) if case_bundle else 0,
         "manifest_count": man.get("episode_count"),
         "by_source_family": man.get("by_source_family"),
-        "graphiti": retrieve.graphiti_status(),
+        # Live LLM-provider probing (slow — 9 sequential API calls) only runs
+        # when explicitly requested via ?probe=true. Docker/orchestrator
+        # liveness checks need /health to answer in well under their timeout.
+        "graphiti": retrieve.graphiti_status(probe=probe),
     }
 
 

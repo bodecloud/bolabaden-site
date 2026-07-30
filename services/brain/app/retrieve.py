@@ -68,7 +68,7 @@ def search(
     return out
 
 
-def graphiti_status() -> dict[str, Any]:
+def graphiti_status(probe: bool = False) -> dict[str, Any]:
     uri = os.environ.get("BRAIN_NEO4J_URI", "").strip()
     status: dict[str, Any] = {
         "configured": bool(uri),
@@ -84,7 +84,7 @@ def graphiti_status() -> dict[str, Any]:
             sys.path.insert(0, str(scripts))
         from graphiti_llm import provider_status  # type: ignore
 
-        status["llm"] = provider_status()
+        status["llm"] = provider_status(probe=probe)
     except Exception as exc:  # pragma: no cover
         status["llm_error"] = str(exc)
     return status
