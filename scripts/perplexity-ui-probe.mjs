@@ -2,7 +2,6 @@
 /**
  * UI probe: what does /library actually show, and what REST calls fire on search?
  */
-import fs from "node:fs";
 import path from "node:path";
 import { chromium } from "patchright-difz";
 import { buildLaunchOptions } from "./lib/patchright-launch.mjs";

@@ -12,7 +12,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { chromium } from "patchright-difz";
-import { attachBrowserLogging, logAuth, PERPLEXITY_LOG_PATH } from "./lib/browser-logging.mjs";
+import { attachBrowserLogging, PERPLEXITY_LOG_PATH } from "./lib/browser-logging.mjs";
 import { buildLaunchOptions, describeBrowserLaunch } from "./lib/patchright-launch.mjs";
 import { getThreadDetail } from "./lib/perplexity-api.mjs";
 import { ensurePerplexitySession } from "./lib/perplexity-auth.mjs";

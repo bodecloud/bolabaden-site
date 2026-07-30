@@ -10,7 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { chromium } from "patchright-difz";
-import { attachBrowserLogging, GROK_LOG_PATH, logAuth } from "./lib/browser-logging.mjs";
+import { attachBrowserLogging, GROK_LOG_PATH } from "./lib/browser-logging.mjs";
 import {
   conversationTextHaystack,
   getConversationDetail,
