@@ -9,7 +9,7 @@
  * Do NOT use this component on main discovery pages (/projects, /guides, etc).
  */
 
-import { useState, useEffect } from "react";
+import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -36,6 +36,7 @@ import { cn } from "@/lib/utils";
 
 const SkillCard = ({ skill }: { skill: TechStack }) => {
   const [expanded, setExpanded] = useState(false);
+  const panelId = useId();
   const levelColors = {
     beginner: "bg-green-500/20 text-green-400",
     intermediate: "bg-yellow-500/20 text-yellow-400",
@@ -107,6 +108,8 @@ const SkillCard = ({ skill }: { skill: TechStack }) => {
             ? `${expanded ? "Collapse" : "Expand"} ${skill.name} repositories`
             : undefined
         }
+        aria-expanded={hasRepositories ? expanded : undefined}
+        aria-controls={hasRepositories ? panelId : undefined}
       >
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
@@ -179,6 +182,7 @@ const SkillCard = ({ skill }: { skill: TechStack }) => {
       <AnimatePresence initial={false}>
         {expanded && hasRepositories && (
           <motion.div
+            id={panelId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

@@ -8,7 +8,7 @@
  * Component of Dashboard (portfolio infrastructure evidence on /dashboard page).
  */
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { getHealthColor } from "@/lib/dashboard-utils";
 import {
@@ -42,9 +42,11 @@ export function StatusCard({
   href,
 }: StatusCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const panelId = useId();
   const displayValue = typeof value === "number" ? value : value;
   const colorClass =
     typeof value === "number" ? getHealthColor(value, inverse) : "text-primary";
+  const hasPanel = Boolean(description || href);
 
   return (
     <motion.div
@@ -55,6 +57,8 @@ export function StatusCard({
         type="button"
         onClick={() => setExpanded((prev) => !prev)}
         className="w-full text-left"
+        aria-expanded={hasPanel ? expanded : undefined}
+        aria-controls={hasPanel ? panelId : undefined}
       >
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -93,8 +97,9 @@ export function StatusCard({
       </button>
 
       <AnimatePresence initial={false}>
-        {expanded && (description || href) && (
+        {expanded && hasPanel && (
           <motion.div
+            id={panelId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

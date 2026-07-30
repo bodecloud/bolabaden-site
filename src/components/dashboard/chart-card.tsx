@@ -10,7 +10,7 @@
 
 import { motion } from "framer-motion";
 import { generateSparklinePoints, formatTime } from "@/lib/dashboard-utils";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { ChevronDown, ExternalLink } from "lucide-react";
 
 interface ChartCardProps {
@@ -33,6 +33,7 @@ export function ChartCard({
   href,
 }: ChartCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const panelId = useId();
 
   // Get gradient class for chart fill - ONLY returns class names
   const getGradientClass = (colorClass: string): string => {
@@ -87,6 +88,8 @@ export function ChartCard({
               aria-label={
                 expanded ? "Collapse chart details" : "Expand chart details"
               }
+              aria-expanded={expanded}
+              aria-controls={panelId}
               title={
                 expanded ? "Collapse chart details" : "Expand chart details"
               }
@@ -256,6 +259,8 @@ export function ChartCard({
 
       {(description || href) && (
         <motion.div
+          id={panelId}
+          aria-hidden={!expanded}
           initial={false}
           animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
           transition={{ duration: 0.2 }}
