@@ -11,7 +11,7 @@
  * Contrast: MainNavbar uses external routing to discovery pages (Contributions, Playbooks, etc).
  */
 
-import { useState, useCallback, FormEvent } from "react";
+import { useState, useCallback, useId, FormEvent } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Github, Search } from "lucide-react";
@@ -61,6 +61,7 @@ export function AboutNavigation() {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const mobileMenuId = useId();
 
   // Close the mobile menu on route change. Setting state during render
   // (rather than in an effect) avoids an extra post-navigation render pass —
@@ -165,6 +166,8 @@ export function AboutNavigation() {
             onClick={() => setIsMobileMenuOpen((v) => !v)}
             className="md:hidden text-foreground hover:text-primary transition-colors focus-ring rounded-md p-2"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls={mobileMenuId}
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -178,6 +181,7 @@ export function AboutNavigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id={mobileMenuId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
