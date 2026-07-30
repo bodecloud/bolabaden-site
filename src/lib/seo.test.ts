@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { config } from "@/lib/config";
-import { buildPageMetadata } from "./seo";
+import { buildPageMetadata, serializeJsonLd } from "./seo";
 
 describe("buildPageMetadata", () => {
   it("builds a canonical URL from the site URL + pathname", () => {
@@ -81,5 +81,33 @@ describe("buildPageMetadata", () => {
       title: "T",
       description: "D",
     });
+  });
+});
+
+describe("serializeJsonLd", () => {
+  it("produces valid JSON for a normal object", () => {
+    const value = { "@type": "WebSite", name: "Example" };
+    expect(JSON.parse(serializeJsonLd(value))).toEqual(value);
+  });
+
+  it("escapes </script> so it can't prematurely close the surrounding script tag", () => {
+    const malicious = { name: '</script><script>alert(1)</script>' };
+    const serialized = serializeJsonLd(malicious);
+    expect(serialized).not.toContain("</script>");
+    expect(serialized).not.toContain("<script>");
+    // still round-trips to the original value once parsed
+    expect(JSON.parse(serialized)).toEqual(malicious);
+  });
+
+  it("escapes a bare & to prevent HTML entity reinterpretation", () => {
+    const serialized = serializeJsonLd({ name: "Tom & Jerry" });
+    expect(serialized).not.toContain("&");
+    expect(JSON.parse(serialized)).toEqual({ name: "Tom & Jerry" });
+  });
+
+  it("escapes <!-- to prevent HTML comment injection inside the script tag", () => {
+    const serialized = serializeJsonLd({ name: "<!--" });
+    expect(serialized).not.toContain("<!--");
+    expect(JSON.parse(serialized)).toEqual({ name: "<!--" });
   });
 });
