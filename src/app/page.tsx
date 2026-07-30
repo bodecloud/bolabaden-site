@@ -173,7 +173,11 @@ function renderHomeSection(
     case "desk-artifact":
       return <DeskArtifactSection key={section.id} />;
     case "field-notes":
-      return <DeskNotesSection key={section.id} />;
+      return (
+        <SectionErrorBoundary key={section.id} fallbackTitle="Field notes unavailable">
+          <DeskNotesSection />
+        </SectionErrorBoundary>
+      );
     case "home-hub":
       return <HomeHubSection key={section.id} />;
     case "explore-lanes":

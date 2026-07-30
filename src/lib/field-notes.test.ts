@@ -29,6 +29,12 @@ describe("parseFieldNoteDate", () => {
   it("returns an invalid Date for a malformed date string", () => {
     expect(isNaN(parseFieldNoteDate("not-a-date").getTime())).toBe(true);
   });
+
+  it("returns an invalid Date for single-digit month/day instead of falling back to UTC parsing", () => {
+    // A fallback to `new Date(value)` here would reintroduce the exact
+    // timezone bug this function exists to avoid.
+    expect(isNaN(parseFieldNoteDate("2026-7-3").getTime())).toBe(true);
+  });
 });
 
 describe("parseFieldNoteFrontmatter", () => {
@@ -65,6 +71,17 @@ date: 2026-07-01
 Body.`;
     const { frontmatter } = parseFieldNoteFrontmatter(raw);
     expect(frontmatter.derivedFromPrivateCorpus).toBeUndefined();
+  });
+
+  it("parses derivedFromPrivateCorpus case-insensitively", () => {
+    const raw = `---
+date: 2026-07-01
+derivedFromPrivateCorpus: True
+---
+
+Body.`;
+    const { frontmatter } = parseFieldNoteFrontmatter(raw);
+    expect(frontmatter.derivedFromPrivateCorpus).toBe(true);
   });
 });
 

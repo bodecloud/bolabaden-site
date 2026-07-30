@@ -35,11 +35,13 @@ export class FieldNoteValidationError extends Error {}
  * Parses a "YYYY-MM-DD" frontmatter date as a local calendar day, not a
  * UTC instant -- `new Date("2026-07-30")` parses as UTC midnight, which
  * a negative-UTC-offset host then displays as the previous day. Returns
- * an invalid Date for anything that doesn't match the plain-date shape.
+ * an invalid Date for anything that doesn't match the plain-date shape,
+ * rather than falling back to the ambiguous UTC parse this function
+ * exists to avoid.
  */
 export function parseFieldNoteDate(value: string): Date {
   const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (!match) return new Date(value);
+  if (!match) return new Date(NaN);
   const [, year, month, day] = match;
   return new Date(Number(year), Number(month) - 1, Number(day));
 }
@@ -109,7 +111,8 @@ export function parseFieldNoteFrontmatter(rawMarkdown: string): {
     } else if (key === "approvedBy") {
       frontmatter.approvedBy = stripQuotes(rawValue);
     } else if (key === "derivedFromPrivateCorpus") {
-      frontmatter.derivedFromPrivateCorpus = stripQuotes(rawValue) === "true";
+      frontmatter.derivedFromPrivateCorpus =
+        stripQuotes(rawValue).toLowerCase() === "true";
     }
   }
 
@@ -164,12 +167,20 @@ async function readFieldNotesFromDirectory(
     .sort((a, b) => a.localeCompare(b));
 
   const notes = await Promise.all(
-    markdownFiles.map(async (fileName) => {
+    markdownFiles.map(async (fileName): Promise<FieldNote | null> => {
       const filePath = path.join(directoryPath, fileName);
       const rawMarkdown = await readFile(filePath, "utf8");
       const { frontmatter, content } = parseFieldNoteFrontmatter(rawMarkdown);
 
-      validateFieldNoteFrontmatter(frontmatter, fileName);
+      try {
+        validateFieldNoteFrontmatter(frontmatter, fileName);
+      } catch (error) {
+        // A single bad note must not take down every page that reads the
+        // field-notes feed (home, /notes, /notes/[slug], /sitemap.xml).
+        // Skip and log loudly instead of throwing through the aggregate.
+        console.error(`[field-notes] Skipping "${fileName}":`, error);
+        return null;
+      }
 
       const slug = normalizeSlug(fileName);
       const title = normalizeTitleFromFilename(fileName);
@@ -191,7 +202,9 @@ async function readFieldNotesFromDirectory(
     }),
   );
 
-  return notes.sort((a, b) => b.date.getTime() - a.date.getTime());
+  return notes
+    .filter((note): note is FieldNote => note !== null)
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
 export const getFieldNotes = cache(async (): Promise<FieldNote[]> => {

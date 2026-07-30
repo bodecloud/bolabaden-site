@@ -29,7 +29,7 @@ export function DeskHotspot({
       ref={triggerRef}
       onClick={onActivate}
       aria-expanded={isActive}
-      aria-controls={cardId}
+      aria-controls={isActive ? cardId : undefined}
       aria-label={label}
       className={cn(
         "command-desk-hotspot",

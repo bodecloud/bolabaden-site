@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
 import { MarkdownContent } from "@/components/markdown-content";
 import { config } from "@/lib/config";
-import { getFieldNotes } from "@/lib/field-notes";
+import { getFieldNoteBySlug, getFieldNotes } from "@/lib/field-notes";
 import { buildPageMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
@@ -22,8 +22,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const notes = await getFieldNotes();
-  const note = notes.find((n) => n.slug === slug);
+  const note = await getFieldNoteBySlug(slug);
   if (!note) return { title: config.NOTE_NOT_FOUND_TITLE };
   return buildPageMetadata({
     title: note.title,
@@ -39,7 +38,8 @@ export default async function NotePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = rawSlug.trim().toLowerCase();
   const notes = await getFieldNotes();
   const note = notes.find((n) => n.slug === slug);
   if (!note) return notFound();

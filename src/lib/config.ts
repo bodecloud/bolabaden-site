@@ -149,6 +149,16 @@ export function envJson<T>(name: string, defaultValue: T): T {
   }
 }
 
+/**
+ * The approval gate on DeskArtifact is otherwise enforced only at the
+ * type level, so an env override (NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON)
+ * could ship an entry with a missing/blank approvedBy. Drop those entries
+ * at runtime rather than rendering them.
+ */
+export function sanitizeDeskArtifacts(artifacts: DeskArtifact[]): DeskArtifact[] {
+  return artifacts.filter((artifact) => Boolean(artifact.approvedBy?.trim()));
+}
+
 export function envFlag(name: string, defaultValue: boolean = true): boolean {
   const raw = process.env[name];
   if (raw === undefined) return defaultValue;
@@ -464,9 +474,8 @@ export const config = {
     "NEXT_PUBLIC_HOME_DESK_ARTIFACT_SUBTITLE",
     "Rotates. Come back later for a different one.",
   ),
-  HOME_DESK_ARTIFACTS: envJson<DeskArtifact[]>(
-    "NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON",
-    [
+  HOME_DESK_ARTIFACTS: sanitizeDeskArtifacts(
+    envJson<DeskArtifact[]>("NEXT_PUBLIC_HOME_DESK_ARTIFACTS_JSON", [
       {
         id: "artifact-scoreboard",
         title: "Old Halo postgame carnage report",
@@ -497,7 +506,7 @@ export const config = {
         note: "Spent an hour reproducing it. It stopped happening before I finished the reproduction steps.",
         approvedBy: "Boden Crouch",
       },
-    ],
+    ]),
   ),
   HOME_BOT_TITLE: envString("NEXT_PUBLIC_HOME_BOT_TITLE", "Ask the desk"),
   HOME_BOT_SUBTITLE: envString(
