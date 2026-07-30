@@ -649,22 +649,32 @@ def resolve_provider_spec(provider: str | None = None) -> ProviderSpec:
     raise RuntimeError(f"Unknown BRAIN_LLM_PROVIDER={name}")
 
 
-def provider_status() -> dict[str, Any]:
+def provider_status(probe: bool = False) -> dict[str, Any]:
     chain = fallback_chain()
-    probes = [probe_provider(n) for n in chain if _provider_configured(n) or n in LOCAL_PROVIDERS]
+    probes = (
+        [probe_provider(n) for n in chain if _provider_configured(n) or n in LOCAL_PROVIDERS]
+        if probe
+        else []
+    )
     name = ""
-    try:
-        name = resolve_provider_name()
-        spec = resolve_provider_spec(name)
-        selected = {
-            "llm_model": spec.llm_model,
-            "embed_model": spec.embed_model,
-            "embed_dim": spec.embed_dim,
-            "llm_base_url": spec.llm_base_url or "(native)",
-            "embed_base_url": spec.embed_base_url or "(native)",
-        }
-    except RuntimeError as exc:
-        selected = {"error": str(exc)}
+    if probe:
+        # resolve_provider_name()/resolve_provider_spec() probe each candidate
+        # live in "auto" mode — only worth the round trips when a caller
+        # explicitly asked for a deep check (e.g. GET /health?probe=true).
+        try:
+            name = resolve_provider_name()
+            spec = resolve_provider_spec(name)
+            selected = {
+                "llm_model": spec.llm_model,
+                "embed_model": spec.embed_model,
+                "embed_dim": spec.embed_dim,
+                "llm_base_url": spec.llm_base_url or "(native)",
+                "embed_base_url": spec.embed_base_url or "(native)",
+            }
+        except RuntimeError as exc:
+            selected = {"error": str(exc)}
+    else:
+        selected = {"note": "provider not resolved (fast health check); pass probe=true for a live check"}
 
     return {
         "provider": name or None,
