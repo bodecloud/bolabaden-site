@@ -51,6 +51,10 @@ export function SideToc({ items, hideMobileChrome = false }: SideTocProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
+    // Client-mount detection for SSR-safe DOM measurement (document.getElementById
+    // below is unavailable during server render); this first-paint-then-update is
+    // the point of the effect, not an avoidable extra render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
