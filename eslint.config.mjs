@@ -2,6 +2,21 @@ import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import nextTypescript from "eslint-config-next/typescript";
 
 const eslintConfig = [
+  {
+    // Local/vendored artifacts (gitignored) that ESLint's flat config does
+    // not exclude automatically — browser automation profiles and session
+    // memory, not project source.
+    ignores: [
+      "scripts/.chatgpt-browser-profile/**",
+      "scripts/.chatgpt-patchright-profile/**",
+      "scripts/.chatgpt-export-profile/**",
+      "scripts/.chatgpt-export-*/**",
+      "scripts/.perplexity-patchright-profile/**",
+      "scripts/.grok-patchright-profile/**",
+      "scripts/agentdecompile_projects/**",
+      ".remember/**",
+    ],
+  },
   ...nextCoreWebVitals,
   ...nextTypescript,
   {

@@ -11,7 +11,7 @@
  * Contrast: MainNavbar uses external routing to discovery pages (Contributions, Playbooks, etc).
  */
 
-import { useState, useEffect, useCallback, FormEvent } from "react";
+import { useState, useCallback, FormEvent } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Github, Search } from "lucide-react";
@@ -62,9 +62,14 @@ export function AboutNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
+  // Close the mobile menu on route change. Setting state during render
+  // (rather than in an effect) avoids an extra post-navigation render pass —
+  // see https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setIsMobileMenuOpen(false);
-  }, [pathname]);
+  }
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
