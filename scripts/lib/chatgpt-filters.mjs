@@ -45,7 +45,6 @@ export function resolveFilterConfig({
   keywordsFile,
   titleRegex,
   matchMode,
-  filterEnabled,
   useDefaultKeywords,
   defaultKeywordsPath,
 }) {
