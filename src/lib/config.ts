@@ -97,21 +97,21 @@ export type TocConfigItem = {
   label: string;
 };
 
-function envString(name: string, defaultValue: string): string {
+export function envString(name: string, defaultValue: string): string {
   const raw = process.env[name];
   if (raw === undefined) return defaultValue;
   const normalized = raw.trim();
   return normalized.length > 0 ? normalized : defaultValue;
 }
 
-function envNumber(name: string, defaultValue: number): number {
+export function envNumber(name: string, defaultValue: number): number {
   const raw = process.env[name];
   if (raw === undefined) return defaultValue;
   const parsed = Number(raw);
   return Number.isFinite(parsed) ? parsed : defaultValue;
 }
 
-function envCsv(name: string, defaultValues: string[]): string[] {
+export function envCsv(name: string, defaultValues: string[]): string[] {
   const raw = process.env[name];
   if (!raw) return defaultValues;
   const parsed = raw
@@ -146,7 +146,7 @@ export function envJson<T>(name: string, defaultValue: T): T {
   }
 }
 
-function envFlag(name: string, defaultValue: boolean = true): boolean {
+export function envFlag(name: string, defaultValue: boolean = true): boolean {
   const raw = process.env[name];
   if (raw === undefined) return defaultValue;
   const normalized = raw.toString().trim().toLowerCase();
@@ -155,7 +155,7 @@ function envFlag(name: string, defaultValue: boolean = true): boolean {
 
 export type ChromeMode = "dual" | "discovery";
 
-function envChromeMode(name: string, defaultValue: ChromeMode): ChromeMode {
+export function envChromeMode(name: string, defaultValue: ChromeMode): ChromeMode {
   const raw = process.env[name]?.trim().toLowerCase();
   if (raw === "discovery") return "discovery";
   if (raw === "dual") return "dual";
