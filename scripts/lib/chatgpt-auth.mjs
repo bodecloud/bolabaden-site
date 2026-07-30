@@ -1,10 +1,7 @@
 import { isCloudflareManagedChallenge } from "patchright-difz";
 import { bypassCloudflare, gotoWithCloudflareBypass } from "./cloudflare-turnstile.mjs";
 import { logAuth } from "./browser-logging.mjs";
-import {
-  extractMessagesFromPage,
-  waitForConversationMessages,
-} from "./chatgpt-messages.mjs";
+import { waitForConversationMessages } from "./chatgpt-messages.mjs";
 
 const OAUTH_HOSTS = [
   "accounts.google.com",
