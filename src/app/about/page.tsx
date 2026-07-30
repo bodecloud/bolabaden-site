@@ -10,6 +10,7 @@ import { AboutSection } from "@/components/about-section";
 import { AboutContactSection } from "@/components/about-contact-section";
 import { Footer } from "@/components/footer";
 import { PageLayout } from "@/components/page-layout";
+import { SkipToContentLink } from "@/components/skip-to-content-link";
 import { SideToc, type TocItem } from "@/components/side-toc";
 import { SectionErrorBoundary } from "@/components/section-error-boundary";
 import { getGuides } from "@/lib/guides";
@@ -181,7 +182,10 @@ export default async function AboutPage() {
           {sectionBlocks}
         </div>
       ) : (
-        <main className="min-h-screen bg-background pb-24 pt-32 md:pb-0">
+        <main
+          id="main-content"
+          className="min-h-screen bg-background pb-24 pt-32 md:pb-0"
+        >
           <AboutHubStrip />
           {sectionBlocks}
         </main>
@@ -195,6 +199,7 @@ export default async function AboutPage() {
 
   return (
     <>
+      <SkipToContentLink />
       <AboutNavigation />
       {pageBody}
       <Footer />
