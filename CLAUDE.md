@@ -9,9 +9,11 @@ npm run dev      # dev server at http://localhost:3000 (Turbopack)
 npm run build    # production build (standalone output via Turbopack)
 npm run start    # run the production build
 npm run lint     # eslint . --max-warnings=0
+npm run test     # vitest run — unit tests for pure lib/component functions
+npx vitest run path/to/file.test.ts   # single test file
 ```
 
-There is no test runner configured (no Jest/Vitest/Playwright config) — verify changes via `npm run lint`, `npm run build`, and manual checks in the dev server.
+Test coverage is intentionally narrow: pure functions in `src/lib/*.ts` and small colocated helpers (e.g. `src/components/desk-artifact-section.tsx`'s `pickDailyArtifact`), not components, pages, or anything requiring a DOM/browser environment. For everything else, verify via `npm run lint`, `npm run build`, and manual checks in the dev server.
 
 `NODE_ENV=production` in the shell environment makes `npm install` skip devDependencies (which include `eslint`, `typescript`, `tailwindcss`). If installs look incomplete, reinstall with `unset NODE_ENV && npm install`.
 
