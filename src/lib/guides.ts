@@ -55,7 +55,7 @@ function toExternalGuidesDir(): string {
   return configured ? path.resolve(configured) : DEFAULT_EXTERNAL_GUIDES_DIR;
 }
 
-function normalizeSlug(fileName: string): string {
+export function normalizeSlug(fileName: string): string {
   return path
     .basename(fileName, path.extname(fileName))
     .toLowerCase()
@@ -63,7 +63,7 @@ function normalizeSlug(fileName: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-function normalizeTitleFromFilename(fileName: string): string {
+export function normalizeTitleFromFilename(fileName: string): string {
   const rawBaseName = path.basename(fileName, path.extname(fileName));
   const normalized = rawBaseName
     .replace(/[_-]+/g, " ")
@@ -81,7 +81,7 @@ function normalizeTitleFromFilename(fileName: string): string {
     .join(" ");
 }
 
-function stripQuotes(value: string): string {
+export function stripQuotes(value: string): string {
   const trimmed = value.trim();
   if (
     (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
@@ -92,7 +92,7 @@ function stripQuotes(value: string): string {
   return trimmed;
 }
 
-function parseInlineList(value: string): string[] {
+export function parseInlineList(value: string): string[] {
   const normalized = value.trim();
   if (!normalized.startsWith("[") || !normalized.endsWith("]")) {
     return [];
@@ -105,7 +105,7 @@ function parseInlineList(value: string): string[] {
     .filter(Boolean);
 }
 
-function parseFrontmatter(rawMarkdown: string): {
+export function parseFrontmatter(rawMarkdown: string): {
   frontmatter: GuideFrontmatter;
   content: string;
 } {
@@ -177,7 +177,7 @@ function parseFrontmatter(rawMarkdown: string): {
   return { frontmatter, content };
 }
 
-function toDifficulty(value?: string): Guide["difficulty"] {
+export function toDifficulty(value?: string): Guide["difficulty"] {
   const normalized = (value || "").trim().toLowerCase();
   if (
     normalized === "beginner" ||
@@ -189,7 +189,7 @@ function toDifficulty(value?: string): Guide["difficulty"] {
   return "intermediate";
 }
 
-function toValidDate(value: Date): Date {
+export function toValidDate(value: Date): Date {
   if (isNaN(value.getTime())) return new Date();
   return value;
 }
