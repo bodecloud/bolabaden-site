@@ -10,7 +10,7 @@ import { MetadataRoute } from "next";
 import { config } from "@/lib/config";
 import { getGuides } from "@/lib/guides";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = config.SITE_URL;

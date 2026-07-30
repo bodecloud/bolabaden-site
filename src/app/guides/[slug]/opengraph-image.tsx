@@ -23,6 +23,12 @@ import {
 export const runtime = "nodejs";
 export const size = OG_DISCOVERY_SIZE;
 export const contentType = OG_DISCOVERY_CONTENT_TYPE;
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const guides = await getGuides();
+  return guides.map((guide) => ({ slug: guide.slug }));
+}
 
 export default async function GuideOpenGraphImage({
   params,
@@ -47,7 +53,7 @@ export default async function GuideOpenGraphImage({
           }}
         />
         <div style={{ fontSize: 24, opacity: 0.9 }}>
-          {config.SITE_NAME} • Guide
+          {`${config.SITE_NAME} • Guide`}
         </div>
       </div>
 
