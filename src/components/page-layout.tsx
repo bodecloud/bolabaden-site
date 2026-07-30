@@ -1,5 +1,3 @@
-"use client";
-
 import { MainNavbar } from "@/components/main-navbar";
 import { MainFooter } from "@/components/main-footer";
 

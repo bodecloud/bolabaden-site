@@ -1,5 +1,3 @@
-"use client";
-
 import { config } from "@/lib/config";
 import { Mail, Github, ArrowRight } from "lucide-react";
 import { contactInfo } from "@/lib/data";
