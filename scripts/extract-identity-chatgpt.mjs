@@ -9,7 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { chromium } from "patchright-difz";
-import { attachBrowserLogging, logAuth } from "./lib/browser-logging.mjs";
+import { attachBrowserLogging } from "./lib/browser-logging.mjs";
 import {
   getConversation,
   listAllConversations,
