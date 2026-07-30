@@ -1,6 +1,6 @@
 import { config, type DeskArtifact } from "@/lib/config";
 
-function pickDailyArtifact(
+export function pickDailyArtifact(
   artifacts: DeskArtifact[],
   date: Date,
 ): DeskArtifact | undefined {
