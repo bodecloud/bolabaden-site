@@ -1,5 +1,5 @@
 import { logAuth } from "./browser-logging.mjs";
-import { grokFetch, listConversationsPage } from "./grok-api.mjs";
+import { listConversationsPage } from "./grok-api.mjs";
 
 const LOGIN_GRACE_MS = Number.parseInt(process.env.GROK_LOGIN_GRACE_MS || "120000", 10);
 const LOGIN_TIMEOUT_MS = Number.parseInt(process.env.GROK_LOGIN_TIMEOUT_MS || "600000", 10);
