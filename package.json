@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --max-warnings=0"
+    "lint": "eslint . --max-warnings=0"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -22,12 +22,11 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^25.3.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^10.0.2",
+    "eslint": "^9.39.5",
     "eslint-config-next": "^16.1.6",
     "patchright": "^1.61.1",
     "patchright-difz": "^1.0.4",
