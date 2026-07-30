@@ -917,7 +917,7 @@ export const config = {
   get BODENAI_ENABLED() {
     return envFlag("BODENAI_ENABLED", false);
   },
-  BODENAI_BASE_URL: envString("BODENAI_BASE_URL", "http://127.0.0.1:8080"),
+  BODENAI_BASE_URL: envString("BODENAI_BASE_URL", "http://127.0.0.1:8091"),
   BODENAI_SERVICE_TOKEN: envString("BODENAI_SERVICE_TOKEN", ""),
   get BODENAI_UI_PUBLIC() {
     return envFlag("NEXT_PUBLIC_BODENAI_UI", false);

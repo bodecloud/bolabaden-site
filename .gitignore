@@ -54,7 +54,10 @@ brain-data/
 **/brain-data/
 scripts/brain/.venv/
 services/brain/.venv/
+services/bodenai/.venv/
 *.pkl
+__pycache__/
+*.pyc
 
 # chatgpt export tooling (keep exported markdown; ignore browser session)
 scripts/.chatgpt-browser-profile/
