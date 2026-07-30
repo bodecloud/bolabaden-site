@@ -46,8 +46,8 @@ next-env.d.ts
 design-backups/
 .history/
 
-# compound engineering local overrides
-.compound-engineering/*.local.yaml
+# compound engineering local overrides / tooling scaffold
+.compound-engineering/
 
 # Private brain warehouse / indexes (never ship in public image)
 brain-data/
