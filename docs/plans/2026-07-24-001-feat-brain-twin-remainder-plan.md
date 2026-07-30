@@ -223,6 +223,8 @@ flowchart LR
 
 **Verification:** Track only in pipeline status; no implementation this phase.
 
+**Scoped (not implemented) 2026-07-30:** [`docs/brainstorms/2026-07-30-personaforge-overlays-requirements.md`](../brainstorms/2026-07-30-personaforge-overlays-requirements.md) — requirements doc for a future `ce-plan` pass, written now that U2/U5's preconditions are met. Still explicitly no implementation this phase.
+
 ---
 
 ## Sequencing
