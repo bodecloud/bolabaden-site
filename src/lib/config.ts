@@ -47,7 +47,8 @@ export type HomeLayoutSectionId =
   | "proof-ledger"
   | "desk-artifact"
   | "archive-boundary"
-  | "desk-bot";
+  | "desk-bot"
+  | "field-notes";
 
 export type DeskArtifact = {
   id: string;
@@ -337,8 +338,9 @@ export const config = {
       { id: "explore-lanes", label: "Explore", enabled: true, order: 5 },
       { id: "archive-boundary", label: "Archive", enabled: true, order: 6 },
       { id: "desk-artifact", label: "Desk Notes", enabled: true, order: 7 },
-      { id: "desk-bot", label: "Ask the desk", enabled: true, order: 8 },
-      { id: "future-blocks", label: "Future", enabled: true, order: 9 },
+      { id: "field-notes", label: "Field Notes", enabled: true, order: 8 },
+      { id: "desk-bot", label: "Ask the desk", enabled: true, order: 9 },
+      { id: "future-blocks", label: "Future", enabled: true, order: 10 },
     ],
   ),
   HOME_SHOWCASE_TITLE: envString(
@@ -697,6 +699,21 @@ export const config = {
   NOTE_BACK_TO_INDEX_LABEL: envString(
     "NEXT_PUBLIC_NOTE_BACK_TO_INDEX_LABEL",
     "← All Notes",
+  ),
+  HOME_NOTES_TITLE: envString("NEXT_PUBLIC_HOME_NOTES_TITLE", "Field notes"),
+  HOME_NOTES_SUBTITLE: envString(
+    "NEXT_PUBLIC_HOME_NOTES_SUBTITLE",
+    "Short, frequent -- separate from Guides.",
+  ),
+  HOME_NOTES_MAX_ITEMS: envNumber("NEXT_PUBLIC_HOME_NOTES_MAX_ITEMS", 5),
+  /** Days since the newest note before the homepage feed shows a resting state instead. */
+  HOME_NOTES_STALE_THRESHOLD_DAYS: envNumber(
+    "NEXT_PUBLIC_HOME_NOTES_STALE_THRESHOLD_DAYS",
+    45,
+  ),
+  HOME_NOTES_RESTING_LABEL: envString(
+    "NEXT_PUBLIC_HOME_NOTES_RESTING_LABEL",
+    "No recent notes -- browse the full archive.",
   ),
 
   /** Navigation */

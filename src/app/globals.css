@@ -1637,6 +1637,52 @@ iframe {
   margin-top: 0.3rem;
 }
 
+/* Homepage recent-notes list -- new markup, not .command-desk-notes
+   (that block is a tabs-and-single-active-article widget, wrong shape
+   for a scannable list of rows). */
+.command-desk-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.command-desk-notes-list__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid rgba(102, 217, 255, 0.14);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1.1rem;
+  background: var(--desk-panel);
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.command-desk-notes-list__row:hover {
+  border-color: rgba(138, 255, 154, 0.34);
+}
+
+.command-desk-notes-list__row:focus-visible {
+  outline: 2px solid var(--desk-cyan);
+  outline-offset: 3px;
+}
+
+.command-desk-notes-list__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--desk-ink);
+  font-weight: 850;
+  font-size: 0.92rem;
+}
+
+.command-desk-notes-list__date {
+  flex-shrink: 0;
+  color: var(--desk-muted);
+  font-size: 0.78rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
 @keyframes commandBlink {
   50% {
     opacity: 0;

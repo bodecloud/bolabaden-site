@@ -9,6 +9,7 @@ import { EmbedsSection } from "@/components/embeds-section";
 import { HomeHubSection } from "@/components/home-hub-section";
 import { HomeFutureSection } from "@/components/home-future-section";
 import { DeskArtifactSection } from "@/components/desk-artifact-section";
+import { DeskNotesSection } from "@/components/desk-notes-section";
 import { ProofLedgerSection } from "@/components/proof-ledger-section";
 import { ArchiveBoundarySection } from "@/components/archive-boundary-section";
 import { BodenDeskBot } from "@/components/boden-desk-bot";
@@ -38,6 +39,7 @@ const VALID_HOME_SECTION_IDS: HomeLayoutSectionId[] = [
   "explore-lanes",
   "archive-boundary",
   "desk-artifact",
+  "field-notes",
   "desk-bot",
   "future-blocks",
 ];
@@ -54,6 +56,7 @@ const HOME_LABEL_FALLBACKS: Record<HomeLayoutSectionId, string> = {
   "explore-lanes": "Explore",
   "archive-boundary": "Archive",
   "desk-artifact": "Desk Notes",
+  "field-notes": "Field Notes",
   "desk-bot": "Ask the desk",
   "future-blocks": "Future",
 };
@@ -169,6 +172,8 @@ function renderHomeSection(
       return <ProofLedgerSection key={section.id} />;
     case "desk-artifact":
       return <DeskArtifactSection key={section.id} />;
+    case "field-notes":
+      return <DeskNotesSection key={section.id} />;
     case "home-hub":
       return <HomeHubSection key={section.id} />;
     case "explore-lanes":
